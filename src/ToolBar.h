@@ -18,6 +18,9 @@ public:
 
 protected:
     void resizeEvent(QResizeEvent *e);
+    void paintEvent(QPaintEvent *e);
+private:
+    void relayout();
 
 private:
     Ui::ToolBar *ui;

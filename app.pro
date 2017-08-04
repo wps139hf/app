@@ -30,17 +30,20 @@ SOURCES += \
         src/HomePage.cpp \
     src/StyledButton.cpp \
     src/Image.cpp \
-    src/ToolBar.cpp
+    src/ToolBar.cpp \
+    src/Applications.cpp
 
 HEADERS += \
         src/HomePage.h \
     src/StyledButton.h \
     src/Image.h \
-    src/ToolBar.h
+    src/ToolBar.h \
+    src/Applications.h
 
 FORMS += \
         src/HomePage.ui \
-    src/ToolBar.ui
+    src/ToolBar.ui \
+    src/Applications.ui
 
 CONFIG += mobility
 MOBILITY = 

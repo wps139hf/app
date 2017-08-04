@@ -2,13 +2,13 @@
 #include "ui_HomePage.h"
 
 #include <QResizeEvent>
+#include <QPainter>
 
 HomePage::HomePage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::HomePage)
 {
     ui->setupUi(this);
-
 }
 
 HomePage::~HomePage()
@@ -19,6 +19,17 @@ HomePage::~HomePage()
 void HomePage::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
+
+    ui->applications->resize(width(), ui->applications->height());
+
     ui->toolBar->resize(width(), ui->toolBar->height());
     ui->toolBar->move(0, height() - ui->toolBar->height());
+    ui->toolBar->raise();
+}
+
+void HomePage::paintEvent(QPaintEvent *e)
+{
+    Q_UNUSED(e);
+    QPainter painter(this);
+    painter.fillRect(rect(), Qt::white);
 }

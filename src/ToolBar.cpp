@@ -2,6 +2,7 @@
 #include "ui_ToolBar.h"
 
 #include <QResizeEvent>
+#include <QPainter>
 
 ToolBar::ToolBar(QWidget *parent) :
     QWidget(parent),
@@ -36,6 +37,19 @@ ToolBar::~ToolBar()
 void ToolBar::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
+    relayout();
+}
+
+void ToolBar::paintEvent(QPaintEvent *e)
+{
+    Q_UNUSED(e);
+    QPainter painter(this);
+
+    painter.fillRect(rect(), Qt::lightGray);
+}
+
+void ToolBar::relayout()
+{
     QList<QAbstractButton*>list = m_btnGrp->buttons();
     if(list.size()){
         int step = width() / list.size();
