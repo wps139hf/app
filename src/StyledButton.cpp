@@ -46,7 +46,14 @@ void StyledButton::paintEvent(QPaintEvent *e)
     //get the real rect that will draw image and text in
     QRect rc = getBoundary(painter);
     rc.moveTo(0, rect().height()/2 - rc.height()/2);
-    draw(painter, rc);
+
+    drawBackground(painter);
+
+    drawImage(painter, rc);
+
+    if(!text().isEmpty()){
+        drawText(painter, rc);
+    }
 
     if(m_msgCount){
         drawMsg(painter);
@@ -66,7 +73,7 @@ QRect StyledButton::getBoundary(QPainter &painter)
     return QRect(rect().x(), 0, rect().width(), m_image.rect().height() + gap + textHeight());
 }
 
-void StyledButton::draw(QPainter &painter, const QRect &rc)
+void StyledButton::drawBackground(QPainter &painter)
 {
     //draw background if selected
     if(isChecked()){
@@ -77,7 +84,10 @@ void StyledButton::draw(QPainter &painter, const QRect &rc)
 //        painter.drawRoundRect(rect(), 30, 30);
         painter.drawRect(rect());
     }
+}
 
+void StyledButton::drawImage(QPainter &painter, const QRect &rc)
+{
     painter.drawImage(rc.left() + rc.width()/2 - m_image.width()/2, rc.top(), m_image);
     if(m_isPressed){
         m_mask = QImage(m_image.size(), QImage::Format_ARGB32);
@@ -85,7 +95,10 @@ void StyledButton::draw(QPainter &painter, const QRect &rc)
 
         painter.drawImage(rc.left() + rc.width()/2 - m_image.width()/2, rc.top(), m_mask);
     }
+}
 
+void StyledButton::drawText(QPainter &painter, const QRect &rc)
+{
     //draw text
     QPen pen;
     if(isChecked()){

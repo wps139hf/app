@@ -21,7 +21,9 @@ protected:
 private:
     int textHeight();
     QRect getBoundary(QPainter &painter);
-    void draw(QPainter &painter, const QRect &rc);
+    void drawBackground(QPainter &painter);
+    void drawImage(QPainter &painter, const QRect &rc);
+    void drawText(QPainter &painter, const QRect &rc);
     void drawMsg(QPainter &painter);
 
 private:
