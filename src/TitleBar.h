@@ -15,12 +15,10 @@ public:
     explicit TitleBar(QWidget *parent = 0);
     ~TitleBar();
 
-    void setBackVisible(bool visible);
-    void setCustomVisible(bool visible);
-
 protected:
     void resizeEvent(QResizeEvent *e);
-    void paintEvent(QPaintEvent *e);
+    void paintEvent(QPaintEvent *event);
+
 private:
     Ui::TitleBar *ui;
 };

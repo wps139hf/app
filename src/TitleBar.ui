@@ -22,6 +22,14 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Title</string>
    </property>
@@ -29,35 +37,95 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="StyledButton" name="btnBack" native="true">
+  <widget class="QToolButton" name="btnBack">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>61</width>
-     <height>40</height>
+     <width>81</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>11</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>:/icons/icon-back.png</normalon>
+    </iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="popupMode">
+    <enum>QToolButton::InstantPopup</enum>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <property name="autoRaise">
+    <bool>true</bool>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::NoArrow</enum>
+   </property>
   </widget>
-  <widget class="StyledButton" name="btnCustom" native="true">
+  <widget class="QToolButton" name="btnCustom">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>380</x>
      <y>0</y>
-     <width>61</width>
-     <height>40</height>
+     <width>41</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>11</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/res.qrc">
+     <normaloff>:/icons/icon-qr.png</normaloff>:/icons/icon-qr.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="popupMode">
+    <enum>QToolButton::InstantPopup</enum>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <property name="autoRaise">
+    <bool>true</bool>
+   </property>
+   <property name="arrowType">
+    <enum>Qt::NoArrow</enum>
    </property>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>StyledButton</class>
-   <extends>QWidget</extends>
-   <header>StyledButton.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
- <resources/>
+ <resources>
+  <include location="../res/res.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -11,10 +11,18 @@ class ToolBar;
 class ToolBar : public QWidget
 {
     Q_OBJECT
-
 public:
+    enum Button{
+        Message = 0,
+        Home,
+        Mine
+    };
+
     explicit ToolBar(QWidget *parent = 0);
     ~ToolBar();
+
+signals:
+    void clicked(int btnIndex);
 
 protected:
     void resizeEvent(QResizeEvent *e);

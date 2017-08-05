@@ -34,7 +34,8 @@ SOURCES += \
     src/Applications.cpp \
     src/NoticePanel.cpp \
     src/MainWindow.cpp \
-    src/TitleBar.cpp
+    src/TitleBar.cpp \
+    src/PagePanel.cpp
 
 HEADERS += \
         src/HomePage.h \
@@ -44,7 +45,8 @@ HEADERS += \
     src/Applications.h \
     src/NoticePanel.h \
     src/MainWindow.h \
-    src/TitleBar.h
+    src/TitleBar.h \
+    src/PagePanel.h
 
 FORMS += \
         src/HomePage.ui \
@@ -52,7 +54,8 @@ FORMS += \
     src/Applications.ui \
     src/NoticePanel.ui \
     src/MainWindow.ui \
-    src/TitleBar.ui
+    src/TitleBar.ui \
+    src/PagePanel.ui
 
 CONFIG += mobility
 MOBILITY = 

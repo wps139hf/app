@@ -6,14 +6,54 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>409</width>
-    <height>321</height>
+    <width>400</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="ToolBar" name="toolBar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>520</y>
+     <width>400</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(202, 202, 202);</string>
+   </property>
+  </widget>
+  <widget class="PagePanel" name="pagePanel" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>520</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ToolBar</class>
+   <extends>QWidget</extends>
+   <header>ToolBar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PagePanel</class>
+   <extends>QWidget</extends>
+   <header>PagePanel.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

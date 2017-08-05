@@ -23,10 +23,12 @@ ToolBar::ToolBar(QWidget *parent) :
     ui->btnMine->setImage(QImage("://icons/icon-mine.png"));
 
     m_btnGrp = new QButtonGroup(this);
-    m_btnGrp->addButton(ui->btnMsg);
-    m_btnGrp->addButton(ui->btnHome);
-    m_btnGrp->addButton(ui->btnMine);
+    m_btnGrp->addButton(ui->btnMsg, ToolBar::Message);
+    m_btnGrp->addButton(ui->btnHome, ToolBar::Home);
+    m_btnGrp->addButton(ui->btnMine, ToolBar::Mine);
     m_btnGrp->setExclusive(true);
+
+    connect(m_btnGrp, SIGNAL(buttonClicked(int)), this, SIGNAL(clicked(int)));
 }
 
 ToolBar::~ToolBar()
