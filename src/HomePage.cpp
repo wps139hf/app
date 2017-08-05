@@ -20,6 +20,9 @@ void HomePage::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
 
+    ui->titleBar->resize(width(), ui->titleBar->height());
+    ui->titleBar->move(0, 0);
+
     ui->applications->resize(width(), ui->applications->height());
 
     ui->toolBar->resize(width(), ui->toolBar->height());

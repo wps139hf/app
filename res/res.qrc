@@ -9,5 +9,7 @@
         <file>icons/icon-msg.png</file>
         <file>icons/icon-print.png</file>
         <file>icons/icon-repair.png</file>
+        <file>icons/icon-back.png</file>
+        <file>icons/icon-qr.png</file>
     </qresource>
 </RCC>

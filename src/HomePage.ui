@@ -13,35 +13,11 @@
   <property name="windowTitle">
    <string>HomePage</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>10</y>
-     <width>191</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-     <kerning>true</kerning>
-    </font>
-   </property>
-   <property name="text">
-    <string>爱菊微后勤</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QWidget" name="banner" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>50</y>
+     <y>40</y>
      <width>401</width>
      <height>101</height>
     </rect>
@@ -73,6 +49,19 @@
     </rect>
    </property>
   </widget>
+  <widget class="TitleBar" name="titleBar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>0</y>
+     <width>401</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 114, 167);</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -86,6 +75,12 @@
    <class>Applications</class>
    <extends>QWidget</extends>
    <header>Applications.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TitleBar</class>
+   <extends>QWidget</extends>
+   <header>TitleBar.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
