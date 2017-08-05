@@ -22,40 +22,40 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += src
-DEPENDPATH += src
+INCLUDEPATH += pages utils widgets
+DEPENDPATH += pages utils widgets
 
 SOURCES += \
-        src/main.cpp \
-        src/HomePage.cpp \
-    src/StyledButton.cpp \
-    src/Image.cpp \
-    src/ToolBar.cpp \
-    src/MainWindow.cpp \
-    src/TitleBar.cpp \
-    src/AppWidget.cpp \
-    src/NoticeWidget.cpp \
-    src/MainPages.cpp
+    main.cpp \
+    pages/HomePage.cpp \
+    widgets/StyledButton.cpp \
+    utils/Image.cpp \
+    widgets/ToolBar.cpp \
+    MainWindow.cpp \
+    widgets/TitleBar.cpp \
+    widgets/AppWidget.cpp \
+    widgets/NoticeWidget.cpp \
+    pages/MainPages.cpp
 
 HEADERS += \
-        src/HomePage.h \
-    src/StyledButton.h \
-    src/Image.h \
-    src/ToolBar.h \
-    src/MainWindow.h \
-    src/TitleBar.h \
-    src/AppWidget.h \
-    src/NoticeWidget.h \
-    src/MainPages.h
+    pages/HomePage.h \
+    widgets/StyledButton.h \
+    utils/Image.h \
+    widgets/ToolBar.h \
+    MainWindow.h \
+    widgets/TitleBar.h \
+    widgets/AppWidget.h \
+    widgets/NoticeWidget.h \
+    pages/MainPages.h
 
 FORMS += \
-        src/HomePage.ui \
-    src/ToolBar.ui \
-    src/MainWindow.ui \
-    src/TitleBar.ui \
-    src/AppWidget.ui \
-    src/NoticeWidget.ui \
-    src/MainPages.ui
+    pages/HomePage.ui \
+    widgets/ToolBar.ui \
+    MainWindow.ui \
+    widgets/TitleBar.ui \
+    widgets/AppWidget.ui \
+    widgets/NoticeWidget.ui \
+    pages/MainPages.ui
 
 CONFIG += mobility
 MOBILITY = 

@@ -44,13 +44,13 @@
   <customwidget>
    <class>ToolBar</class>
    <extends>QWidget</extends>
-   <header>ToolBar.h</header>
+   <header>widgets/ToolBar.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>MainPages</class>
    <extends>QWidget</extends>
-   <header>MainPages.h</header>
+   <header>pages/MainPages.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

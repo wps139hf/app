@@ -76,13 +76,13 @@
   <customwidget>
    <class>TitleBar</class>
    <extends>QWidget</extends>
-   <header>TitleBar.h</header>
+   <header>widgets/TitleBar.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>AppWidget</class>
    <extends>QWidget</extends>
-   <header>AppWidget.h</header>
+   <header>widgets/AppWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
