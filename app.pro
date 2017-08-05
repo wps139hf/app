@@ -31,31 +31,31 @@ SOURCES += \
     src/StyledButton.cpp \
     src/Image.cpp \
     src/ToolBar.cpp \
-    src/NoticePanel.cpp \
     src/MainWindow.cpp \
     src/TitleBar.cpp \
     src/PagePanel.cpp \
-    src/AppWidget.cpp
+    src/AppWidget.cpp \
+    src/NoticeWidget.cpp
 
 HEADERS += \
         src/HomePage.h \
     src/StyledButton.h \
     src/Image.h \
     src/ToolBar.h \
-    src/NoticePanel.h \
     src/MainWindow.h \
     src/TitleBar.h \
     src/PagePanel.h \
-    src/AppWidget.h
+    src/AppWidget.h \
+    src/NoticeWidget.h
 
 FORMS += \
         src/HomePage.ui \
     src/ToolBar.ui \
-    src/NoticePanel.ui \
     src/MainWindow.ui \
     src/TitleBar.ui \
     src/PagePanel.ui \
-    src/AppWidget.ui
+    src/AppWidget.ui \
+    src/NoticeWidget.ui
 
 CONFIG += mobility
 MOBILITY = 

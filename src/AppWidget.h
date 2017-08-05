@@ -1,5 +1,5 @@
-#ifndef APPLICATIONS_H
-#define APPLICATIONS_H
+#ifndef APPWIDGET_H
+#define APPWIDGET_H
 
 #include <QWidget>
 #include <QButtonGroup>
@@ -30,4 +30,4 @@ private:
     int m_row = 2;
 };
 
-#endif // APPLICATIONS_H
+#endif // APPWIDGET_H

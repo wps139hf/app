@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>NoticePanel</class>
- <widget class="QWidget" name="NoticePanel">
+ <class>NoticeWidget</class>
+ <widget class="QWidget" name="NoticeWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
