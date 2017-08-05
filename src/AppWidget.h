@@ -5,16 +5,16 @@
 #include <QButtonGroup>
 
 namespace Ui {
-class Applications;
+class AppWidget;
 }
 
-class Applications : public QWidget
+class AppWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Applications(QWidget *parent = 0);
-    ~Applications();
+    explicit AppWidget(QWidget *parent = 0);
+    ~AppWidget();
     void setColumn(int count);
 
 protected:
@@ -23,7 +23,7 @@ protected:
 private:
     void relayout();
 private:
-    Ui::Applications *ui;
+    Ui::AppWidget *ui;
 
     QButtonGroup *m_btnGrp;
     int m_column = 4;

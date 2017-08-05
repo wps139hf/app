@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Applications</class>
- <widget class="QWidget" name="Applications">
+ <class>AppWidget</class>
+ <widget class="QWidget" name="AppWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -21,6 +21,14 @@
      <width>201</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Common Applications</string>

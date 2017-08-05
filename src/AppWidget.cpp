@@ -1,11 +1,11 @@
-#include "Applications.h"
-#include "ui_Applications.h"
+#include "AppWidget.h"
+#include "ui_AppWidget.h"
 
 #include <QPainter>
 
-Applications::Applications(QWidget *parent) :
+AppWidget::AppWidget(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Applications)
+    ui(new Ui::AppWidget)
 {
     ui->setupUi(this);
 
@@ -36,31 +36,31 @@ Applications::Applications(QWidget *parent) :
     m_btnGrp->addButton(ui->btnAsset);
 }
 
-Applications::~Applications()
+AppWidget::~AppWidget()
 {
     delete ui;
 }
 
-void Applications::setColumn(int count)
+void AppWidget::setColumn(int count)
 {
     m_column = count;
 }
 
-void Applications::resizeEvent(QResizeEvent *e)
+void AppWidget::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
 
     relayout();
 }
 
-void Applications::paintEvent(QPaintEvent *e)
+void AppWidget::paintEvent(QPaintEvent *e)
 {
     Q_UNUSED(e);
     QPainter painter(this);
     painter.fillRect(rect(), Qt::white);
 }
 
-void Applications::relayout()
+void AppWidget::relayout()
 {
     QList<QAbstractButton*>list = m_btnGrp->buttons();
     ui->title->move(rect().topLeft());

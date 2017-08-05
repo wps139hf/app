@@ -23,8 +23,8 @@ void HomePage::resizeEvent(QResizeEvent *e)
     ui->titleBar->resize(width(), ui->titleBar->height());
     ui->titleBar->move(0, 0);
 
-    ui->appPanel->resize(width(), ui->appPanel->height());
-    ui->appPanel->move(0, height() - ui->appPanel->height());
+    ui->appWidget->resize(width(), ui->appWidget->height());
+    ui->appWidget->move(0, height() - ui->appWidget->height());
 }
 
 void HomePage::paintEvent(QPaintEvent *e)

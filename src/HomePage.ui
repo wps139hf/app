@@ -34,7 +34,7 @@
     <string notr="true">background-color: rgb(0, 85, 127);</string>
    </property>
   </widget>
-  <widget class="Applications" name="appPanel" native="true">
+  <widget class="AppWidget" name="appWidget" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -74,15 +74,15 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>Applications</class>
-   <extends>QWidget</extends>
-   <header>Applications.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>TitleBar</class>
    <extends>QWidget</extends>
    <header>TitleBar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AppWidget</class>
+   <extends>QWidget</extends>
+   <header>AppWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
