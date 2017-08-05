@@ -15,6 +15,14 @@ public:
     explicit TitleBar(QWidget *parent = 0);
     ~TitleBar();
 
+    void setBackButtonVisible(bool visible);
+    void setCustomButtonVisible(bool visible);
+    void setText(const QString &text);
+
+signals:
+    void backClicked(bool);
+    void customClicked(bool);
+
 protected:
     void resizeEvent(QResizeEvent *e);
     void paintEvent(QPaintEvent *event);

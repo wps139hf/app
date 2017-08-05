@@ -1,20 +1,21 @@
 #ifndef HOMEPAGE_H
 #define HOMEPAGE_H
 
-#include <QWidget>
+#include "BasePage.h"
 
 namespace Ui {
 class HomePage;
 }
 
-class HomePage : public QWidget
+class HomePage : public BasePage
 {
     Q_OBJECT
 
 public:
     explicit HomePage(QWidget *parent = 0);
     ~HomePage();
-
+public slots:
+    void onAppSelected(int index);
 protected:
     void resizeEvent(QResizeEvent *e);
     void paintEvent(QPaintEvent *e);

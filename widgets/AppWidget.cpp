@@ -28,12 +28,14 @@ AppWidget::AppWidget(QWidget *parent) :
     ui->btnAsset->setImage(QImage("://icons/icon-asset.png"));
 
     m_btnGrp = new QButtonGroup(this);
-    m_btnGrp->addButton(ui->btnCar);
-    m_btnGrp->addButton(ui->btnRepair);
-    m_btnGrp->addButton(ui->btnBuy);
-    m_btnGrp->addButton(ui->btnPrint);
-    m_btnGrp->addButton(ui->btnHall);
-    m_btnGrp->addButton(ui->btnAsset);
+    m_btnGrp->addButton(ui->btnCar, App::Car);
+    m_btnGrp->addButton(ui->btnRepair, App::Repair);
+    m_btnGrp->addButton(ui->btnBuy, App::Buy);
+    m_btnGrp->addButton(ui->btnPrint, App::Print);
+    m_btnGrp->addButton(ui->btnHall, App::Hall);
+    m_btnGrp->addButton(ui->btnAsset, App::Asset);
+
+    connect(m_btnGrp, SIGNAL(buttonClicked(int)), this, SIGNAL(clicked(int)));
 }
 
 AppWidget::~AppWidget()
@@ -62,8 +64,10 @@ void AppWidget::paintEvent(QPaintEvent *e)
 
 void AppWidget::relayout()
 {
-    QList<QAbstractButton*>list = m_btnGrp->buttons();
+    ui->title->resize(width(), ui->title->height());
     ui->title->move(rect().topLeft());
+
+    QList<QAbstractButton*>list = m_btnGrp->buttons();
     if(list.size()){
         m_row = list.size()/m_column + 1;
         int step = width()/m_column;

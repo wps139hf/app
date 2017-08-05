@@ -16,10 +16,10 @@
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>10</y>
-     <width>201</width>
-     <height>21</height>
+     <x>0</x>
+     <y>0</y>
+     <width>561</width>
+     <height>40</height>
     </rect>
    </property>
    <property name="font">
@@ -30,8 +30,14 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(57, 179, 255);</string>
+   </property>
    <property name="text">
-    <string>Common Applications</string>
+    <string>常见应用</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="StyledButton" name="btnCar" native="true">

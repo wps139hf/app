@@ -12,3 +12,10 @@ NoticeWidget::~NoticeWidget()
 {
     delete ui;
 }
+
+void NoticeWidget::resizeEvent(QResizeEvent *e)
+{
+    Q_UNUSED(e);
+    ui->title->resize(width(), ui->title->height());
+    ui->title->move(rect().topLeft());
+}

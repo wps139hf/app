@@ -35,7 +35,8 @@ SOURCES += \
     widgets/TitleBar.cpp \
     widgets/AppWidget.cpp \
     widgets/NoticeWidget.cpp \
-    pages/MainPages.cpp
+    pages/MainPages.cpp \
+    pages/BasePage.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -46,7 +47,8 @@ HEADERS += \
     widgets/TitleBar.h \
     widgets/AppWidget.h \
     widgets/NoticeWidget.h \
-    pages/MainPages.h
+    pages/MainPages.h \
+    pages/BasePage.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -55,7 +57,8 @@ FORMS += \
     widgets/TitleBar.ui \
     widgets/AppWidget.ui \
     widgets/NoticeWidget.ui \
-    pages/MainPages.ui
+    pages/MainPages.ui \
+    pages/BasePage.ui
 
 CONFIG += mobility
 MOBILITY = 

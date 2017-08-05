@@ -30,3 +30,12 @@ void MainPages::showMine()
     ui->pageMine->show();
     ui->pageMine->raise();
 }
+
+void MainPages::resizeEvent(QResizeEvent *e)
+{
+    Q_UNUSED(e);
+
+    ui->pageMsg->resize(width(), height());
+    ui->pageHome->resize(width(), height());
+    ui->pageMine->resize(width(), height());
+}

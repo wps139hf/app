@@ -8,11 +8,32 @@ TitleBar::TitleBar(QWidget *parent) :
     ui(new Ui::TitleBar)
 {
     ui->setupUi(this);
+
+    ui->btnBack->setVisible(false);
+    ui->btnCustom->setVisible(false);
+
+    connect(ui->btnBack, SIGNAL(clicked(bool)), this, SIGNAL(backClicked(bool)));
+    connect(ui->btnCustom, SIGNAL(clicked(bool)), this, SIGNAL(customClicked(bool)));
 }
 
 TitleBar::~TitleBar()
 {
     delete ui;
+}
+
+void TitleBar::setBackButtonVisible(bool visible)
+{
+    ui->btnBack->setVisible(visible);
+}
+
+void TitleBar::setCustomButtonVisible(bool visible)
+{
+    ui->btnCustom->setVisible(visible);
+}
+
+void TitleBar::setText(const QString &text)
+{
+    ui->title->setText(text);
 }
 
 void TitleBar::resizeEvent(QResizeEvent *e)

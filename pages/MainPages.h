@@ -19,6 +19,9 @@ public:
     void showHome();
     void showMine();
 
+protected:
+    void resizeEvent(QResizeEvent *e);
+
 private:
     Ui::MainPages *ui;
 };

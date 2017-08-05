@@ -8,6 +8,17 @@ namespace Ui {
 class AppWidget;
 }
 
+namespace App {
+enum Id{
+    Car,
+    Repair,
+    Buy,
+    Print,
+    Hall,
+    Asset
+};
+}
+
 class AppWidget : public QWidget
 {
     Q_OBJECT
@@ -16,7 +27,8 @@ public:
     explicit AppWidget(QWidget *parent = 0);
     ~AppWidget();
     void setColumn(int count);
-
+signals:
+    void clicked(int);
 protected:
     void resizeEvent(QResizeEvent *e);
     void paintEvent(QPaintEvent *e);
