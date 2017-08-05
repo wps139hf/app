@@ -1,31 +1,31 @@
-#include "PagePanel.h"
-#include "ui_PagePanel.h"
+#include "MainPages.h"
+#include "ui_MainPages.h"
 
-PagePanel::PagePanel(QWidget *parent) :
+MainPages::MainPages(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::PagePanel)
+    ui(new Ui::MainPages)
 {
     ui->setupUi(this);
 }
 
-PagePanel::~PagePanel()
+MainPages::~MainPages()
 {
     delete ui;
 }
 
-void PagePanel::showMsg()
+void MainPages::showMsg()
 {
     ui->pageMsg->show();
     ui->pageMsg->raise();
 }
 
-void PagePanel::showHome()
+void MainPages::showHome()
 {
     ui->pageHome->show();
     ui->pageHome->raise();
 }
 
-void PagePanel::showMine()
+void MainPages::showMine()
 {
     ui->pageMine->show();
     ui->pageMine->raise();

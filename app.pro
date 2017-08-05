@@ -33,9 +33,9 @@ SOURCES += \
     src/ToolBar.cpp \
     src/MainWindow.cpp \
     src/TitleBar.cpp \
-    src/PagePanel.cpp \
     src/AppWidget.cpp \
-    src/NoticeWidget.cpp
+    src/NoticeWidget.cpp \
+    src/MainPages.cpp
 
 HEADERS += \
         src/HomePage.h \
@@ -44,18 +44,18 @@ HEADERS += \
     src/ToolBar.h \
     src/MainWindow.h \
     src/TitleBar.h \
-    src/PagePanel.h \
     src/AppWidget.h \
-    src/NoticeWidget.h
+    src/NoticeWidget.h \
+    src/MainPages.h
 
 FORMS += \
         src/HomePage.ui \
     src/ToolBar.ui \
     src/MainWindow.ui \
     src/TitleBar.ui \
-    src/PagePanel.ui \
     src/AppWidget.ui \
-    src/NoticeWidget.ui
+    src/NoticeWidget.ui \
+    src/MainPages.ui
 
 CONFIG += mobility
 MOBILITY = 

@@ -26,7 +26,7 @@
     <string notr="true">background-color: rgb(202, 202, 202);</string>
    </property>
   </widget>
-  <widget class="PagePanel" name="pagePanel" native="true">
+  <widget class="MainPages" name="mainPages" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -48,9 +48,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>PagePanel</class>
+   <class>MainPages</class>
    <extends>QWidget</extends>
-   <header>PagePanel.h</header>
+   <header>MainPages.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

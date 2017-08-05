@@ -4,23 +4,23 @@
 #include <QWidget>
 
 namespace Ui {
-class PagePanel;
+class MainPages;
 }
 
-class PagePanel : public QWidget
+class MainPages : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit PagePanel(QWidget *parent = 0);
-    ~PagePanel();
+    explicit MainPages(QWidget *parent = 0);
+    ~MainPages();
 
     void showMsg();
     void showHome();
     void showMine();
 
 private:
-    Ui::PagePanel *ui;
+    Ui::MainPages *ui;
 };
 
 #endif // PAGEPANEL_H
