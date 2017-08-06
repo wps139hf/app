@@ -11,5 +11,6 @@
         <file>icons/icon-repair.png</file>
         <file>icons/icon-back.png</file>
         <file>icons/icon-qr.png</file>
+        <file>icons/icon-mark.png</file>
     </qresource>
 </RCC>

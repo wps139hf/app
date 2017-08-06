@@ -37,7 +37,8 @@ SOURCES += \
     widgets/NoticeWidget.cpp \
     pages/MainPages.cpp \
     pages/BasePage.cpp \
-    utils/qDebug2Logcat.cpp
+    utils/qDebug2Logcat.cpp \
+    widgets/AbbrNoticeItem.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -50,7 +51,8 @@ HEADERS += \
     widgets/NoticeWidget.h \
     pages/MainPages.h \
     pages/BasePage.h \
-    utils/qDebug2Logcat.h
+    utils/qDebug2Logcat.h \
+    widgets/AbbrNoticeItem.h
 
 FORMS += \
     pages/HomePage.ui \

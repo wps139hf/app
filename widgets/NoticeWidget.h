@@ -2,6 +2,7 @@
 #define NOTICEWIDGET_H
 
 #include <QWidget>
+#include <QTimer>
 
 namespace Ui {
 class NoticeWidget;
@@ -17,9 +18,13 @@ public:
 
 protected:
     void resizeEvent(QResizeEvent *e);
-
+    void mousePressEvent(QMouseEvent *e);
+    void mouseReleaseEvent(QMouseEvent *e);
 private:
+    int itemHeight();
+    int itemCountOnePage();
     Ui::NoticeWidget *ui;
+    QTimer m_timer;
 };
 
 #endif // NOTICEWIDGET_H

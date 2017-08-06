@@ -29,8 +29,14 @@ void HomePage::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
     BasePage::resizeEvent(e);
+    ui->banner->resize(width(), ui->banner->height());
+
     ui->appWidget->resize(width(), ui->appWidget->height());
     ui->appWidget->move(0, height() - ui->appWidget->height());
+
+    int h = ui->appWidget->geometry().top() - ui->banner->geometry().bottom();
+    ui->notice->resize(width(), h);
+    ui->notice->move(ui->banner->geometry().bottomLeft());
 }
 
 void HomePage::paintEvent(QPaintEvent *e)
