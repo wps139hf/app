@@ -16,32 +16,40 @@ void BasePage::setTitleBar(TitleBar *bar)
     connect(m_titleBar, SIGNAL(customClicked(bool)), this, SIGNAL(customClicked(bool)));
 }
 
+void BasePage::setToolBar(ToolBar *bar)
+{
+    m_toolbar = bar;
+}
+
 void BasePage::setTitle(const QString &title)
 {
     if(m_titleBar){
         m_titleBar->setText(title);
     }else{
-        qWarning("No title bar to display!");
+        qDebug() << " !!! No title bar for page " << objectName() << ".!!!";
     }
 }
 
-void BasePage::showBackButton()
+void BasePage::setTitleButtonVisible(TitleBar::Button btn, bool visible)
 {
     if(m_titleBar){
-        m_titleBar->setBackButtonVisible(true);
+        m_titleBar->setButtonVisible(btn, visible);
+    }else{
+        qDebug() << " !!! No title bar for page " << objectName() << ".!!!";
     }
 }
 
-void BasePage::showCustomButton()
+void BasePage::setToolButtonChecked(ToolBar::Button btn)
 {
-    if(m_titleBar){
-        m_titleBar->setCustomButtonVisible(true);
+    if(m_toolbar){
+        m_toolbar->setChecked(btn);
+    }else{
+        qDebug() << " !!! No toolbar for page " << objectName() << ".!!!";
     }
 }
 
 void BasePage::init()
 {
-
 }
 
 void BasePage::showEvent(QShowEvent *e)

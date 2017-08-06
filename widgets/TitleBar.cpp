@@ -21,14 +21,18 @@ TitleBar::~TitleBar()
     delete ui;
 }
 
-void TitleBar::setBackButtonVisible(bool visible)
+void TitleBar::setButtonVisible(TitleBar::Button btn, bool visible)
 {
-    ui->btnBack->setVisible(visible);
-}
-
-void TitleBar::setCustomButtonVisible(bool visible)
-{
-    ui->btnCustom->setVisible(visible);
+    switch (btn) {
+    case TitleBar::Back:
+        ui->btnBack->setVisible(visible);
+        break;
+    case TitleBar::Custom:
+        ui->btnCustom->setVisible(visible);
+        break;
+    default:
+        break;
+    }
 }
 
 void TitleBar::setText(const QString &text)

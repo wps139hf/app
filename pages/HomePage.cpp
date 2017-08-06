@@ -25,6 +25,9 @@ void HomePage::onAppSelected(int index)
 void HomePage::init()
 {
     setTitle(tr("爱菊微后勤"));
+    setTitleButtonVisible(TitleBar::Back, false);
+    setTitleButtonVisible(TitleBar::Custom, false);
+    setToolButtonChecked(ToolBar::Home);
 }
 
 void HomePage::resizeEvent(QResizeEvent *e)

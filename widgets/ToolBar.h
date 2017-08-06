@@ -20,7 +20,7 @@ public:
 
     explicit ToolBar(QWidget *parent = 0);
     ~ToolBar();
-
+    void setChecked(int btnIndex);
 signals:
     void clicked(int btnIndex);
 

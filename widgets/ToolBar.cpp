@@ -35,14 +35,21 @@ ToolBar::ToolBar(QWidget *parent) :
     //show default page - home page
     QTimer::singleShot(50, this, [this](){
         qDebug() << "show default page";
-        emit m_btnGrp->buttonClicked(ToolBar::Home);
-        ui->btnHome->click();
+//        emit m_btnGrp->buttonClicked(ToolBar::Home);
+//        ui->btnHome->click();
+        setChecked(ToolBar::Home);
     });
 }
 
 ToolBar::~ToolBar()
 {
     delete ui;
+}
+
+void ToolBar::setChecked(int btnIndex)
+{
+//    emit clicked(btnIndex);
+    m_btnGrp->button(btnIndex)->click();
 }
 
 void ToolBar::resizeEvent(QResizeEvent *e)

@@ -2,6 +2,7 @@
 #define BASEPAGE_H
 
 #include "TitleBar.h"
+#include "ToolBar.h"
 
 #include <QDebug>
 #include <QWidget>
@@ -15,10 +16,11 @@ public:
     ~BasePage();
 
     void setTitleBar(TitleBar *bar);
-    void setTitle(const QString &title);
+    void setToolBar(ToolBar *bar);
 
-    void showBackButton();
-    void showCustomButton();
+    void setTitle(const QString &title);
+    void setTitleButtonVisible(TitleBar::Button btn, bool visible);
+    void setToolButtonChecked(ToolBar::Button btn);
 signals:
     void backClicked(bool);
     void customClicked(bool);
@@ -27,8 +29,9 @@ protected:
     virtual void init();
     void showEvent(QShowEvent *e);
 
-private:
+protected:
     TitleBar *m_titleBar = nullptr;
+    ToolBar *m_toolbar = nullptr;
 };
 
 #endif // BASEPAGE_H

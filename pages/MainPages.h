@@ -2,6 +2,7 @@
 #define PAGEPANEL_H
 
 #include "TitleBar.h"
+#include "ToolBar.h"
 
 #include <QWidget>
 
@@ -18,6 +19,7 @@ public:
     ~MainPages();
 
     void setTitleBar(TitleBar *bar);
+    void setToolBar(ToolBar *bar);
     void showMsg();
     void showHome();
     void showMine();
@@ -27,6 +29,7 @@ protected:
 
 private:
     void showPage(QWidget *page);
+    void initConnections();
     Ui::MainPages *ui;
 };
 

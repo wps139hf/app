@@ -16,4 +16,7 @@ MinePage::~MinePage()
 void MinePage::init()
 {
     setTitle(tr("我的信息"));
+    setTitleButtonVisible(TitleBar::Back, true);
+    setTitleButtonVisible(TitleBar::Custom, false);
+    setToolButtonChecked(ToolBar::Mine);
 }

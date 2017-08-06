@@ -9,6 +9,8 @@ MainPages::MainPages(QWidget *parent) :
     ui->pageMsg->hide();
     ui->pageHome->hide();
     ui->pageMine->hide();
+
+    initConnections();
 }
 
 MainPages::~MainPages()
@@ -21,6 +23,13 @@ void MainPages::setTitleBar(TitleBar *bar)
     ui->pageMsg->setTitleBar(bar);
     ui->pageHome->setTitleBar(bar);
     ui->pageMine->setTitleBar(bar);
+}
+
+void MainPages::setToolBar(ToolBar *bar)
+{
+    ui->pageMsg->setToolBar(bar);
+    ui->pageHome->setToolBar(bar);
+    ui->pageMine->setToolBar(bar);
 }
 
 void MainPages::showMsg()
@@ -59,4 +68,15 @@ void MainPages::showPage(QWidget *page)
             }
         }
     }
+}
+
+void MainPages::initConnections()
+{
+    connect(ui->pageMsg, &MessagePage::backClicked, [this](bool){
+        ui->pageHome->show();
+    });
+
+    connect(ui->pageMine, &MinePage::backClicked, [this](bool){
+        ui->pageHome->show();
+    });
 }

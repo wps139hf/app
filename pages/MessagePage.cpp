@@ -16,4 +16,7 @@ MessagePage::~MessagePage()
 void MessagePage::init()
 {
     setTitle(tr("消息"));
+    setTitleButtonVisible(TitleBar::Back, true);
+    setTitleButtonVisible(TitleBar::Custom, false);
+    setToolButtonChecked(ToolBar::Message);
 }

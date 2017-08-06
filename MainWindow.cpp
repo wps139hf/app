@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->mainPages->setTitleBar(ui->titleBar);
+    ui->mainPages->setToolBar(ui->toolBar);
 
     connect(ui->toolBar, &ToolBar::clicked, [this](int btnIndex){
         qDebug() << "toolbar: clicked:" << btnIndex;

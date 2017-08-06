@@ -12,11 +12,15 @@ class TitleBar : public QWidget
     Q_OBJECT
 
 public:
+    enum Button{
+        Back,
+        Custom
+    };
+
     explicit TitleBar(QWidget *parent = 0);
     ~TitleBar();
 
-    void setBackButtonVisible(bool visible);
-    void setCustomButtonVisible(bool visible);
+    void setButtonVisible(TitleBar::Button btn, bool visible);
     void setText(const QString &text);
 
 signals:
