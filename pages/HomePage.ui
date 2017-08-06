@@ -21,7 +21,7 @@
   <property name="windowTitle">
    <string>HomePage</string>
   </property>
-  <widget class="QWidget" name="banner" native="true">
+  <widget class="SliderPicture" name="banner" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -73,6 +73,12 @@
    <class>NoticeWidget</class>
    <extends>QWidget</extends>
    <header>widgets/NoticeWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SliderPicture</class>
+   <extends>QWidget</extends>
+   <header>widgets/sliderpicture.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

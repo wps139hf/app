@@ -41,7 +41,8 @@ SOURCES += \
     widgets/AbbrNoticeItem.cpp \
     pages/NoticeDisplay.cpp \
     pages/MessagePage.cpp \
-    pages/MinePage.cpp
+    pages/MinePage.cpp \
+    widgets/sliderpicture.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -58,7 +59,8 @@ HEADERS += \
     widgets/AbbrNoticeItem.h \
     pages/NoticeDisplay.h \
     pages/MessagePage.h \
-    pages/MinePage.h
+    pages/MinePage.h \
+    widgets/sliderpicture.h
 
 FORMS += \
     pages/HomePage.ui \

@@ -12,5 +12,10 @@
         <file>icons/icon-back.png</file>
         <file>icons/icon-qr.png</file>
         <file>icons/icon-mark.png</file>
+        <file>icons/bg_bottom.png</file>
+        <file>icons/desktop_0.jpg</file>
+        <file>icons/desktop_1.jpg</file>
+        <file>icons/desktop_2.jpg</file>
+        <file>icons/desktop_3.jpg</file>
     </qresource>
 </RCC>
