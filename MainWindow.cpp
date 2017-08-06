@@ -51,4 +51,5 @@ void MainWindow::resizeEvent(QResizeEvent *e)
 
     ui->pageStack->resize(width(), height());
     ui->pageStack->move(0, 0);
+    ui->pageStack->raise();
 }

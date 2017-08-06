@@ -52,7 +52,7 @@
     <string notr="true">background-color: rgb(57, 179, 255);</string>
    </property>
   </widget>
-  <widget class="QWidget" name="pageStack" native="true">
+  <widget class="QStackedWidget" name="pageStack">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -61,6 +61,7 @@
      <height>600</height>
     </rect>
    </property>
+   <widget class="NoticeDisplay" name="noticeDisplay" native="true"/>
   </widget>
  </widget>
  <customwidgets>
@@ -80,6 +81,12 @@
    <class>PageManager</class>
    <extends>QWidget</extends>
    <header>pages/PageManager.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NoticeDisplay</class>
+   <extends>QWidget</extends>
+   <header>pages/NoticeDisplay.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

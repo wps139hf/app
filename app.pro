@@ -42,8 +42,7 @@ SOURCES += \
     pages/MessagePage.cpp \
     pages/MinePage.cpp \
     widgets/sliderpicture.cpp \
-    pages/PageManager.cpp \
-    pages/PageStack.cpp
+    pages/PageManager.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -61,8 +60,7 @@ HEADERS += \
     pages/MessagePage.h \
     pages/MinePage.h \
     widgets/sliderpicture.h \
-    pages/PageManager.h \
-    pages/PageStack.h
+    pages/PageManager.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -74,8 +72,7 @@ FORMS += \
     pages/NoticeDisplay.ui \
     pages/MessagePage.ui \
     pages/MinePage.ui \
-    pages/PageManager.ui \
-    pages/PageStack.ui
+    pages/PageManager.ui
 
 CONFIG += mobility
 MOBILITY = 

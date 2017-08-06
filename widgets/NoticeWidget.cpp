@@ -43,12 +43,12 @@ NoticeWidget::NoticeWidget(QWidget *parent) :
     });
     m_timer.start();
 
-    connect(ui->listWidget, &QListWidget::itemClicked, [this](QListWidgetItem *item){
-        qDebug() << item->text();
+//    connect(ui->listWidget, &QListWidget::itemClicked, [this](QListWidgetItem *item){
+//        qDebug() << item->text();
 
-        NoticeDisplay *noticeDisplay = new NoticeDisplay(this);
-        noticeDisplay->show();
-    });
+//        NoticeDisplay *noticeDisplay = new NoticeDisplay(this);
+//        noticeDisplay->show();
+//    });
 }
 
 NoticeWidget::~NoticeWidget()

@@ -2,7 +2,7 @@
 #include "ui_NoticeDisplay.h"
 
 NoticeDisplay::NoticeDisplay(QWidget *parent) :
-    QWidget(parent),
+    BasePage(parent),
     ui(new Ui::NoticeDisplay)
 {
     ui->setupUi(this);

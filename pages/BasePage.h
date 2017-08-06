@@ -28,7 +28,7 @@ signals:
 protected:
     virtual void init();
     void showEvent(QShowEvent *e);
-
+    void paintEvent(QPaintEvent *e);
 protected:
     TitleBar *m_titleBar = nullptr;
     ToolBar *m_toolbar = nullptr;

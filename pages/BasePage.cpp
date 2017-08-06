@@ -1,5 +1,7 @@
 #include "BasePage.h"
 
+#include <QPainter>
+
 BasePage::BasePage(QWidget *parent) :
     QWidget(parent)
 {
@@ -57,4 +59,11 @@ void BasePage::showEvent(QShowEvent *e)
     QWidget::showEvent(e);
     qDebug() << objectName() << "show up.";
     init();
+}
+
+void BasePage::paintEvent(QPaintEvent *e)
+{
+    QWidget::paintEvent(e);
+    QPainter painter(this);
+    painter.fillRect(rect(), Qt::cyan);
 }

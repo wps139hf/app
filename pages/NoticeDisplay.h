@@ -1,13 +1,13 @@
 #ifndef NOTICEDISPLAY_H
 #define NOTICEDISPLAY_H
 
-#include <QWidget>
+#include "BasePage.h"
 
 namespace Ui {
 class NoticeDisplay;
 }
 
-class NoticeDisplay : public QWidget
+class NoticeDisplay : public BasePage
 {
     Q_OBJECT
 
