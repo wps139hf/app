@@ -17,5 +17,6 @@
         <file>icons/desktop_1.jpg</file>
         <file>icons/desktop_2.jpg</file>
         <file>icons/desktop_3.jpg</file>
+        <file>icons/icon-logo.png</file>
     </qresource>
 </RCC>

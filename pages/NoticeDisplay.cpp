@@ -12,3 +12,9 @@ NoticeDisplay::~NoticeDisplay()
 {
     delete ui;
 }
+
+void NoticeDisplay::resizeEvent(QResizeEvent *e)
+{
+    Q_UNUSED(e);
+    qDebug() << "NoticeDisplay::resizeEvent," << e;
+}

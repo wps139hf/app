@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
             break;
         }
     });
+
+    ui->pageStack->setCurrentWidget(ui->welcome);
 }
 
 MainWindow::~MainWindow()

@@ -61,7 +61,8 @@
      <height>600</height>
     </rect>
    </property>
-   <widget class="NoticeDisplay" name="noticeDisplay" native="true"/>
+   <widget class="NoticeDisplay" name="noticeDisplay"/>
+   <widget class="WelcomePage" name="welcome"/>
   </widget>
  </widget>
  <customwidgets>
@@ -87,6 +88,12 @@
    <class>NoticeDisplay</class>
    <extends>QWidget</extends>
    <header>pages/NoticeDisplay.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WelcomePage</class>
+   <extends>QWidget</extends>
+   <header>pages/WelcomePage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -15,6 +15,8 @@ public:
     explicit NoticeDisplay(QWidget *parent = 0);
     ~NoticeDisplay();
 
+protected:
+    void resizeEvent(QResizeEvent *e);
 private:
     Ui::NoticeDisplay *ui;
 };
