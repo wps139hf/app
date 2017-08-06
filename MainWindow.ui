@@ -26,7 +26,7 @@
     <string notr="true">background-color: rgb(202, 202, 202);</string>
    </property>
   </widget>
-  <widget class="MainPages" name="mainPages" native="true">
+  <widget class="PageManager" name="pageManager" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -61,15 +61,15 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>MainPages</class>
-   <extends>QWidget</extends>
-   <header>pages/MainPages.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>TitleBar</class>
    <extends>QWidget</extends>
    <header>widgets/TitleBar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PageManager</class>
+   <extends>QWidget</extends>
+   <header>pages/PageManager.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

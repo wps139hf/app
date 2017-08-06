@@ -35,14 +35,14 @@ SOURCES += \
     widgets/TitleBar.cpp \
     widgets/AppWidget.cpp \
     widgets/NoticeWidget.cpp \
-    pages/MainPages.cpp \
     pages/BasePage.cpp \
     utils/qDebug2Logcat.cpp \
     widgets/AbbrNoticeItem.cpp \
     pages/NoticeDisplay.cpp \
     pages/MessagePage.cpp \
     pages/MinePage.cpp \
-    widgets/sliderpicture.cpp
+    widgets/sliderpicture.cpp \
+    pages/PageManager.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -53,14 +53,14 @@ HEADERS += \
     widgets/TitleBar.h \
     widgets/AppWidget.h \
     widgets/NoticeWidget.h \
-    pages/MainPages.h \
     pages/BasePage.h \
     utils/qDebug2Logcat.h \
     widgets/AbbrNoticeItem.h \
     pages/NoticeDisplay.h \
     pages/MessagePage.h \
     pages/MinePage.h \
-    widgets/sliderpicture.h
+    widgets/sliderpicture.h \
+    pages/PageManager.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -69,10 +69,10 @@ FORMS += \
     widgets/TitleBar.ui \
     widgets/AppWidget.ui \
     widgets/NoticeWidget.ui \
-    pages/MainPages.ui \
     pages/NoticeDisplay.ui \
     pages/MessagePage.ui \
-    pages/MinePage.ui
+    pages/MinePage.ui \
+    pages/PageManager.ui
 
 CONFIG += mobility
 MOBILITY = 

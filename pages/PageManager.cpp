@@ -1,9 +1,9 @@
-#include "MainPages.h"
-#include "ui_MainPages.h"
+#include "PageManager.h"
+#include "ui_PageManager.h"
 
-MainPages::MainPages(QWidget *parent) :
+PageManager::PageManager(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::MainPages)
+    ui(new Ui::PageManager)
 {
     ui->setupUi(this);
     ui->pageMsg->hide();
@@ -13,41 +13,41 @@ MainPages::MainPages(QWidget *parent) :
     initConnections();
 }
 
-MainPages::~MainPages()
+PageManager::~PageManager()
 {
     delete ui;
 }
 
-void MainPages::setTitleBar(TitleBar *bar)
+void PageManager::setTitleBar(TitleBar *bar)
 {
     ui->pageMsg->setTitleBar(bar);
     ui->pageHome->setTitleBar(bar);
     ui->pageMine->setTitleBar(bar);
 }
 
-void MainPages::setToolBar(ToolBar *bar)
+void PageManager::setToolBar(ToolBar *bar)
 {
     ui->pageMsg->setToolBar(bar);
     ui->pageHome->setToolBar(bar);
     ui->pageMine->setToolBar(bar);
 }
 
-void MainPages::showMsg()
+void PageManager::showMsg()
 {
     showPage(ui->pageMsg);
 }
 
-void MainPages::showHome()
+void PageManager::showHome()
 {
     showPage(ui->pageHome);
 }
 
-void MainPages::showMine()
+void PageManager::showMine()
 {
     showPage(ui->pageMine);
 }
 
-void MainPages::resizeEvent(QResizeEvent *e)
+void PageManager::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
 
@@ -56,7 +56,7 @@ void MainPages::resizeEvent(QResizeEvent *e)
     ui->pageMine->resize(width(), height());
 }
 
-void MainPages::showPage(QWidget *page)
+void PageManager::showPage(QWidget *page)
 {
     for(auto child : children()){
         QWidget *w = qobject_cast<QWidget*>(child);
@@ -70,7 +70,7 @@ void MainPages::showPage(QWidget *page)
     }
 }
 
-void MainPages::initConnections()
+void PageManager::initConnections()
 {
     connect(ui->pageMsg, &MessagePage::backClicked, [this](bool){
         ui->pageHome->show();

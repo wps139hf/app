@@ -9,20 +9,20 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->mainPages->setTitleBar(ui->titleBar);
-    ui->mainPages->setToolBar(ui->toolBar);
+    ui->pageManager->setTitleBar(ui->titleBar);
+    ui->pageManager->setToolBar(ui->toolBar);
 
     connect(ui->toolBar, &ToolBar::clicked, [this](int btnIndex){
         qDebug() << "toolbar: clicked:" << btnIndex;
         switch (btnIndex) {
         case ToolBar::Message:
-            ui->mainPages->showMsg();
+            ui->pageManager->showMsg();
             break;
         case ToolBar::Home:
-            ui->mainPages->showHome();
+            ui->pageManager->showHome();
             break;
         case ToolBar::Mine:
-            ui->mainPages->showMine();
+            ui->pageManager->showMine();
             break;
         default:
             break;
@@ -42,8 +42,8 @@ void MainWindow::resizeEvent(QResizeEvent *e)
     ui->titleBar->move(0, 0);
 
     int h = height() - ui->titleBar->height() - ui->toolBar->height();
-    ui->mainPages->resize(width(), h);
-    ui->mainPages->move(0, 0);
+    ui->pageManager->resize(width(), h);
+    ui->pageManager->move(0, 0);
 
     ui->toolBar->resize(width(), ui->toolBar->height());
     ui->toolBar->move(0, height() - ui->toolBar->height());

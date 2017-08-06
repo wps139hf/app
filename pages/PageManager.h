@@ -7,16 +7,16 @@
 #include <QWidget>
 
 namespace Ui {
-class MainPages;
+class PageManager;
 }
 
-class MainPages : public QWidget
+class PageManager : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit MainPages(QWidget *parent = 0);
-    ~MainPages();
+    explicit PageManager(QWidget *parent = 0);
+    ~PageManager();
 
     void setTitleBar(TitleBar *bar);
     void setToolBar(ToolBar *bar);
@@ -30,7 +30,7 @@ protected:
 private:
     void showPage(QWidget *page);
     void initConnections();
-    Ui::MainPages *ui;
+    Ui::PageManager *ui;
 };
 
 #endif // PAGEPANEL_H
