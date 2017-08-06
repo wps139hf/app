@@ -48,4 +48,7 @@ void MainWindow::resizeEvent(QResizeEvent *e)
     ui->toolBar->resize(width(), ui->toolBar->height());
     ui->toolBar->move(0, height() - ui->toolBar->height());
     ui->toolBar->raise();
+
+    ui->pageStack->resize(width(), height());
+    ui->pageStack->move(0, 0);
 }

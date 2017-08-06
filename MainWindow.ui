@@ -52,6 +52,16 @@
     <string notr="true">background-color: rgb(57, 179, 255);</string>
    </property>
   </widget>
+  <widget class="QWidget" name="pageStack" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>600</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
