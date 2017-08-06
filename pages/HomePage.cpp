@@ -3,15 +3,12 @@
 
 #include <QResizeEvent>
 #include <QPainter>
-#include <QDebug>
 
 HomePage::HomePage(QWidget *parent) :
     BasePage(parent),
     ui(new Ui::HomePage)
 {
     ui->setupUi(this);
-    setTitle(tr("爱菊微后勤"));
-
     connect(ui->appWidget, SIGNAL(clicked(int)), this, SLOT(onAppSelected(int)));
 }
 
@@ -44,4 +41,11 @@ void HomePage::paintEvent(QPaintEvent *e)
     Q_UNUSED(e);
     QPainter painter(this);
     painter.fillRect(rect(), Qt::white);
+}
+
+void HomePage::showEvent(QShowEvent *e)
+{
+    BasePage::showEvent(e);
+    setTitle(tr("爱菊微后勤"));
+    qDebug() << objectName() << "show up.";
 }

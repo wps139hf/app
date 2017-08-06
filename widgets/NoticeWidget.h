@@ -20,6 +20,8 @@ protected:
     void resizeEvent(QResizeEvent *e);
     void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
+    void showEvent(QShowEvent *e);
+    void hideEvent(QHideEvent *e);
 private:
     int itemHeight();
     int itemCountOnePage();

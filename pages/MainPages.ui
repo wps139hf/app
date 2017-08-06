@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="pageMsg" native="true">
+  <widget class="MessagePage" name="pageMsg" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -39,7 +39,7 @@
     <string notr="true">background-color: rgb(255, 170, 0);</string>
    </property>
   </widget>
-  <widget class="QWidget" name="pageMine" native="true">
+  <widget class="MinePage" name="pageMine" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -58,6 +58,18 @@
    <class>HomePage</class>
    <extends>QWidget</extends>
    <header>pages/HomePage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MessagePage</class>
+   <extends>QWidget</extends>
+   <header>pages/MessagePage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MinePage</class>
+   <extends>QWidget</extends>
+   <header>pages/MinePage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

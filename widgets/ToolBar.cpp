@@ -3,6 +3,8 @@
 
 #include <QResizeEvent>
 #include <QPainter>
+#include <QTimer>
+#include <QDebug>
 
 ToolBar::ToolBar(QWidget *parent) :
     QWidget(parent),
@@ -29,6 +31,13 @@ ToolBar::ToolBar(QWidget *parent) :
     m_btnGrp->setExclusive(true);
 
     connect(m_btnGrp, SIGNAL(buttonClicked(int)), this, SIGNAL(clicked(int)));
+
+    //show default page - home page
+    QTimer::singleShot(50, this, [this](){
+        qDebug() << "show default page";
+        emit m_btnGrp->buttonClicked(ToolBar::Home);
+        ui->btnHome->click();
+    });
 }
 
 ToolBar::~ToolBar()

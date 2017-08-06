@@ -38,7 +38,10 @@ SOURCES += \
     pages/MainPages.cpp \
     pages/BasePage.cpp \
     utils/qDebug2Logcat.cpp \
-    widgets/AbbrNoticeItem.cpp
+    widgets/AbbrNoticeItem.cpp \
+    pages/NoticeDisplay.cpp \
+    pages/MessagePage.cpp \
+    pages/MinePage.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -52,7 +55,10 @@ HEADERS += \
     pages/MainPages.h \
     pages/BasePage.h \
     utils/qDebug2Logcat.h \
-    widgets/AbbrNoticeItem.h
+    widgets/AbbrNoticeItem.h \
+    pages/NoticeDisplay.h \
+    pages/MessagePage.h \
+    pages/MinePage.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -62,7 +68,9 @@ FORMS += \
     widgets/AppWidget.ui \
     widgets/NoticeWidget.ui \
     pages/MainPages.ui \
-    pages/BasePage.ui
+    pages/NoticeDisplay.ui \
+    pages/MessagePage.ui \
+    pages/MinePage.ui
 
 CONFIG += mobility
 MOBILITY = 

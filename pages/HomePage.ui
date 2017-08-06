@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>520</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="font">
@@ -25,9 +25,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>40</y>
-     <width>401</width>
-     <height>101</height>
+     <y>0</y>
+     <width>400</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -38,17 +38,20 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>240</y>
+     <y>200</y>
      <width>400</width>
      <height>281</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(38, 190, 255);</string>
    </property>
   </widget>
   <widget class="NoticeWidget" name="notice" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>139</y>
+     <y>100</y>
      <width>400</width>
      <height>100</height>
     </rect>

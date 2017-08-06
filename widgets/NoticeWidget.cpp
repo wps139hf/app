@@ -1,6 +1,7 @@
 #include "NoticeWidget.h"
 #include "ui_NoticeWidget.h"
 #include "AbbrNoticeItem.h"
+#include "NoticeDisplay.h"
 
 #include <QDebug>
 
@@ -35,6 +36,7 @@ NoticeWidget::NoticeWidget(QWidget *parent) :
     int i = 0;
     m_timer.setInterval(2000);
     connect(&m_timer, &QTimer::timeout, [this, &i](){
+        qDebug() << objectName() << " is scrolling.";
         i = (i + itemCountOnePage())%ui->listWidget->count();
         QListWidgetItem *item = ui->listWidget->item(i);
         ui->listWidget->scrollToItem(item);
@@ -43,6 +45,9 @@ NoticeWidget::NoticeWidget(QWidget *parent) :
 
     connect(ui->listWidget, &QListWidget::itemClicked, [this](QListWidgetItem *item){
         qDebug() << item->text();
+
+        NoticeDisplay *noticeDisplay = new NoticeDisplay(this);
+        noticeDisplay->show();
     });
 }
 
@@ -62,6 +67,7 @@ void NoticeWidget::resizeEvent(QResizeEvent *e)
 }
 
 void NoticeWidget::mousePressEvent(QMouseEvent *e)
+
 {
     m_timer.stop();
     QWidget::mousePressEvent(e);
@@ -71,6 +77,18 @@ void NoticeWidget::mouseReleaseEvent(QMouseEvent *e)
 {
     m_timer.start();
     QWidget::mouseReleaseEvent(e);
+}
+
+void NoticeWidget::showEvent(QShowEvent *e)
+{
+    QWidget::showEvent(e);
+    m_timer.start();
+}
+
+void NoticeWidget::hideEvent(QHideEvent *e)
+{
+    QWidget::hideEvent(e);
+    m_timer.stop();
 }
 
 int NoticeWidget::itemHeight()

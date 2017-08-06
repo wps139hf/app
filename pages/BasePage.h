@@ -1,11 +1,10 @@
 #ifndef BASEPAGE_H
 #define BASEPAGE_H
 
-#include <QWidget>
+#include "TitleBar.h"
 
-namespace Ui {
-class BasePage;
-}
+#include <QDebug>
+#include <QWidget>
 
 class BasePage : public QWidget
 {
@@ -15,15 +14,14 @@ public:
     explicit BasePage(QWidget *parent = 0);
     ~BasePage();
 
+    void setTitleBar(TitleBar *bar);
     void setTitle(const QString &title);
 
 signals:
     void backClicked(bool);
     void customClicked(bool);
-protected:
-    void resizeEvent(QResizeEvent *e);
 private:
-    Ui::BasePage *ui;
+    TitleBar *m_titleBar = nullptr;
 };
 
 #endif // BASEPAGE_H
