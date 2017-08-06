@@ -17,9 +17,9 @@ public:
 public slots:
     void onAppSelected(int index);
 protected:
+    void init();
     void resizeEvent(QResizeEvent *e);
     void paintEvent(QPaintEvent *e);
-    void showEvent(QShowEvent *e);
 private:
     Ui::HomePage *ui;
 };

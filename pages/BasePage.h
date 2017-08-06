@@ -17,9 +17,16 @@ public:
     void setTitleBar(TitleBar *bar);
     void setTitle(const QString &title);
 
+    void showBackButton();
+    void showCustomButton();
 signals:
     void backClicked(bool);
     void customClicked(bool);
+
+protected:
+    virtual void init();
+    void showEvent(QShowEvent *e);
+
 private:
     TitleBar *m_titleBar = nullptr;
 };

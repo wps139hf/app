@@ -13,9 +13,7 @@ MinePage::~MinePage()
     delete ui;
 }
 
-void MinePage::showEvent(QShowEvent *e)
+void MinePage::init()
 {
-    BasePage::showEvent(e);
     setTitle(tr("我的信息"));
-    qDebug() << objectName() << "show up.";
 }

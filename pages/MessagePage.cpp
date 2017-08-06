@@ -13,9 +13,7 @@ MessagePage::~MessagePage()
     delete ui;
 }
 
-void MessagePage::showEvent(QShowEvent *e)
+void MessagePage::init()
 {
-    BasePage::showEvent(e);
     setTitle(tr("消息"));
-    qDebug() << objectName() << "show up.";
 }

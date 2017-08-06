@@ -15,7 +15,7 @@ public:
     explicit MinePage(QWidget *parent = 0);
     ~MinePage();
 protected:
-    void showEvent(QShowEvent *e);
+    void init();
 private:
     Ui::MinePage *ui;
 };

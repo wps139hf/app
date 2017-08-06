@@ -22,6 +22,11 @@ void HomePage::onAppSelected(int index)
     qDebug() << "onAppSelected, index=" << index;
 }
 
+void HomePage::init()
+{
+    setTitle(tr("爱菊微后勤"));
+}
+
 void HomePage::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
@@ -41,11 +46,4 @@ void HomePage::paintEvent(QPaintEvent *e)
     Q_UNUSED(e);
     QPainter painter(this);
     painter.fillRect(rect(), Qt::white);
-}
-
-void HomePage::showEvent(QShowEvent *e)
-{
-    BasePage::showEvent(e);
-    setTitle(tr("爱菊微后勤"));
-    qDebug() << objectName() << "show up.";
 }

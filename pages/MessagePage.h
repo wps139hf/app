@@ -14,7 +14,7 @@ public:
     explicit MessagePage(QWidget *parent = nullptr);
     ~MessagePage();
 protected:
-    void showEvent(QShowEvent *e);
+    void init();
 private:
     Ui::MessagePage *ui;
 };

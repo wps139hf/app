@@ -24,3 +24,29 @@ void BasePage::setTitle(const QString &title)
         qWarning("No title bar to display!");
     }
 }
+
+void BasePage::showBackButton()
+{
+    if(m_titleBar){
+        m_titleBar->setBackButtonVisible(true);
+    }
+}
+
+void BasePage::showCustomButton()
+{
+    if(m_titleBar){
+        m_titleBar->setCustomButtonVisible(true);
+    }
+}
+
+void BasePage::init()
+{
+
+}
+
+void BasePage::showEvent(QShowEvent *e)
+{
+    QWidget::showEvent(e);
+    qDebug() << objectName() << "show up.";
+    init();
+}
