@@ -11,17 +11,12 @@ HomePage::HomePage(QWidget *parent) :
     ui->setupUi(this);
     setTitleBar(ui->titleBar);
 
-    connect(ui->appWidget, SIGNAL(clicked(int)), this, SLOT(onAppSelected(int)));
+    connect(ui->appWidget, SIGNAL(clicked(int)), this, SIGNAL(appSelected(int)));
 }
 
 HomePage::~HomePage()
 {
     delete ui;
-}
-
-void HomePage::onAppSelected(int index)
-{
-    qDebug() << "onAppSelected, index=" << index;
 }
 
 void HomePage::init()

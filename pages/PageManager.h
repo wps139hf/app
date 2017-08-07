@@ -3,6 +3,9 @@
 
 #include "TitleBar.h"
 #include "ToolBar.h"
+#include "MessagePage.h"
+#include "HomePage.h"
+#include "MinePage.h"
 
 #include <QWidget>
 
@@ -23,6 +26,10 @@ public:
     void showMsg();
     void showHome();
     void showMine();
+
+    MessagePage *messagePage();
+    HomePage *homePage();
+    MinePage *minePage();
 
 protected:
     void resizeEvent(QResizeEvent *e);

@@ -65,6 +65,7 @@ void MainWindow::initPageList()
 {
     m_listNoToolBarPage.append(ui->pageWelcome);
     m_listNoToolBarPage.append(ui->pageLogin);
+    m_listNoToolBarPage.append(ui->pageCar);
 }
 
 void MainWindow::initToolBar()
@@ -101,6 +102,21 @@ void MainWindow::initConnections()
 
     connect(ui->pageLogin, &LoginPage::loginClicked, [this]{
         ui->pageLogin->hide();
+        ui->pageManager->show();
+    });
+
+    connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
+        switch (app) {
+        case App::Car:
+            ui->pageCar->show();
+            break;
+        default:
+            break;
+        }
+    });
+
+    connect(ui->pageCar, &CarPage::backClicked, [this]{
+        ui->pageCar->hide();
         ui->pageManager->show();
     });
 }

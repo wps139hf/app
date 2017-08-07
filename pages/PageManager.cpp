@@ -47,6 +47,21 @@ void PageManager::showMine()
     showPage(ui->pageMine);
 }
 
+MessagePage *PageManager::messagePage()
+{
+    return ui->pageMsg;
+}
+
+HomePage *PageManager::homePage()
+{
+    return ui->pageHome;
+}
+
+MinePage *PageManager::minePage()
+{
+    return ui->pageMine;
+}
+
 void PageManager::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);

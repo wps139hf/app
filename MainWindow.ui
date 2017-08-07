@@ -59,6 +59,16 @@
     </rect>
    </property>
   </widget>
+  <widget class="CarPage" name="pageCar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>600</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -83,6 +93,12 @@
    <class>LoginPage</class>
    <extends>QWidget</extends>
    <header>pages/LoginPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CarPage</class>
+   <extends>QWidget</extends>
+   <header>pages/CarPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

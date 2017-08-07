@@ -2,6 +2,7 @@
 #define HOMEPAGE_H
 
 #include "BasePage.h"
+#include "AppWidget.h"
 
 namespace Ui {
 class HomePage;
@@ -14,8 +15,9 @@ class HomePage : public BasePage
 public:
     explicit HomePage(QWidget *parent = 0);
     ~HomePage();
-public slots:
-    void onAppSelected(int index);
+signals:
+    void appSelected(int index);
+
 protected:
     void init();
     void resizeEvent(QResizeEvent *e);
