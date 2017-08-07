@@ -63,6 +63,7 @@
    </property>
    <widget class="NoticeDisplay" name="noticeDisplay"/>
    <widget class="WelcomePage" name="welcome"/>
+   <widget class="LoginPage" name="login"/>
   </widget>
  </widget>
  <customwidgets>
@@ -94,6 +95,12 @@
    <class>WelcomePage</class>
    <extends>QWidget</extends>
    <header>pages/WelcomePage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LoginPage</class>
+   <extends>QWidget</extends>
+   <header>pages/LoginPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

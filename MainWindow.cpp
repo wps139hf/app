@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     });
 
-    ui->pageStack->setCurrentWidget(ui->welcome);
+    ui->pageStack->setCurrentWidget(ui->login);
 }
 
 MainWindow::~MainWindow()
