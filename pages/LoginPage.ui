@@ -24,7 +24,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QWidget" name="titleBar" native="true">
+    <widget class="TitleBar" name="titleBar" native="true">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -86,31 +86,54 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEditUsername">
+    <widget class="QComboBox" name="comboBox">
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>200</width>
        <height>50</height>
       </size>
      </property>
      <property name="font">
       <font>
-       <pointsize>-1</pointsize>
+       <family>微软雅黑</family>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 1px solid rgb(41, 57, 85);
-    border-radius: 3px;
-    background: white;
-    selection-background-color: green;
-    font-size: 14px ;
+      <string notr="true">QComboBox {
+	background-color: rgb(255, 255, 255);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1px 2px 1px 2px;  
+    min-width: 9em;
 }
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 40px;
  
-QLineEdit:hover {
-    border: 1px solid blue;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/icons/icon-down-arrow.png);
 }</string>
      </property>
+     <property name="editable">
+      <bool>true</bool>
+     </property>
+     <property name="currentText">
+      <string>Alice</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Alice</string>
+      </property>
+     </item>
     </widget>
    </item>
    <item>
@@ -139,10 +162,10 @@ QLineEdit:hover {
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEditPassword">
+    <widget class="QLineEdit" name="password">
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>200</width>
        <height>50</height>
       </size>
      </property>
@@ -153,8 +176,8 @@ QLineEdit:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QLineEdit {
-    border: 1px solid rgb(41, 57, 85);
-    border-radius: 3px;
+    border: 1px solid gray;
+    border-radius: 5px;
     background: white;
     selection-background-color: green;
     font-size: 14px ;
@@ -227,8 +250,8 @@ QCheckBox::indicator:checked {
      </property>
      <property name="minimumSize">
       <size>
-       <width>0</width>
-       <height>44</height>
+       <width>200</width>
+       <height>50</height>
       </size>
      </property>
      <property name="font">
@@ -239,19 +262,16 @@ QCheckBox::indicator:checked {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
+    border: 1px solid gray;
 	background-color: rgb(0, 170, 255);
 	color: white;   
-	border-radius: 10px;  
-	border: 2px groove gray;                       
-	border-style: outset;
+	border-radius: 5px;                        
 }
 QPushButton:hover{
-	background-color:white; 
-	color: black;
+	background-color: rgb(0, 119, 179);
 }
 QPushButton:pressed{
-	background-color:rgb(85, 170, 255);
-	border-style: inset;
+	background-color: rgb(0, 101, 152);
 }</string>
      </property>
      <property name="text">
@@ -274,6 +294,14 @@ QPushButton:pressed{
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TitleBar</class>
+   <extends>QWidget</extends>
+   <header>widgets/TitleBar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

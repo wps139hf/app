@@ -2,6 +2,7 @@
 #include "ui_MainWindow.h"
 
 #include <QDebug>
+#include <QKeyEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
@@ -9,27 +10,19 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->pageManager->setTitleBar(ui->titleBar);
-    ui->pageManager->setToolBar(ui->toolBar);
+    initPageList();
+    initTitleBar();
+    initToolBar();
+    initConnections();
 
-    connect(ui->toolBar, &ToolBar::clicked, [this](int btnIndex){
-        qDebug() << "toolbar: clicked:" << btnIndex;
-        switch (btnIndex) {
-        case ToolBar::Message:
-            ui->pageManager->showMsg();
-            break;
-        case ToolBar::Home:
-            ui->pageManager->showHome();
-            break;
-        case ToolBar::Mine:
-            ui->pageManager->showMine();
-            break;
-        default:
-            break;
-        }
-    });
+    hidePagesNoToolBar();
 
-    ui->pageStack->setCurrentWidget(ui->login);
+    if(!m_isLogin){
+        ui->pageManager->hide();
+        ui->pageWelcome->show();
+    }else{
+        ui->pageManager->show();
+    }
 }
 
 MainWindow::~MainWindow()
@@ -51,7 +44,93 @@ void MainWindow::resizeEvent(QResizeEvent *e)
     ui->toolBar->move(0, height() - ui->toolBar->height());
     ui->toolBar->raise();
 
-    ui->pageStack->resize(width(), height());
-    ui->pageStack->move(0, 0);
-    ui->pageStack->raise();
+    for(auto page : m_listNoToolBarPage){
+        page->resize(size());
+        page->move(0, 0);
+    }
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *e)
+{
+    switch(e->key()){
+    case Qt::Key_Up:
+        qDebug() << "up key pressed.";
+        ui->pageLogin->show();
+        break;
+    case Qt::Key_Down:
+        qDebug() << "down key pressed.";
+        ui->pageLogin->hide();
+        break;
+    default:break;
+    }
+}
+
+void MainWindow::initPageList()
+{
+    m_listNoToolBarPage.append(ui->pageWelcome);
+    m_listNoToolBarPage.append(ui->pageLogin);
+}
+
+void MainWindow::initTitleBar()
+{
+    ui->pageManager->setTitleBar(ui->titleBar);
+    for(auto page : m_listNoToolBarPage){
+        page->setTitleBar(ui->titleBar);
+    }
+}
+
+void MainWindow::initToolBar()
+{
+    ui->pageManager->setToolBar(ui->toolBar);
+}
+
+void MainWindow::initConnections()
+{
+    connect(ui->toolBar, &ToolBar::clicked, [this](int btnIndex){
+        qDebug() << "toolbar: clicked:" << btnIndex;
+        switch (btnIndex) {
+        case ToolBar::Message:
+            ui->pageManager->showMsg();
+            break;
+        case ToolBar::Home:
+            ui->pageManager->showHome();
+            break;
+        case ToolBar::Mine:
+            ui->pageManager->showMine();
+            break;
+        default:
+            break;
+        }
+    });
+
+    connect(ui->pageWelcome, &WelcomePage::loginClicked, [this]{
+        showPage(ui->pageLogin);
+    });
+
+    connect(ui->pageLogin, &LoginPage::backClicked, [this]{
+        showPage(ui->pageWelcome);
+    });
+
+    connect(ui->pageLogin, &LoginPage::loginClicked, [this]{
+        ui->pageLogin->hide();
+        ui->pageManager->show();
+    });
+}
+
+void MainWindow::hidePagesNoToolBar()
+{
+    for(auto page : m_listNoToolBarPage){
+        page->hide();
+    }
+}
+
+void MainWindow::showPage(BasePage *page)
+{
+    for(auto p : m_listNoToolBarPage){
+        if(p == page){
+            p->show();
+        }else{
+            p->hide();
+        }
+    }
 }

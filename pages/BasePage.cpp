@@ -57,6 +57,7 @@ void BasePage::init()
 void BasePage::showEvent(QShowEvent *e)
 {
     QWidget::showEvent(e);
+    raise();
     qDebug() << objectName() << "show up.";
     init();
 }

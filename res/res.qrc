@@ -22,5 +22,6 @@
         <file>icons/icon-checkbox-down.png</file>
         <file>icons/icon-checkbox-hover.png</file>
         <file>icons/icon-checkbox-normal.png</file>
+        <file>icons/icon-down-arrow.png</file>
     </qresource>
 </RCC>

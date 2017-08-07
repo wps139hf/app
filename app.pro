@@ -44,7 +44,8 @@ SOURCES += \
     widgets/sliderpicture.cpp \
     pages/PageManager.cpp \
     pages/WelcomePage.cpp \
-    pages/LoginPage.cpp
+    pages/LoginPage.cpp \
+    pages/AnimatedPage.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -64,7 +65,8 @@ HEADERS += \
     widgets/sliderpicture.h \
     pages/PageManager.h \
     pages/WelcomePage.h \
-    pages/LoginPage.h
+    pages/LoginPage.h \
+    pages/AnimatedPage.h
 
 FORMS += \
     pages/HomePage.ui \

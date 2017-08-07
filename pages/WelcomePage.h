@@ -14,7 +14,8 @@ class WelcomePage : public BasePage
 public:
     explicit WelcomePage(QWidget *parent = 0);
     ~WelcomePage();
-
+signals:
+    void loginClicked();
 protected:
     void resizeEvent(QResizeEvent *e);
 

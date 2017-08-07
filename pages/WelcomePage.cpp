@@ -8,6 +8,8 @@ WelcomePage::WelcomePage(QWidget *parent) :
     ui(new Ui::WelcomePage)
 {
     ui->setupUi(this);
+
+    connect(ui->btnLogin, SIGNAL(clicked(bool)), this, SIGNAL(loginClicked()));
 }
 
 WelcomePage::~WelcomePage()

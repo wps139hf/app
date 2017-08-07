@@ -36,7 +36,7 @@ NoticeWidget::NoticeWidget(QWidget *parent) :
     int i = 0;
     m_timer.setInterval(2000);
     connect(&m_timer, &QTimer::timeout, [this, &i](){
-        qDebug() << objectName() << " is scrolling.";
+//        qDebug() << objectName() << " is scrolling.";
         i = (i + itemCountOnePage())%ui->listWidget->count();
         QListWidgetItem *item = ui->listWidget->item(i);
         ui->listWidget->scrollToItem(item);
