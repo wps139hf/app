@@ -11,7 +11,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     initPageList();
-    initTitleBar();
     initToolBar();
     initConnections();
 
@@ -33,11 +32,8 @@ MainWindow::~MainWindow()
 void MainWindow::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
-    ui->titleBar->resize(width(), ui->titleBar->height());
-    ui->titleBar->move(0, 0);
 
-    int h = height() - ui->titleBar->height() - ui->toolBar->height();
-    ui->pageManager->resize(width(), h);
+    ui->pageManager->resize(width(), height() - ui->toolBar->height());
     ui->pageManager->move(0, 0);
 
     ui->toolBar->resize(width(), ui->toolBar->height());
@@ -69,14 +65,6 @@ void MainWindow::initPageList()
 {
     m_listNoToolBarPage.append(ui->pageWelcome);
     m_listNoToolBarPage.append(ui->pageLogin);
-}
-
-void MainWindow::initTitleBar()
-{
-    ui->pageManager->setTitleBar(ui->titleBar);
-    for(auto page : m_listNoToolBarPage){
-        page->setTitleBar(ui->titleBar);
-    }
 }
 
 void MainWindow::initToolBar()

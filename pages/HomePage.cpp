@@ -9,6 +9,8 @@ HomePage::HomePage(QWidget *parent) :
     ui(new Ui::HomePage)
 {
     ui->setupUi(this);
+    setTitleBar(ui->titleBar);
+
     connect(ui->appWidget, SIGNAL(clicked(int)), this, SLOT(onAppSelected(int)));
 }
 
@@ -34,7 +36,9 @@ void HomePage::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
     BasePage::resizeEvent(e);
+    ui->titleBar->resize(width(), ui->titleBar->height());
     ui->banner->resize(width(), ui->banner->height());
+    ui->banner->move(0, ui->titleBar->height());
 
     ui->appWidget->resize(width(), ui->appWidget->height());
     ui->appWidget->move(0, height() - ui->appWidget->height());

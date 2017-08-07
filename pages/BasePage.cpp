@@ -66,5 +66,5 @@ void BasePage::paintEvent(QPaintEvent *e)
 {
     QWidget::paintEvent(e);
     QPainter painter(this);
-    painter.fillRect(rect(), Qt::cyan);
+    painter.fillRect(rect(), Qt::white);
 }

@@ -6,6 +6,7 @@ MessagePage::MessagePage(QWidget *parent)
     , ui(new Ui::MessagePage)
 {
     ui->setupUi(this);
+    setTitleBar(ui->titleBar);
 }
 
 MessagePage::~MessagePage()

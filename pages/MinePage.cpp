@@ -6,6 +6,7 @@ MinePage::MinePage(QWidget *parent) :
     ui(new Ui::MinePage)
 {
     ui->setupUi(this);
+    setTitleBar(ui->titleBar);
 }
 
 MinePage::~MinePage()

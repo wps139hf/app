@@ -16,9 +16,9 @@ public:
     ~LoginPage();
 signals:
     void loginClicked();
+
 protected:
     void init();
-
 private:
     Ui::LoginPage *ui;
 };

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>480</height>
+    <height>520</height>
    </rect>
   </property>
   <property name="font">
@@ -25,7 +25,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
+     <y>44</y>
      <width>400</width>
      <height>100</height>
     </rect>
@@ -38,9 +38,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>200</y>
+     <y>294</y>
      <width>400</width>
-     <height>281</height>
+     <height>226</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -51,18 +51,37 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>100</y>
+     <y>144</y>
      <width>400</width>
-     <height>100</height>
+     <height>150</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 119, 7);</string>
    </property>
   </widget>
+  <widget class="TitleBar" name="titleBar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(57, 179, 255);</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
+  <customwidget>
+   <class>TitleBar</class>
+   <extends>QWidget</extends>
+   <header>widgets/TitleBar.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>AppWidget</class>
    <extends>QWidget</extends>

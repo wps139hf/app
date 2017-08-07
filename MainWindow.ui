@@ -30,26 +30,13 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>40</y>
+     <y>-1</y>
      <width>400</width>
-     <height>480</height>
+     <height>521</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(213, 213, 213);</string>
-   </property>
-  </widget>
-  <widget class="TitleBar" name="titleBar" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>44</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(57, 179, 255);</string>
    </property>
   </widget>
   <widget class="LoginPage" name="pageLogin" native="true">
@@ -78,12 +65,6 @@
    <class>ToolBar</class>
    <extends>QWidget</extends>
    <header>widgets/ToolBar.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>TitleBar</class>
-   <extends>QWidget</extends>
-   <header>widgets/TitleBar.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

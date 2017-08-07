@@ -22,7 +22,6 @@ protected:
     void keyPressEvent(QKeyEvent *e);
 private:
     void initPageList();
-    void initTitleBar();
     void initToolBar();
     void initConnections();
 
