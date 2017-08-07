@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QWidget" name="titleBar" native="true">
@@ -49,6 +52,9 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+     </property>
      <property name="text">
       <string>请输入用户名和密码</string>
      </property>
@@ -68,8 +74,14 @@
        <pointsize>12</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+     </property>
      <property name="text">
       <string>用户名</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
      </property>
     </widget>
    </item>
@@ -83,9 +95,21 @@
      </property>
      <property name="font">
       <font>
-       <family>微软雅黑</family>
-       <pointsize>12</pointsize>
+       <pointsize>-1</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 1px solid rgb(41, 57, 85);
+    border-radius: 3px;
+    background: white;
+    selection-background-color: green;
+    font-size: 14px ;
+}
+ 
+QLineEdit:hover {
+    border: 1px solid blue;
+}</string>
      </property>
     </widget>
    </item>
@@ -102,6 +126,9 @@
        <family>微软雅黑</family>
        <pointsize>12</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
       <string>密码</string>
@@ -121,9 +148,21 @@
      </property>
      <property name="font">
       <font>
-       <family>微软雅黑</family>
-       <pointsize>12</pointsize>
+       <pointsize>-1</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 1px solid rgb(41, 57, 85);
+    border-radius: 3px;
+    background: white;
+    selection-background-color: green;
+    font-size: 14px ;
+}
+ 
+QLineEdit:hover {
+    border: 1px solid blue;
+}</string>
      </property>
      <property name="text">
       <string>123456</string>
@@ -140,6 +179,38 @@
        <width>0</width>
        <height>30</height>
       </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QCheckBox {
+    spacing: 10px;
+}
+ 
+QCheckBox::indicator {
+    width: 15px;
+    height: 15px;
+}
+ 
+QCheckBox::indicator:unchecked {
+    image: url(://icons/icon-checkbox-normal.png);
+}
+ 
+QCheckBox::indicator:unchecked:disabled {
+    image: url(://icons/icon-checkbox-disable.png);
+}
+ 
+QCheckBox::indicator:unchecked:hover {
+    image: url(://icons/icon-checkbox-hover.png);
+}
+ 
+QCheckBox::indicator:checked {
+    image: url(://icons/icon-checkbox-down.png);
+}</string>
      </property>
      <property name="text">
       <string>显示密码</string>
@@ -165,6 +236,23 @@
        <family>微软雅黑</family>
        <pointsize>12</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	background-color: rgb(0, 170, 255);
+	color: white;   
+	border-radius: 10px;  
+	border: 2px groove gray;                       
+	border-style: outset;
+}
+QPushButton:hover{
+	background-color:white; 
+	color: black;
+}
+QPushButton:pressed{
+	background-color:rgb(85, 170, 255);
+	border-style: inset;
+}</string>
      </property>
      <property name="text">
       <string>登陆</string>

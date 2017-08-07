@@ -18,5 +18,9 @@
         <file>icons/desktop_2.jpg</file>
         <file>icons/desktop_3.jpg</file>
         <file>icons/icon-logo.png</file>
+        <file>icons/icon-checkbox-disable.png</file>
+        <file>icons/icon-checkbox-down.png</file>
+        <file>icons/icon-checkbox-hover.png</file>
+        <file>icons/icon-checkbox-normal.png</file>
     </qresource>
 </RCC>
