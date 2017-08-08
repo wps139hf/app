@@ -65,10 +65,12 @@ void MainWindow::initPageList()
 {
     m_pageList.append(ui->pageWelcome);
     m_pageList.append(ui->pageLogin);
+
     m_pageList.append(ui->pageCar);
     m_pageList.append(ui->pageRepair);
     m_pageList.append(ui->pageBuy);
     m_pageList.append(ui->pagePrint);
+    m_pageList.append(ui->pageRoom);
 }
 
 void MainWindow::initToolBar()
@@ -121,6 +123,9 @@ void MainWindow::initConnections()
         case App::Print:
             showPage(ui->pagePrint);
             break;
+        case App::Room:
+            showPage(ui->pageRoom);
+            break;
         default:
             break;
         }
@@ -141,6 +146,10 @@ void MainWindow::initConnections()
     connect(ui->pagePrint, &PrintPage::backClicked, [this]{
         showPage(ui->pageManager);
     });
+
+    connect(ui->pageRoom, &PrintPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
 }
 
 void MainWindow::hidePages()
@@ -153,7 +162,7 @@ void MainWindow::hidePages()
 void MainWindow::showPage(QWidget *page)
 {
     page->show();
-
+    page->raise();
     QTimer::singleShot(ANIMATION_DURATION, this, [this, page](){
         for(auto p : m_pageList){
             if(p != page){

@@ -64,8 +64,6 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(213, 213, 213);</string>
    </property>
-   <zorder>pageRepair</zorder>
-   <zorder>pageRepair</zorder>
   </widget>
   <widget class="RepairPage" name="pageRepair" native="true">
    <property name="geometry">
@@ -111,6 +109,19 @@
     <rect>
      <x>270</x>
      <y>0</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
+   </property>
+  </widget>
+  <widget class="RoomPage" name="pageRoom" native="true">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>90</y>
      <width>120</width>
      <height>80</height>
     </rect>
@@ -167,6 +178,12 @@
    <class>PrintPage</class>
    <extends>QWidget</extends>
    <header>pages/PrintPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RoomPage</class>
+   <extends>QWidget</extends>
+   <header>pages/RoomPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -21,8 +21,8 @@ AppWidget::AppWidget(QWidget *parent) :
     ui->btnPrint->setText(tr("Print"));
     ui->btnPrint->setImage(QImage("://icons/icon-print.png"));
 
-    ui->btnHall->setText(tr("Hall"));
-    ui->btnHall->setImage(QImage("://icons/icon-hall.png"));
+    ui->btnRoom->setText(tr("Room"));
+    ui->btnRoom->setImage(QImage("://icons/icon-room.png"));
 
     ui->btnAsset->setText(tr("Asset"));
     ui->btnAsset->setImage(QImage("://icons/icon-asset.png"));
@@ -32,7 +32,7 @@ AppWidget::AppWidget(QWidget *parent) :
     m_btnGrp->addButton(ui->btnRepair, App::Repair);
     m_btnGrp->addButton(ui->btnBuy, App::Buy);
     m_btnGrp->addButton(ui->btnPrint, App::Print);
-    m_btnGrp->addButton(ui->btnHall, App::Hall);
+    m_btnGrp->addButton(ui->btnRoom, App::Room);
     m_btnGrp->addButton(ui->btnAsset, App::Asset);
 
     connect(m_btnGrp, SIGNAL(buttonClicked(int)), this, SIGNAL(clicked(int)));

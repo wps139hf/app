@@ -14,7 +14,7 @@ enum Id{
     Repair,
     Buy,
     Print,
-    Hall,
+    Room,
     Asset
 };
 }

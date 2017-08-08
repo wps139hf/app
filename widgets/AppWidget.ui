@@ -90,7 +90,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="StyledButton" name="btnHall" native="true">
+  <widget class="StyledButton" name="btnRoom" native="true">
    <property name="geometry">
     <rect>
      <x>20</x>
