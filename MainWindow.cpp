@@ -67,7 +67,7 @@ void MainWindow::initPageList()
     m_listNoToolBarPage.append(ui->pageLogin);
     m_listNoToolBarPage.append(ui->pageCar);
     m_listNoToolBarPage.append(ui->pageRepair);
-
+    m_listNoToolBarPage.append(ui->pageBuy);
 }
 
 void MainWindow::initToolBar()
@@ -114,6 +114,9 @@ void MainWindow::initConnections()
         case App::Repair:
             showPage(ui->pageRepair);
             break;
+        case App::Buy:
+            showPage(ui->pageBuy);
+            break;
         default:
             break;
         }
@@ -124,6 +127,10 @@ void MainWindow::initConnections()
     });
 
     connect(ui->pageRepair, &RepairPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageBuy, &RepairPage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 }

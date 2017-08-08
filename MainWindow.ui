@@ -31,8 +31,62 @@
     <rect>
      <x>0</x>
      <y>-1</y>
-     <width>400</width>
-     <height>521</height>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
+   </property>
+  </widget>
+  <widget class="WelcomePage" name="pageWelcome" native="true">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>180</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
+   </property>
+  </widget>
+  <widget class="CarPage" name="pageCar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>180</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
+   </property>
+   <zorder>pageRepair</zorder>
+   <zorder>pageRepair</zorder>
+  </widget>
+  <widget class="RepairPage" name="pageRepair" native="true">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>0</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
+   </property>
+  </widget>
+  <widget class="BuyPage" name="pageBuy" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>90</y>
+     <width>120</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -42,41 +96,14 @@
   <widget class="LoginPage" name="pageLogin" native="true">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>600</height>
+     <x>130</x>
+     <y>90</y>
+     <width>120</width>
+     <height>80</height>
     </rect>
    </property>
-  </widget>
-  <widget class="WelcomePage" name="pageWelcome" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>600</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="CarPage" name="pageCar" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>600</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="RepairPage" name="pageRepair" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>600</height>
-    </rect>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
    </property>
   </widget>
  </widget>
@@ -115,6 +142,12 @@
    <class>RepairPage</class>
    <extends>QWidget</extends>
    <header>pages/RepairPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BuyPage</class>
+   <extends>QWidget</extends>
+   <header>pages/BuyPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
