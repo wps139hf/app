@@ -71,6 +71,7 @@ void MainWindow::initPageList()
     m_pageList.append(ui->pageBuy);
     m_pageList.append(ui->pagePrint);
     m_pageList.append(ui->pageRoom);
+    m_pageList.append(ui->pageAsset);
 }
 
 void MainWindow::initToolBar()
@@ -126,28 +127,35 @@ void MainWindow::initConnections()
         case App::Room:
             showPage(ui->pageRoom);
             break;
+        case App::Asset:
+            showPage(ui->pageAsset);
+            break;
         default:
             break;
         }
     });
 
-    connect(ui->pageCar, &CarPage::backClicked, [this]{
+    connect(ui->pageCar, &BasePage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 
-    connect(ui->pageRepair, &RepairPage::backClicked, [this]{
+    connect(ui->pageRepair, &BasePage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 
-    connect(ui->pageBuy, &RepairPage::backClicked, [this]{
+    connect(ui->pageBuy, &BasePage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 
-    connect(ui->pagePrint, &PrintPage::backClicked, [this]{
+    connect(ui->pagePrint, &BasePage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 
-    connect(ui->pageRoom, &PrintPage::backClicked, [this]{
+    connect(ui->pageRoom, &BasePage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageAsset, &BasePage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 }

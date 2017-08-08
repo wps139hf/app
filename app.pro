@@ -50,7 +50,8 @@ SOURCES += \
     pages/RepairPage.cpp \
     pages/BuyPage.cpp \
     pages/PrintPage.cpp \
-    pages/RoomPage.cpp
+    pages/RoomPage.cpp \
+    pages/AssetPage.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -76,7 +77,8 @@ HEADERS += \
     pages/RepairPage.h \
     pages/BuyPage.h \
     pages/PrintPage.h \
-    pages/RoomPage.h
+    pages/RoomPage.h \
+    pages/AssetPage.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -95,7 +97,8 @@ FORMS += \
     pages/RepairPage.ui \
     pages/BuyPage.ui \
     pages/PrintPage.ui \
-    pages/RoomPage.ui
+    pages/RoomPage.ui \
+    pages/AssetPage.ui
 
 CONFIG += mobility
 MOBILITY = 
