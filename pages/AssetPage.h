@@ -14,7 +14,8 @@ class AssetPage : public AnimatedPage
 public:
     explicit AssetPage(QWidget *parent = 0);
     ~AssetPage();
-
+signals:
+    void inputQcClicked();
 protected:
     void init();
 private:

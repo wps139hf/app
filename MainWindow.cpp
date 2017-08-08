@@ -72,6 +72,8 @@ void MainWindow::initPageList()
     m_pageList.append(ui->pagePrint);
     m_pageList.append(ui->pageRoom);
     m_pageList.append(ui->pageAsset);
+    m_pageList.append(ui->pageAssetQuery);
+    m_pageList.append(ui->pageAssetInfo);
 }
 
 void MainWindow::initToolBar()
@@ -135,27 +137,44 @@ void MainWindow::initConnections()
         }
     });
 
-    connect(ui->pageCar, &BasePage::backClicked, [this]{
+    connect(ui->pageCar, &CarPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+    //asset pages
+    connect(ui->pageRepair, &RepairPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+    //asset pages
+    connect(ui->pageBuy, &BuyPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+    //asset pages
+    connect(ui->pagePrint, &PrintPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+    //asset pages
+    connect(ui->pageRoom, &RoomPage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 
-    connect(ui->pageRepair, &BasePage::backClicked, [this]{
+    //asset pages
+    connect(ui->pageAsset, &AssetPage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 
-    connect(ui->pageBuy, &BasePage::backClicked, [this]{
+    connect(ui->pageAsset, &AssetPage::inputQcClicked, [this]{
+        showPage(ui->pageAssetQuery);
+    });
+
+    connect(ui->pageAssetQuery, &AssetQuery::okClicked, [this]{
+        showPage(ui->pageAssetInfo);
+    });
+
+    connect(ui->pageAssetQuery, &AssetQuery::backClicked, [this]{
         showPage(ui->pageManager);
     });
 
-    connect(ui->pagePrint, &BasePage::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-
-    connect(ui->pageRoom, &BasePage::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-
-    connect(ui->pageAsset, &BasePage::backClicked, [this]{
+    connect(ui->pageAssetInfo, &AssetInfo::backClicked, [this]{
         showPage(ui->pageManager);
     });
 }

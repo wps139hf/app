@@ -8,6 +8,8 @@ AssetPage::AssetPage(QWidget *parent) :
     ui->setupUi(this);
 
     setTitleBar(ui->titleBar);
+
+    connect(ui->btnInputQc, SIGNAL(clicked(bool)), this, SIGNAL(inputQcClicked()));
 }
 
 AssetPage::~AssetPage()
