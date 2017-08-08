@@ -19,10 +19,8 @@ public:
 
 protected:
     void resizeEvent(QResizeEvent *e);
-    void keyPressEvent(QKeyEvent *e);
 private:
     void initPageList();
-    void initToolBar();
     void initConnections();
 
     void hidePages();
@@ -30,7 +28,7 @@ private:
     Ui::MainWindow *ui;
     QList<QWidget *>m_pageList;
 
-    bool m_isLogin = false;
+    bool m_isLogin = true;
 };
 
 #endif // MAINWINDOW_H

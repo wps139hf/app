@@ -21,12 +21,6 @@ public:
     explicit PageManager(QWidget *parent = 0);
     ~PageManager();
 
-    void setTitleBar(TitleBar *bar);
-    void setToolBar(ToolBar *bar);
-    void showMsg();
-    void showHome();
-    void showMine();
-
     MessagePage *messagePage();
     HomePage *homePage();
     MinePage *minePage();
@@ -35,9 +29,13 @@ protected:
     void resizeEvent(QResizeEvent *e);
 
 private:
+    void initPageList();
+    void initToolBar();
+    void hidePages();
     void showPage(QWidget *page);
     void initConnections();
     Ui::PageManager *ui;
+    QList<QWidget *>m_pageList;
 };
 
 #endif // PAGEPANEL_H

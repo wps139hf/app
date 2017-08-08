@@ -6,45 +6,17 @@ PageManager::PageManager(QWidget *parent) :
     ui(new Ui::PageManager)
 {
     ui->setupUi(this);
-    ui->pageMsg->hide();
-    ui->pageHome->hide();
-    ui->pageMine->hide();
 
+    initPageList();
+    initToolBar();
     initConnections();
+
+    hidePages();
 }
 
 PageManager::~PageManager()
 {
     delete ui;
-}
-
-void PageManager::setTitleBar(TitleBar *bar)
-{
-    ui->pageMsg->setTitleBar(bar);
-    ui->pageHome->setTitleBar(bar);
-    ui->pageMine->setTitleBar(bar);
-}
-
-void PageManager::setToolBar(ToolBar *bar)
-{
-    ui->pageMsg->setToolBar(bar);
-    ui->pageHome->setToolBar(bar);
-    ui->pageMine->setToolBar(bar);
-}
-
-void PageManager::showMsg()
-{
-    showPage(ui->pageMsg);
-}
-
-void PageManager::showHome()
-{
-    showPage(ui->pageHome);
-}
-
-void PageManager::showMine()
-{
-    showPage(ui->pageMine);
 }
 
 MessagePage *PageManager::messagePage()
@@ -66,32 +38,74 @@ void PageManager::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
 
-    ui->pageMsg->resize(width(), height());
-    ui->pageHome->resize(width(), height());
-    ui->pageMine->resize(width(), height());
+    for(auto page : m_pageList){
+        page->resize(width(), height() - ui->toolBar->height());
+        page->move(0, 0);
+    }
+
+    ui->toolBar->resize(width(), ui->toolBar->height());
+    ui->toolBar->move(0, height() - ui->toolBar->height());
+}
+
+void PageManager::initPageList()
+{
+    m_pageList.append(ui->pageMsg);
+    m_pageList.append(ui->pageHome);
+    m_pageList.append(ui->pageMine);
+}
+
+void PageManager::initToolBar()
+{
+    for(auto page : m_pageList){
+        BasePage *w = qobject_cast<BasePage*>(page);
+        if(w){
+            w->setToolBar(ui->toolBar);
+        }
+    }
+}
+
+void PageManager::hidePages()
+{
+    for(auto page : m_pageList){
+        page->hide();
+    }
 }
 
 void PageManager::showPage(QWidget *page)
 {
-    for(auto child : children()){
-        QWidget *w = qobject_cast<QWidget*>(child);
-        if(w){
-            if(w == page){
-                page->show();
-            }else{
-                w->hide();
-            }
+    page->show();
+    raise();
+    for(auto p : m_pageList){
+        if(p != page){
+            p->hide();
         }
     }
 }
 
 void PageManager::initConnections()
 {
+    connect(ui->toolBar, &ToolBar::clicked, [this](int btnIndex){
+        qDebug() << "toolbar: clicked:" << btnIndex;
+        switch (btnIndex) {
+        case ToolBar::Message:
+            showPage(ui->pageMsg);
+            break;
+        case ToolBar::Home:
+            showPage(ui->pageHome);
+            break;
+        case ToolBar::Mine:
+            showPage(ui->pageMine);
+            break;
+        default:
+            break;
+        }
+    });
+
     connect(ui->pageMsg, &MessagePage::backClicked, [this](bool){
-        ui->pageHome->show();
+        showPage(ui->pageHome);
     });
 
     connect(ui->pageMine, &MinePage::backClicked, [this](bool){
-        ui->pageHome->show();
+        showPage(ui->pageHome);
     });
 }
