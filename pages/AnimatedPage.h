@@ -6,23 +6,32 @@
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
 
-#define ANIMATION_DURATION  300
+#define ANIMATION_DURATION  (300)
+#define ANIMATION_EASING_CURVE    (QEasingCurve::InQuad)
 
 class AnimatedPage : public BasePage
 {
     Q_OBJECT
 public:
+    enum Style{
+        FromRight,
+        FromTop,
+        FromLeft,
+        FromBottom
+
+    };
+
     explicit AnimatedPage(QWidget *parent = nullptr);
 
-signals:
-
-public slots:
+    void setAnimationStyle(AnimatedPage::Style style);
 protected:
     void resizeEvent(QResizeEvent *e);
     void showEvent(QShowEvent *e);
 private:
     void initAnimation();
-    QParallelAnimationGroup m_animationGrp;
+    QParallelAnimationGroup m_aniGrp;
+
+    Style m_style = FromRight;
 };
 
 #endif // ANIMATEDPAGE_H

@@ -12,6 +12,7 @@ AssetScan::AssetScan(QWidget *parent) :
     setTitleBar(ui->titleBar);
 
     setBackgroundColor(Qt::black);
+    setAnimationStyle(AnimatedPage::FromTop);
 
     connect(ui->btnInputQc, SIGNAL(clicked(bool)), this, SIGNAL(inputQcClicked()));
 }
