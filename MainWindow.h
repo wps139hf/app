@@ -26,9 +26,9 @@ private:
     void initConnections();
 
     void hidePagesNoToolBar();
-    void showPage(BasePage *page);
+    void showPage(QWidget *page);
     Ui::MainWindow *ui;
-    QList<BasePage *>m_listNoToolBarPage;
+    QList<QWidget *>m_listNoToolBarPage;
 
     bool m_isLogin = false;
 };

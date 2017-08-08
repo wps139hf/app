@@ -68,3 +68,4 @@ void BasePage::paintEvent(QPaintEvent *e)
     QPainter painter(this);
     painter.fillRect(rect(), Qt::white);
 }
+

@@ -2,7 +2,7 @@
 #include "ui_CarPage.h"
 
 CarPage::CarPage(QWidget *parent) :
-    BasePage(parent),
+    AnimatedPage(parent),
     ui(new Ui::CarPage)
 {
     ui->setupUi(this);

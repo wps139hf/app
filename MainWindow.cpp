@@ -17,10 +17,9 @@ MainWindow::MainWindow(QWidget *parent) :
     hidePagesNoToolBar();
 
     if(!m_isLogin){
-        ui->pageManager->hide();
-        ui->pageWelcome->show();
+        showPage(ui->pageWelcome);
     }else{
-        ui->pageManager->show();
+        showPage(ui->pageManager);
     }
 }
 
@@ -101,14 +100,13 @@ void MainWindow::initConnections()
     });
 
     connect(ui->pageLogin, &LoginPage::loginClicked, [this]{
-        ui->pageLogin->hide();
-        ui->pageManager->show();
+        showPage(ui->pageManager);
     });
 
     connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
         switch (app) {
         case App::Car:
-            ui->pageCar->show();
+            showPage(ui->pageCar);
             break;
         default:
             break;
@@ -116,8 +114,7 @@ void MainWindow::initConnections()
     });
 
     connect(ui->pageCar, &CarPage::backClicked, [this]{
-        ui->pageCar->hide();
-        ui->pageManager->show();
+        showPage(ui->pageManager);
     });
 }
 
@@ -128,12 +125,11 @@ void MainWindow::hidePagesNoToolBar()
     }
 }
 
-void MainWindow::showPage(BasePage *page)
+void MainWindow::showPage(QWidget *page)
 {
+    page->show();
     for(auto p : m_listNoToolBarPage){
-        if(p == page){
-            p->show();
-        }else{
+        if(p != page){
             p->hide();
         }
     }
