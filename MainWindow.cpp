@@ -3,6 +3,7 @@
 
 #include <QDebug>
 #include <QKeyEvent>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
@@ -65,6 +66,8 @@ void MainWindow::initPageList()
     m_listNoToolBarPage.append(ui->pageWelcome);
     m_listNoToolBarPage.append(ui->pageLogin);
     m_listNoToolBarPage.append(ui->pageCar);
+    m_listNoToolBarPage.append(ui->pageRepair);
+
 }
 
 void MainWindow::initToolBar()
@@ -108,12 +111,19 @@ void MainWindow::initConnections()
         case App::Car:
             showPage(ui->pageCar);
             break;
+        case App::Repair:
+            showPage(ui->pageRepair);
+            break;
         default:
             break;
         }
     });
 
     connect(ui->pageCar, &CarPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageRepair, &RepairPage::backClicked, [this]{
         showPage(ui->pageManager);
     });
 }
@@ -128,9 +138,12 @@ void MainWindow::hidePagesNoToolBar()
 void MainWindow::showPage(QWidget *page)
 {
     page->show();
-    for(auto p : m_listNoToolBarPage){
-        if(p != page){
-            p->hide();
+
+    QTimer::singleShot(ANIMATION_DURATION, this, [this, page](){
+        for(auto p : m_listNoToolBarPage){
+            if(p != page){
+                p->hide();
+            }
         }
-    }
+    });
 }

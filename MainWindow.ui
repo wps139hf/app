@@ -69,6 +69,16 @@
     </rect>
    </property>
   </widget>
+  <widget class="RepairPage" name="pageRepair" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>600</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -99,6 +109,12 @@
    <class>CarPage</class>
    <extends>QWidget</extends>
    <header>pages/CarPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RepairPage</class>
+   <extends>QWidget</extends>
+   <header>pages/RepairPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

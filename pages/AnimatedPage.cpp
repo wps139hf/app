@@ -29,7 +29,7 @@ void AnimatedPage::initAnimation()
 
     QPropertyAnimation *animate = new QPropertyAnimation(this, "geometry", &m_animationGrp);
     animate->setEasingCurve(QEasingCurve::InQuad);
-    animate->setDuration(300);
+    animate->setDuration(ANIMATION_DURATION);
     animate->setStartValue(QRect(width(), 0, width(), height()));
     animate->setEndValue(QRect(0, 0, width(), height()));
     m_animationGrp.addAnimation(animate);

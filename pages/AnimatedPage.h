@@ -6,6 +6,8 @@
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
 
+#define ANIMATION_DURATION  300
+
 class AnimatedPage : public BasePage
 {
     Q_OBJECT

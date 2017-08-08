@@ -1,22 +1,22 @@
-#include "CarPage.h"
-#include "ui_CarPage.h"
+#include "RepairPage.h"
+#include "ui_RepairPage.h"
 
-CarPage::CarPage(QWidget *parent) :
+RepairPage::RepairPage(QWidget *parent) :
     AnimatedPage(parent),
-    ui(new Ui::CarPage)
+    ui(new Ui::RepairPage)
 {
     ui->setupUi(this);
     setTitleBar(ui->titleBar);
 }
 
-CarPage::~CarPage()
+RepairPage::~RepairPage()
 {
     delete ui;
 }
 
-void CarPage::init()
+void RepairPage::init()
 {
-    setTitle(tr("用车信息"));
+    setTitle(tr("报修信息"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
 }
