@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AssetPage</class>
- <widget class="QWidget" name="AssetPage">
+ <class>AssetScan</class>
+ <widget class="QWidget" name="AssetScan">
   <property name="geometry">
    <rect>
     <x>0</x>

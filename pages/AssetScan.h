@@ -4,22 +4,22 @@
 #include "AnimatedPage.h"
 
 namespace Ui {
-class AssetPage;
+class AssetScan;
 }
 
-class AssetPage : public AnimatedPage
+class AssetScan : public AnimatedPage
 {
     Q_OBJECT
 
 public:
-    explicit AssetPage(QWidget *parent = 0);
-    ~AssetPage();
+    explicit AssetScan(QWidget *parent = 0);
+    ~AssetScan();
 signals:
     void inputQcClicked();
 protected:
     void init();
 private:
-    Ui::AssetPage *ui;
+    Ui::AssetScan *ui;
 };
 
 #endif // ASSETPAGE_H

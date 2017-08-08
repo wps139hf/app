@@ -5,6 +5,7 @@
 BasePage::BasePage(QWidget *parent) :
     QWidget(parent)
 {
+    setBackgroundColor(Qt::white);
 }
 
 BasePage::~BasePage()
@@ -50,6 +51,12 @@ void BasePage::setToolButtonChecked(ToolBar::Button btn)
     }
 }
 
+void BasePage::setBackgroundColor(const QColor &color)
+{
+    m_backgoundColor = color;
+    update();
+}
+
 void BasePage::init()
 {
 }
@@ -66,6 +73,6 @@ void BasePage::paintEvent(QPaintEvent *e)
 {
     QWidget::paintEvent(e);
     QPainter painter(this);
-    painter.fillRect(rect(), Qt::white);
+    painter.fillRect(rect(), m_backgoundColor);
 }
 

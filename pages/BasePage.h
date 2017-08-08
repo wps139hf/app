@@ -21,6 +21,8 @@ public:
     void setTitle(const QString &title);
     void setTitleButtonVisible(TitleBar::Button btn, bool visible);
     void setToolButtonChecked(ToolBar::Button btn);
+
+    void setBackgroundColor(const QColor &color);
 signals:
     void backClicked(bool);
     void customClicked(bool);
@@ -32,6 +34,8 @@ protected:
 protected:
     TitleBar *m_titleBar = nullptr;
     ToolBar *m_toolbar = nullptr;
+
+    QColor m_backgoundColor = Qt::white;
 };
 
 #endif // BASEPAGE_H

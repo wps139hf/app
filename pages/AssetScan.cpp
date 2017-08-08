@@ -1,23 +1,27 @@
-#include "AssetPage.h"
-#include "ui_AssetPage.h"
+#include "AssetScan.h"
+#include "ui_AssetScan.h"
 
-AssetPage::AssetPage(QWidget *parent) :
+#include <QPainter>
+
+AssetScan::AssetScan(QWidget *parent) :
     AnimatedPage(parent),
-    ui(new Ui::AssetPage)
+    ui(new Ui::AssetScan)
 {
     ui->setupUi(this);
 
     setTitleBar(ui->titleBar);
 
+    setBackgroundColor(Qt::black);
+
     connect(ui->btnInputQc, SIGNAL(clicked(bool)), this, SIGNAL(inputQcClicked()));
 }
 
-AssetPage::~AssetPage()
+AssetScan::~AssetScan()
 {
     delete ui;
 }
 
-void AssetPage::init()
+void AssetScan::init()
 {
     setTitle(tr("扫一扫"));
     setTitleButtonVisible(TitleBar::Back, true);

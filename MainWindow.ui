@@ -117,7 +117,7 @@
     <string notr="true">background-color: rgb(213, 213, 213);</string>
    </property>
   </widget>
-  <widget class="AssetPage" name="pageAsset" native="true">
+  <widget class="AssetScan" name="pageAssetScan" native="true">
    <property name="geometry">
     <rect>
      <x>270</x>
@@ -207,12 +207,6 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>AssetPage</class>
-   <extends>QWidget</extends>
-   <header>pages/AssetPage.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>AssetQuery</class>
    <extends>QWidget</extends>
    <header>pages/AssetQuery.h</header>
@@ -222,6 +216,12 @@
    <class>AssetInfo</class>
    <extends>QWidget</extends>
    <header>pages/AssetInfo.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AssetScan</class>
+   <extends>QWidget</extends>
+   <header>pages/AssetScan.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

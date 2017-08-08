@@ -50,7 +50,7 @@ void MainWindow::initPageList()
     m_pageList.append(ui->pageBuy);
     m_pageList.append(ui->pagePrint);
     m_pageList.append(ui->pageRoom);
-    m_pageList.append(ui->pageAsset);
+    m_pageList.append(ui->pageAssetScan);
     m_pageList.append(ui->pageAssetQuery);
     m_pageList.append(ui->pageAssetInfo);
 }
@@ -87,7 +87,7 @@ void MainWindow::initConnections()
             showPage(ui->pageRoom);
             break;
         case App::Asset:
-            showPage(ui->pageAsset);
+            showPage(ui->pageAssetScan);
             break;
         default:
             break;
@@ -115,11 +115,11 @@ void MainWindow::initConnections()
     });
 
     //asset pages
-    connect(ui->pageAsset, &AssetPage::backClicked, [this]{
+    connect(ui->pageAssetScan, &AssetScan::backClicked, [this]{
         showPage(ui->pageManager);
     });
 
-    connect(ui->pageAsset, &AssetPage::inputQcClicked, [this]{
+    connect(ui->pageAssetScan, &AssetScan::inputQcClicked, [this]{
         showPage(ui->pageAssetQuery);
     });
 
