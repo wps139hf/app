@@ -106,6 +106,19 @@
     <string notr="true">background-color: rgb(213, 213, 213);</string>
    </property>
   </widget>
+  <widget class="PrintPage" name="pagePrint" native="true">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>0</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -148,6 +161,12 @@
    <class>BuyPage</class>
    <extends>QWidget</extends>
    <header>pages/BuyPage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PrintPage</class>
+   <extends>QWidget</extends>
+   <header>pages/PrintPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

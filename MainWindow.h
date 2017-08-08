@@ -25,10 +25,10 @@ private:
     void initToolBar();
     void initConnections();
 
-    void hidePagesNoToolBar();
+    void hidePages();
     void showPage(QWidget *page);
     Ui::MainWindow *ui;
-    QList<QWidget *>m_listNoToolBarPage;
+    QList<QWidget *>m_pageList;
 
     bool m_isLogin = false;
 };

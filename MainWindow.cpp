@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     initToolBar();
     initConnections();
 
-    hidePagesNoToolBar();
+    hidePages();
 
     if(!m_isLogin){
         showPage(ui->pageWelcome);
@@ -40,7 +40,7 @@ void MainWindow::resizeEvent(QResizeEvent *e)
     ui->toolBar->move(0, height() - ui->toolBar->height());
     ui->toolBar->raise();
 
-    for(auto page : m_listNoToolBarPage){
+    for(auto page : m_pageList){
         page->resize(size());
         page->move(0, 0);
     }
@@ -63,11 +63,12 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 
 void MainWindow::initPageList()
 {
-    m_listNoToolBarPage.append(ui->pageWelcome);
-    m_listNoToolBarPage.append(ui->pageLogin);
-    m_listNoToolBarPage.append(ui->pageCar);
-    m_listNoToolBarPage.append(ui->pageRepair);
-    m_listNoToolBarPage.append(ui->pageBuy);
+    m_pageList.append(ui->pageWelcome);
+    m_pageList.append(ui->pageLogin);
+    m_pageList.append(ui->pageCar);
+    m_pageList.append(ui->pageRepair);
+    m_pageList.append(ui->pageBuy);
+    m_pageList.append(ui->pagePrint);
 }
 
 void MainWindow::initToolBar()
@@ -117,6 +118,9 @@ void MainWindow::initConnections()
         case App::Buy:
             showPage(ui->pageBuy);
             break;
+        case App::Print:
+            showPage(ui->pagePrint);
+            break;
         default:
             break;
         }
@@ -133,11 +137,15 @@ void MainWindow::initConnections()
     connect(ui->pageBuy, &RepairPage::backClicked, [this]{
         showPage(ui->pageManager);
     });
+
+    connect(ui->pagePrint, &PrintPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
 }
 
-void MainWindow::hidePagesNoToolBar()
+void MainWindow::hidePages()
 {
-    for(auto page : m_listNoToolBarPage){
+    for(auto page : m_pageList){
         page->hide();
     }
 }
@@ -147,7 +155,7 @@ void MainWindow::showPage(QWidget *page)
     page->show();
 
     QTimer::singleShot(ANIMATION_DURATION, this, [this, page](){
-        for(auto p : m_listNoToolBarPage){
+        for(auto p : m_pageList){
             if(p != page){
                 p->hide();
             }
