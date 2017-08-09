@@ -28,7 +28,7 @@ private:
     Ui::MainWindow *ui;
     QList<QWidget *>m_pageList;
 
-    bool m_isLogin = true;
+    bool m_isLogin = false;
 };
 
 #endif // MAINWINDOW_H
