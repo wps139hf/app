@@ -53,7 +53,8 @@ SOURCES += \
     pages/RoomPage.cpp \
     pages/AssetQuery.cpp \
     pages/AssetInfo.cpp \
-    pages/AssetScan.cpp
+    pages/AssetScan.cpp \
+    pages/AbstractPageManager.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -82,7 +83,8 @@ HEADERS += \
     pages/RoomPage.h \
     pages/AssetQuery.h \
     pages/AssetInfo.h \
-    pages/AssetScan.h
+    pages/AssetScan.h \
+    pages/AbstractPageManager.h
 
 FORMS += \
     pages/HomePage.ui \

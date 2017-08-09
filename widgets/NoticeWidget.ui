@@ -24,8 +24,8 @@
    </property>
    <property name="font">
     <font>
-     <family>Segoe UI</family>
-     <pointsize>16</pointsize>
+     <family>宋体</family>
+     <pointsize>18</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
