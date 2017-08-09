@@ -3,13 +3,13 @@
 
 #include "BasePage.h"
 
-#include <QWidget>
+#include "AbstractPageManager.h"
 
 namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QWidget
+class MainWindow : public AbstractPageManager
 {
     Q_OBJECT
 
@@ -18,16 +18,9 @@ public:
     ~MainWindow();
 
 protected:
-    void resizeEvent(QResizeEvent *e);
+    void setupConnections();
 private:
-    void initPageList();
-    void initConnections();
-
-    void hidePages();
-    void showPage(QWidget *page);
     Ui::MainWindow *ui;
-    QList<QWidget *>m_pageList;
-
     bool m_isLogin = false;
 };
 
