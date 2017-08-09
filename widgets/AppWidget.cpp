@@ -51,8 +51,9 @@ void AppWidget::setColumn(int count)
 void AppWidget::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
-
-    relayout();
+    ui->title->resize(width(), ui->title->height());
+    ui->title->move(rect().topLeft());
+//    relayout();
 }
 
 void AppWidget::paintEvent(QPaintEvent *e)
