@@ -10,22 +10,22 @@ AppWidget::AppWidget(QWidget *parent) :
     ui->setupUi(this);
 
     ui->btnCar->setText(tr("Use Car"));
-    ui->btnCar->setImage(QImage("://icons/icon-car.png"));
+    ui->btnCar->setPixmap(QPixmap("://icons/icon-car.png"));
 
     ui->btnRepair->setText(tr("Repair"));
-    ui->btnRepair->setImage(QImage("://icons/icon-repair.png"));
+    ui->btnRepair->setPixmap(QPixmap("://icons/icon-repair.png"));
 
     ui->btnBuy->setText(tr("Buy"));
-    ui->btnBuy->setImage(QImage("://icons/icon-buy.png"));
+    ui->btnBuy->setPixmap(QPixmap("://icons/icon-buy.png"));
 
     ui->btnPrint->setText(tr("Print"));
-    ui->btnPrint->setImage(QImage("://icons/icon-print.png"));
+    ui->btnPrint->setPixmap(QPixmap("://icons/icon-print.png"));
 
     ui->btnRoom->setText(tr("Room"));
-    ui->btnRoom->setImage(QImage("://icons/icon-room.png"));
+    ui->btnRoom->setPixmap(QPixmap("://icons/icon-room.png"));
 
     ui->btnAsset->setText(tr("Asset"));
-    ui->btnAsset->setImage(QImage("://icons/icon-asset.png"));
+    ui->btnAsset->setPixmap(QPixmap("://icons/icon-asset.png"));
 
     m_btnGrp = new QButtonGroup(this);
     m_btnGrp->addButton(ui->btnCar, App::Car);

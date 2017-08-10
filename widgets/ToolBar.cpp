@@ -14,15 +14,16 @@ ToolBar::ToolBar(QWidget *parent) :
 
     ui->btnMsg->setCheckable(true);
     ui->btnMsg->setText(tr("Message"));
-    ui->btnMsg->setImage(QImage("://icons/icon-msg.png"));
+    ui->btnMsg->setPixmap(QPixmap("://icons/icon-msg.png"));
+    ui->btnMsg->setMsgCount(10);
 
     ui->btnHome->setCheckable(true);
     ui->btnHome->setText(tr("Home"));
-    ui->btnHome->setImage(QImage("://icons/icon-home.png"));
+    ui->btnHome->setPixmap(QPixmap("://icons/icon-home.png"));
 
     ui->btnMine->setCheckable(true);
     ui->btnMine->setText(tr("Mine"));
-    ui->btnMine->setImage(QImage("://icons/icon-mine.png"));
+    ui->btnMine->setPixmap(QPixmap("://icons/icon-mine.png"));
 
     m_btnGrp = new QButtonGroup(this);
     m_btnGrp->addButton(ui->btnMsg, ToolBar::Message);

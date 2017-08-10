@@ -4,13 +4,14 @@
 #include <QDebug>
 #include <QRect>
 
+#if 0
 StyledButton::StyledButton(QWidget *parent)
     : QAbstractButton(parent)
 {
 
 }
 
-void StyledButton::setImage(const QImage &image)
+void StyledButton::setPixmap(const QPixmap &pixmap)
 {
     m_image = image.scaledToHeight(rect().height()/2);
     update();
@@ -143,3 +144,71 @@ void StyledButton::drawMsg(QPainter &painter)
         painter.drawEllipse(rc);
     }
 }
+#else
+
+StyledButton::StyledButton(QWidget *parent)
+    : QToolButton(parent)
+{
+    setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+    setIconSize(QSize(50, 50));
+    setAutoRaise(true);
+    setStyleSheet("QToolButton{\
+                  border: 0;\
+              }");
+}
+
+void StyledButton::setPixmap(const QPixmap &pixmap)
+{
+    setIcon(QIcon(pixmap));
+}
+
+void StyledButton::setMsgCount(int count)
+{
+    m_msgCount = count;
+}
+
+void StyledButton::paintEvent(QPaintEvent *e)
+{
+    QToolButton::paintEvent(e);
+
+    QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::HighQualityAntialiasing);
+    if(m_msgCount){
+        drawMsg(painter);
+    }
+}
+
+void StyledButton::drawMsg(QPainter &painter)
+{
+    if(m_msgCount < 100){
+        //text background
+        QPen pen;
+        pen.setColor(Qt::red);
+        painter.setPen(pen);
+        painter.setBrush(Qt::red);
+
+        QRect rc(rect().right() - 20, rect().top(), 20, 20);
+        painter.drawEllipse(rc);
+        //text
+        pen.setColor(Qt::white);
+        painter.setPen(pen);
+        QFont font;
+        font.setPointSize(10);//text font size
+        font.setBold(true);
+        painter.setFont(font);
+        painter.drawText(rc, Qt::AlignCenter, QString().setNum(m_msgCount));
+    }else{
+        //too many message
+        QPen pen;
+        pen.setColor(Qt::red);
+        painter.setPen(pen);
+        painter.setBrush(Qt::red);
+
+        QRect rc(rect().right() - 10, rect().top(), 10, 10);
+        painter.drawEllipse(rc);
+    }
+}
+
+#endif
+
+
