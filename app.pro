@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -54,7 +54,8 @@ SOURCES += \
     pages/AssetQuery.cpp \
     pages/AssetInfo.cpp \
     pages/AssetScan.cpp \
-    pages/AbstractPageManager.cpp
+    pages/AbstractPageManager.cpp \
+    utils/Http.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -84,7 +85,8 @@ HEADERS += \
     pages/AssetQuery.h \
     pages/AssetInfo.h \
     pages/AssetScan.h \
-    pages/AbstractPageManager.h
+    pages/AbstractPageManager.h \
+    utils/Http.h
 
 FORMS += \
     pages/HomePage.ui \

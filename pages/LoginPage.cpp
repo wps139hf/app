@@ -1,6 +1,8 @@
 #include "LoginPage.h"
 #include "ui_LoginPage.h"
 
+#include "Http.h"
+
 LoginPage::LoginPage(QWidget *parent) :
     AnimatedPage(parent),
     ui(new Ui::LoginPage)
@@ -21,4 +23,24 @@ void LoginPage::init()
     setTitle(tr("登录"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
+}
+
+void LoginPage::on_btnLogin_clicked()
+{
+    QAuthenticator auth;
+    auth.setUser(ui->username->currentText());
+    auth.setPassword(ui->password->text());
+    Http::instance().setAuthenticator(auth);
+
+//    Http::instance().startRequest(QUrl("https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3Dmac%2520mini%26enc%3Dutf-8%26wq%3Dmac%2520mini%26pvid%3D2034e5a06e35487fba1f3ef6aff1aab6"));
+    Http::instance().startRequest(QUrl("https://www.baidu.com/index.html"));
+}
+
+void LoginPage::on_checkBox_clicked(bool checked)
+{
+    if(checked){
+        ui->password->setEchoMode(QLineEdit::Normal);
+    }else{
+        ui->password->setEchoMode(QLineEdit::Password);
+    }
 }

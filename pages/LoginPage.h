@@ -19,6 +19,10 @@ signals:
 
 protected:
     void init();
+
+private slots:
+    void on_btnLogin_clicked();
+    void on_checkBox_clicked(bool checked);
 private:
     Ui::LoginPage *ui;
 };
