@@ -6,8 +6,8 @@
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
 
-#define ANIMATION_DURATION  (300)
-#define ANIMATION_EASING_CURVE    (QEasingCurve::InQuad)
+#define ANIMATION_DURATION  (200)
+#define ANIMATION_EASING_CURVE    (QEasingCurve::InOutQuad)
 
 class AnimatedPage : public BasePage
 {
@@ -18,7 +18,6 @@ public:
         FromTop,
         FromLeft,
         FromBottom
-
     };
 
     explicit AnimatedPage(QWidget *parent = nullptr);

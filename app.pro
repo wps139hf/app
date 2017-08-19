@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network xml
+QT       += core gui network xml concurrent
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,8 +22,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += pages utils widgets
-DEPENDPATH += pages utils widgets
+INCLUDEPATH += pages utils widgets models
+DEPENDPATH += pages utils widgets models
 
 SOURCES += \
     main.cpp \
@@ -55,9 +55,10 @@ SOURCES += \
     pages/AssetInfo.cpp \
     pages/AssetScan.cpp \
     pages/AbstractPageManager.cpp \
-    utils/Http.cpp \
     pages/BusyPage.cpp \
-    utils/qtsoap.cpp
+    utils/qtsoap.cpp \
+    models/ApplicationModel.cpp \
+    models/ModelManager.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -88,9 +89,10 @@ HEADERS += \
     pages/AssetInfo.h \
     pages/AssetScan.h \
     pages/AbstractPageManager.h \
-    utils/Http.h \
     pages/BusyPage.h \
-    utils/qtsoap.h
+    utils/qtsoap.h \
+    models/ApplicationModel.h \
+    models/ModelManager.h
 
 FORMS += \
     pages/HomePage.ui \

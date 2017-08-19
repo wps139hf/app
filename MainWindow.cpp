@@ -1,6 +1,8 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include "Http.h"
+#include "ModelManager.h"
+
 
 #include <QDebug>
 
@@ -12,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initilize();
 
-    if(!m_isLogin){
+    ApplicationModel *app = ModelManager::instance()->application();
+    if(!app->logined()){
         showPage(ui->pageWelcome);
     }else{
         showPage(ui->pageManager);
@@ -35,7 +38,7 @@ void MainWindow::setupConnections()
     });
 
     connect(ui->pageLogin, &LoginPage::loginClicked, [this]{
-        showPage(ui->pageManager);
+//        showPage(ui->pageManager);
     });
 
     connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
@@ -104,13 +107,15 @@ void MainWindow::setupConnections()
         showPage(ui->pageManager);
     });
 
-    connect(&Http::instance(), &Http::started, [this](){
-        showPage(ui->pageBusy);
+    connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){
+        ui->pageBusy->raise();
+        ui->pageBusy->show();
+//        showPage(ui->pageBusy);
         qDebug() << "Busy Page show up.";
     });
-    connect(&Http::instance(), &Http::finished, [this](){
-//        hide();
-        showPrevPage();
+    connect(ModelManager::instance(), &ModelManager::requestFinish, [this](){
+        ui->pageBusy->hide();
+//        showPrevPage();
         qDebug() << "Busy Page hide.";
     });
 }

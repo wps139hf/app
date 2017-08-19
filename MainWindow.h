@@ -21,7 +21,6 @@ protected:
     void setupConnections();
 private:
     Ui::MainWindow *ui;
-    bool m_isLogin = false;
 };
 
 #endif // MAINWINDOW_H

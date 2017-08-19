@@ -1,5 +1,3 @@
-#include "Http.h"
-
 #include <QUrl>
 #include <QNetworkReply>
 #include <QMessageBox>
