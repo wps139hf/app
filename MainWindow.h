@@ -17,6 +17,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    static MainWindow *instance();
+
+    QWidget *busyPage();
+
 protected:
     void setupConnections();
 private:

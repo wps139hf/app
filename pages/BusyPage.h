@@ -14,7 +14,7 @@ class BusyPage : public QWidget
 public:
     explicit BusyPage(QWidget *parent = 0);
     ~BusyPage();
-
+    static BusyPage *instance();
 private:
     Ui::BusyPage *ui;
 };

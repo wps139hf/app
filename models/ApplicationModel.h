@@ -14,11 +14,11 @@ public:
     explicit ApplicationModel(QObject *parent = nullptr);
     void setUser(const QString &user);
     void setPassword(const QString &password);
-
+    void setLogin(bool enable);
     QString user();
     QString password();
     bool logined();
-
+    bool valid();
     void commit();
 protected:
     virtual void handleResponse();
@@ -26,6 +26,7 @@ private:
     QString m_username;
     QString m_password;
     bool m_isLogined = false;
+    bool m_isUserValid = false;
 };
 
 #endif // APPLICATIONMODEL_H

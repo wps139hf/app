@@ -12,3 +12,9 @@ BusyPage::~BusyPage()
 {
     delete ui;
 }
+
+BusyPage *BusyPage::instance()
+{
+    static BusyPage busyPage;
+    return &busyPage;
+}

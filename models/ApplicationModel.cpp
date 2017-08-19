@@ -18,6 +18,11 @@ void ApplicationModel::setPassword(const QString &password)
     m_password = password;
 }
 
+void ApplicationModel::setLogin(bool enable)
+{
+    m_isLogined = enable;
+}
+
 QString ApplicationModel::user()
 {
     return m_username;
@@ -33,6 +38,11 @@ bool ApplicationModel::logined()
     return m_isLogined;
 }
 
+bool ApplicationModel::valid()
+{
+    return m_isUserValid;
+}
+
 void ApplicationModel::commit()
 {
     AbstractModel::commit();
@@ -44,7 +54,7 @@ void ApplicationModel::commit()
 
 void ApplicationModel::handleResponse()
 {
-    m_isLogined = getValueByTag("LoginResult") == "true" ? true : false;
+    m_isUserValid = getValueByTag("LoginResult") == "true" ? true : false;
 
     qDebug() << "LoginResult:" << getValueByTag("LoginResult");
     qDebug() << "username:" << getValueByTag("username");

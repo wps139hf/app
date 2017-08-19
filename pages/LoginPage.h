@@ -15,7 +15,7 @@ public:
     explicit LoginPage(QWidget *parent = 0);
     ~LoginPage();
 signals:
-    void loginClicked();
+    void logined();
 
 protected:
     void init();

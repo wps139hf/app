@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
 
     QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+
+    MainWindow::instance()->show();
 
     return a.exec();
 }

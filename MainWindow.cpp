@@ -27,6 +27,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+MainWindow *MainWindow::instance()
+{
+    static MainWindow mainWindow;
+    return &mainWindow;
+}
+
+QWidget *MainWindow::busyPage()
+{
+    return ui->pageBusy;
+}
+
 void MainWindow::setupConnections()
 {
     connect(ui->pageWelcome, &WelcomePage::loginClicked, [this]{
@@ -37,8 +48,8 @@ void MainWindow::setupConnections()
         showPage(ui->pageWelcome);
     });
 
-    connect(ui->pageLogin, &LoginPage::loginClicked, [this]{
-//        showPage(ui->pageManager);
+    connect(ui->pageLogin, &LoginPage::logined, [this]{
+        showPage(ui->pageManager);
     });
 
     connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
@@ -106,7 +117,7 @@ void MainWindow::setupConnections()
     connect(ui->pageAssetInfo, &AssetInfo::backClicked, [this]{
         showPage(ui->pageManager);
     });
-
+/*
     connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){
         ui->pageBusy->raise();
         ui->pageBusy->show();
@@ -118,4 +129,5 @@ void MainWindow::setupConnections()
 //        showPrevPage();
         qDebug() << "Busy Page hide.";
     });
+*/
 }

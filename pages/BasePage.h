@@ -23,6 +23,9 @@ public:
     void setToolButtonChecked(ToolBar::Button btn);
 
     void setBackgroundColor(const QColor &color);
+    void wait(int msecond = 50);
+    void showBusyPage();
+    void hideBusyPage();
 signals:
     void backClicked(bool);
     void customClicked(bool);
@@ -32,10 +35,12 @@ protected:
     void showEvent(QShowEvent *e);
     void paintEvent(QPaintEvent *e);
 protected:
-    TitleBar *m_titleBar = nullptr;
-    ToolBar *m_toolbar = nullptr;
+    TitleBar *m_titleBar = Q_NULLPTR;
+    ToolBar *m_toolbar = Q_NULLPTR;
 
     QColor m_backgoundColor = Qt::white;
+
+    QWidget *m_busypage = Q_NULLPTR;
 };
 
 #endif // BASEPAGE_H
