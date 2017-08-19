@@ -43,19 +43,18 @@ bool ApplicationModel::valid()
     return m_isUserValid;
 }
 
-void ApplicationModel::commit()
+void ApplicationModel::handleRequest()
 {
-    AbstractModel::commit();
     setRequestMethod("Login");
     addRequestArg("userno", m_username);
     addRequestArg("password", m_password);
-    postRequest();
+    sendRequest();
 }
 
 void ApplicationModel::handleResponse()
 {
     m_isUserValid = getValueByTag("LoginResult") == "true" ? true : false;
-
+    m_errorMsg = getValueByTag("msg");
     qDebug() << "LoginResult:" << getValueByTag("LoginResult");
     qDebug() << "username:" << getValueByTag("username");
     qDebug() << "msg:" << getValueByTag("msg");

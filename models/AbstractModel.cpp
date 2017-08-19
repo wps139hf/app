@@ -17,6 +17,13 @@ AbstractModel::AbstractModel(QObject *parent) : QObject(parent)
 void AbstractModel::commit()
 {
     emit requestLaunch();
+
+    handleRequest();
+}
+
+QString AbstractModel::errorMsg()
+{
+    return m_errorMsg;
 }
 
 QString AbstractModel::getValueByTag(const QString &tag)
@@ -45,7 +52,7 @@ void AbstractModel::addRequestArg(const QString &name, const QString &value)
     m_request.addMethodArgument(name, "", value);
 }
 
-void AbstractModel::postRequest(const QString &path)
+void AbstractModel::sendRequest(const QString &path)
 {
     qDebug() << "path:" << path;
     m_http->setHost(HOST, false, PORT);
@@ -60,6 +67,11 @@ void AbstractModel::onResponseReady(const QtSoapMessage &response)
     handleResponse();
 
     emit requestFinish();
+}
+
+void AbstractModel::handleRequest()
+{
+
 }
 
 void AbstractModel::handleResponse()

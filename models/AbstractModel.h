@@ -13,18 +13,22 @@ class AbstractModel : public QObject
     Q_OBJECT
 public:
     explicit AbstractModel(QObject *parent = nullptr);
-    virtual void commit();
+    void commit();
+    QString errorMsg();
+
     QString getValueByTag(const QString &tag);
     void setRequestMethod(const QString &method);
     void addRequestArg(const QString&name, const QString &value);
-    void postRequest(const QString &path = DEFAULT_POST_PATH);
+    void sendRequest(const QString &path = DEFAULT_POST_PATH);
 signals:
     void requestLaunch();
     void requestFinish();
 public slots:
     void onResponseReady(const QtSoapMessage &response);
 protected:
+    virtual void handleRequest();
     virtual void handleResponse();
+    QString m_errorMsg;
 protected:
     QtSoapHttpTransport *m_http = Q_NULLPTR;
     QtSoapMessage m_request;

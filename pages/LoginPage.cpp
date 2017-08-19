@@ -22,7 +22,7 @@ LoginPage::LoginPage(QWidget *parent) :
             qDebug() << "emit logined";
             emit logined();
         }else{
-            qDebug() << "Please check username and password.";
+            qDebug() << app->errorMsg();
         }
     });
 }

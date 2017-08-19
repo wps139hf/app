@@ -59,7 +59,8 @@ SOURCES += \
     utils/qtsoap.cpp \
     models/ApplicationModel.cpp \
     models/ModelManager.cpp \
-    models/AbstractModel.cpp
+    models/AbstractModel.cpp \
+    models/AssetModel.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -95,7 +96,8 @@ HEADERS += \
     models/ApplicationModel.h \
     models/ModelManager.h \
     models/AbstractModel.h \
-    utils/config.h
+    utils/config.h \
+    models/AssetModel.h
 
 FORMS += \
     pages/HomePage.ui \

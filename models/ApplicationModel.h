@@ -19,9 +19,9 @@ public:
     QString password();
     bool logined();
     bool valid();
-    void commit();
 protected:
-    virtual void handleResponse();
+    void handleRequest();
+    void handleResponse();
 private:
     QString m_username;
     QString m_password;
