@@ -12,6 +12,19 @@ LoginPage::LoginPage(QWidget *parent) :
     ui->setupUi(this);
 
     setTitleBar(ui->titleBar);
+
+    ApplicationModel *app = ModelManager::instance()->application();
+    connect(app, &ApplicationModel::requestFinish, [this, app](){
+        hideBusyPage();
+
+        if(app->valid()){
+            app->setLogin(true);
+            qDebug() << "emit logined";
+            emit logined();
+        }else{
+            qDebug() << "Please check username and password.";
+        }
+    });
 }
 
 LoginPage::~LoginPage()
@@ -33,18 +46,6 @@ void LoginPage::on_btnLogin_clicked()
     app->setUser(ui->username->currentText());
     app->setPassword(ui->password->text());
     app->commit();
-
-    connect(app, &ApplicationModel::requestFinish, [this, app](){
-        hideBusyPage();
-
-        if(app->valid()){
-            app->setLogin(true);
-            qDebug() << "emit logined";
-            emit logined();
-        }else{
-            qDebug() << "Please check username and password.";
-        }
-    });
 }
 
 void LoginPage::on_checkBox_clicked(bool checked)

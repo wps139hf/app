@@ -35,6 +35,7 @@ QString AbstractModel::getValueByTag(const QString &tag)
 void AbstractModel::setRequestMethod(const QString &method)
 {
     qDebug() << "method:" << method;
+    m_request.clear();
     m_request.setMethod(method, XML_NS);
     m_http->setAction(XML_NS + method);
 }
