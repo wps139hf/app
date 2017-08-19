@@ -58,7 +58,8 @@ SOURCES += \
     pages/BusyPage.cpp \
     utils/qtsoap.cpp \
     models/ApplicationModel.cpp \
-    models/ModelManager.cpp
+    models/ModelManager.cpp \
+    models/AbstractModel.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -92,7 +93,9 @@ HEADERS += \
     pages/BusyPage.h \
     utils/qtsoap.h \
     models/ApplicationModel.h \
-    models/ModelManager.h
+    models/ModelManager.h \
+    models/AbstractModel.h \
+    utils/config.h
 
 FORMS += \
     pages/HomePage.ui \

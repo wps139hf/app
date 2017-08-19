@@ -5,9 +5,9 @@
 #include <QFutureWatcher>
 #include <QFuture>
 
-#include "qtsoap.h"
+#include "AbstractModel.h"
 
-class ApplicationModel : public QObject
+class ApplicationModel : public AbstractModel
 {
     Q_OBJECT
 public:
@@ -19,19 +19,13 @@ public:
     QString password();
     bool logined();
 
-    void send();
     void commit();
-signals:
-    void requestLaunch();
-    void requestFinish();
-public slots:
-    void onResponseReady(const QtSoapMessage &response);
+protected:
+    virtual void handleResponse();
 private:
     QString m_username;
     QString m_password;
     bool m_isLogined = false;
-
-    QtSoapHttpTransport *m_http = Q_NULLPTR;
 };
 
 #endif // APPLICATIONMODEL_H

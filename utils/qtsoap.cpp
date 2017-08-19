@@ -3155,6 +3155,7 @@ void QtSoapHttpTransport::setHost(const QString &host, bool useSecureHTTP, int p
 void QtSoapHttpTransport::setAction(const QString &action)
 {
     soapAction = action;
+    qDebug() << "setAction:" << action;
 }
 
 /*!
