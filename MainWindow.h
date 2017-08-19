@@ -17,11 +17,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    static MainWindow *instance();
+
+    QWidget *busyPage();
+
 protected:
     void setupConnections();
 private:
     Ui::MainWindow *ui;
-    bool m_isLogin = false;
 };
 
 #endif // MAINWINDOW_H

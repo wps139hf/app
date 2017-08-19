@@ -156,6 +156,19 @@
     <string notr="true">background-color: rgb(213, 213, 213);</string>
    </property>
   </widget>
+  <widget class="BusyPage" name="pageBusy" native="true">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>270</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 213, 213);</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -222,6 +235,12 @@
    <class>AssetScan</class>
    <extends>QWidget</extends>
    <header>pages/AssetScan.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BusyPage</class>
+   <extends>QWidget</extends>
+   <header>pages/BusyPage.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -23,6 +23,9 @@ void AbstractPageManager::initilize()
 
 void AbstractPageManager::showPage(QWidget *page)
 {
+    m_prevPage = m_curPage;
+    m_curPage = page;
+
     page->show();
     page->raise();
     QTimer::singleShot(ANIMATION_DURATION, this, [this, page](){
@@ -32,6 +35,21 @@ void AbstractPageManager::showPage(QWidget *page)
             }
         }
     });
+}
+
+void AbstractPageManager::showPrevPage()
+{
+    if(m_prevPage){
+//        QWidget *page = m_prevPage;
+//        showPage(page);
+        m_prevPage->show();
+        m_prevPage->raise();
+        m_curPage->hide();
+
+        QWidget *page = m_prevPage;
+        m_prevPage = m_curPage;
+        m_curPage = page;
+    }
 }
 
 void AbstractPageManager::setupConnections()

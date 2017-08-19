@@ -1,5 +1,8 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+#include "Http.h"
+#include "ModelManager.h"
+
 
 #include <QDebug>
 
@@ -11,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initilize();
 
-    if(!m_isLogin){
+    ApplicationModel *app = ModelManager::instance()->application();
+    if(!app->logined()){
         showPage(ui->pageWelcome);
     }else{
         showPage(ui->pageManager);
@@ -21,6 +25,17 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+MainWindow *MainWindow::instance()
+{
+    static MainWindow mainWindow;
+    return &mainWindow;
+}
+
+QWidget *MainWindow::busyPage()
+{
+    return ui->pageBusy;
 }
 
 void MainWindow::setupConnections()
@@ -33,7 +48,7 @@ void MainWindow::setupConnections()
         showPage(ui->pageWelcome);
     });
 
-    connect(ui->pageLogin, &LoginPage::loginClicked, [this]{
+    connect(ui->pageLogin, &LoginPage::logined, [this]{
         showPage(ui->pageManager);
     });
 
@@ -102,4 +117,17 @@ void MainWindow::setupConnections()
     connect(ui->pageAssetInfo, &AssetInfo::backClicked, [this]{
         showPage(ui->pageManager);
     });
+/*
+    connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){
+        ui->pageBusy->raise();
+        ui->pageBusy->show();
+//        showPage(ui->pageBusy);
+        qDebug() << "Busy Page show up.";
+    });
+    connect(ModelManager::instance(), &ModelManager::requestFinish, [this](){
+        ui->pageBusy->hide();
+//        showPrevPage();
+        qDebug() << "Busy Page hide.";
+    });
+*/
 }

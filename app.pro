@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network xml concurrent
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,8 +22,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += pages utils widgets
-DEPENDPATH += pages utils widgets
+INCLUDEPATH += pages utils widgets models
+DEPENDPATH += pages utils widgets models
 
 SOURCES += \
     main.cpp \
@@ -54,7 +54,13 @@ SOURCES += \
     pages/AssetQuery.cpp \
     pages/AssetInfo.cpp \
     pages/AssetScan.cpp \
-    pages/AbstractPageManager.cpp
+    pages/AbstractPageManager.cpp \
+    pages/BusyPage.cpp \
+    utils/qtsoap.cpp \
+    models/ApplicationModel.cpp \
+    models/ModelManager.cpp \
+    models/AbstractModel.cpp \
+    models/AssetModel.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -84,7 +90,14 @@ HEADERS += \
     pages/AssetQuery.h \
     pages/AssetInfo.h \
     pages/AssetScan.h \
-    pages/AbstractPageManager.h
+    pages/AbstractPageManager.h \
+    pages/BusyPage.h \
+    utils/qtsoap.h \
+    models/ApplicationModel.h \
+    models/ModelManager.h \
+    models/AbstractModel.h \
+    utils/config.h \
+    models/AssetModel.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -106,7 +119,8 @@ FORMS += \
     pages/RoomPage.ui \
     pages/AssetQuery.ui \
     pages/AssetInfo.ui \
-    pages/AssetScan.ui
+    pages/AssetScan.ui \
+    pages/BusyPage.ui
 
 CONFIG += mobility
 MOBILITY = 

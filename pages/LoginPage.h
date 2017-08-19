@@ -15,10 +15,14 @@ public:
     explicit LoginPage(QWidget *parent = 0);
     ~LoginPage();
 signals:
-    void loginClicked();
+    void logined();
 
 protected:
     void init();
+
+private slots:
+    void on_btnLogin_clicked();
+    void on_checkBox_clicked(bool checked);
 private:
     Ui::LoginPage *ui;
 };
