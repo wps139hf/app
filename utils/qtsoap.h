@@ -49,15 +49,15 @@
 #include <QtCore/QPointer>
 #if 0
 #if defined(Q_OS_WIN) || defined(Q_OS_SYMBIAN)
-  #if defined(QtSOAP_EXPORTS)
-    #define QT_QTSOAP_EXPORT Q_DECL_EXPORT
-  #else
-    #define QT_QTSOAP_EXPORT Q_DECL_IMPORT
-  #endif
+#if defined(QtSOAP_EXPORTS)
+#define QT_QTSOAP_EXPORT Q_DECL_EXPORT
+#else
+#define QT_QTSOAP_EXPORT Q_DECL_IMPORT
+#endif
 #endif
 
 #if !defined(QT_QTSOAP_EXPORT)
-  #define QT_QTSOAP_EXPORT Q_DECL_EXPORT
+#define QT_QTSOAP_EXPORT Q_DECL_EXPORT
 #endif
 
 #else
@@ -79,76 +79,76 @@ class QtSmartPtr
 public:
     inline QtSmartPtr(T *data = 0)
     {
-	d = data;
-	r = new int;
-	*r = 1;
+        d = data;
+        r = new int;
+        *r = 1;
     }
 
     inline QtSmartPtr(const QtSmartPtr &copy)
     {
-	if (*copy.r != 0)
-	    ++(*copy.r);
+        if (*copy.r != 0)
+            ++(*copy.r);
 
-	r = copy.r;
-	d = copy.d;
+        r = copy.r;
+        d = copy.d;
     }
 
     inline ~QtSmartPtr()
     {
         if ((*r) == 0)
             delete r;
-	else if ((*r) != 0 && --(*r) == 0) {
-	    delete r;
-	    if (d) delete d;
-	}
+        else if ((*r) != 0 && --(*r) == 0) {
+            delete r;
+            if (d) delete d;
+        }
     }
 
     inline QtSmartPtr &operator =(const QtSmartPtr &copy)
     {
-	if (*copy.r != 0)
-	    ++(*copy.r);
+        if (*copy.r != 0)
+            ++(*copy.r);
 
         if ((*r) == 0)
             delete r;
-	else if ((*r) != 0 && --(*r) == 0) {
-	    delete r;
-	    if (d) delete d;
-	}
+        else if ((*r) != 0 && --(*r) == 0) {
+            delete r;
+            if (d) delete d;
+        }
 
-	r = copy.r;
-	d = copy.d;
-	return *this;
+        r = copy.r;
+        d = copy.d;
+        return *this;
     }
 
     inline T &operator *() const
     {
-	return *d;
+        return *d;
     }
 
     inline T *operator ->() const
     {
-	    return d;
+        return d;
     }
 
     inline T *ptr() const
     {
-	return d;
+        return d;
     }
 
     inline T &ref() const
     {
-	return *d;
+        return *d;
     }
 
     inline T *releasedPtr() const
     {
-	(*r) = 0;
-	return d;
+        (*r) = 0;
+        return d;
     }
 
     inline bool isNull() const
     {
-	return d == 0;
+        return d == 0;
     }
 
 private:
@@ -159,7 +159,7 @@ private:
 class QT_QTSOAP_EXPORT QtSoapQName
 {
 public:
-    QtSoapQName(const QString &name = QString::null, const QString &uri = QString::null);
+    QtSoapQName(const QString &name = QString(), const QString &uri = QString());
     ~QtSoapQName();
 
     QtSoapQName &operator =(const QString &s);
@@ -179,14 +179,14 @@ class QT_QTSOAP_EXPORT QtSoapType
 {
 public:
     enum Type {
-	Duration, DateTime, Time, Date, GYearMonth, GYear, GMonthDay,
-	GDay, GMonth, Boolean, Base64Binary, HexBinary, Float, Double,
-	AnyURI, QName, NOTATION, String, NormalizedString, Token, Language,
-	Name, NMTOKEN, NCName, ID, IDREF, ENTITY, Decimal, Integer,
-	NonPositiveInteger, NegativeInteger, Long, Int, Short,
-	Byte, NonNegativeInteger, UnsignedLong, PositiveInteger,
-	UnsignedInt, UnsignedShort, UnsignedByte,
-	Array, Struct, Other
+        Duration, DateTime, Time, Date, GYearMonth, GYear, GMonthDay,
+        GDay, GMonth, Boolean, Base64Binary, HexBinary, Float, Double,
+        AnyURI, QName, NOTATION, String, NormalizedString, Token, Language,
+        Name, NMTOKEN, NCName, ID, IDREF, ENTITY, Decimal, Integer,
+        NonPositiveInteger, NegativeInteger, Long, Int, Short,
+        Byte, NonNegativeInteger, UnsignedLong, PositiveInteger,
+        UnsignedInt, UnsignedShort, UnsignedByte,
+        Array, Struct, Other
     };
 
     QtSoapType();
@@ -248,7 +248,7 @@ class QT_QTSOAP_EXPORT QtSoapArray : public QtSoapType
 public:
     QtSoapArray();
     QtSoapArray(const QtSoapQName &name, QtSoapType::Type type = Other,
-		int size0 = -1, int size1 = -1, int size2 = -1, int size3 = -1, int size4 = -1);
+                int size0 = -1, int size1 = -1, int size2 = -1, int size3 = -1, int size4 = -1);
     QtSoapArray(const QtSoapArray &copy);
     QtSoapArray &operator = (const QtSoapArray &copy);
     ~QtSoapArray();
@@ -434,7 +434,7 @@ public:
     const QtSoapType &method() const;
     const QtSoapType &returnValue() const;
     void setMethod(const QtSoapQName &);
-    void setMethod(const QString &name, const QString &url = QString::null);
+    void setMethod(const QString &name, const QString &url = QString());
     void addMethodArgument(QtSoapType *);
     void addMethodArgument(const QString &uri, const QString &name, const QString &value);
     void addMethodArgument(const QString &uri, const QString &name, bool value, int dummy);
@@ -442,11 +442,11 @@ public:
 
     // Fault
     enum FaultCode {
-	VersionMismatch,
-	MustUnderstand,
-	Client,
-	Server,
-	Other
+        VersionMismatch,
+        MustUnderstand,
+        Client,
+        Server,
+        Other
     };
 
     bool isFault() const;
@@ -469,10 +469,10 @@ public:
 
 protected:
     enum MessageType {
-	Fault,
-	MethodRequest,
-	MethodResponse,
-	OtherType
+        Fault,
+        MethodRequest,
+        MethodResponse,
+        OtherType
     };
 
     bool isValidSoapMessage(const QDomDocument &candidate);
@@ -522,19 +522,19 @@ public:
 
     QtSoapType *createObject(QDomNode node)
     {
-	T *t = new T();
-	if (t->parse(node)) {
-	    return t;
-	} else {
-	    errorStr = t->errorString();
-	    delete t;
-	    return 0;
-	}
+        T *t = new T();
+        if (t->parse(node)) {
+            return t;
+        } else {
+            errorStr = t->errorString();
+            delete t;
+            return 0;
+        }
     }
 
     QString errorString() const
     {
-	return errorStr;
+        return errorStr;
     }
 
 private:
