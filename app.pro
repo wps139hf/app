@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+QT       += core gui network xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -55,7 +55,9 @@ SOURCES += \
     pages/AssetInfo.cpp \
     pages/AssetScan.cpp \
     pages/AbstractPageManager.cpp \
-    utils/Http.cpp
+    utils/Http.cpp \
+    pages/BusyPage.cpp \
+    utils/qtsoap.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -86,7 +88,9 @@ HEADERS += \
     pages/AssetInfo.h \
     pages/AssetScan.h \
     pages/AbstractPageManager.h \
-    utils/Http.h
+    utils/Http.h \
+    pages/BusyPage.h \
+    utils/qtsoap.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -108,7 +112,8 @@ FORMS += \
     pages/RoomPage.ui \
     pages/AssetQuery.ui \
     pages/AssetInfo.ui \
-    pages/AssetScan.ui
+    pages/AssetScan.ui \
+    pages/BusyPage.ui
 
 CONFIG += mobility
 MOBILITY = 

@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+#include "Http.h"
 
 #include <QDebug>
 
@@ -101,5 +102,15 @@ void MainWindow::setupConnections()
 
     connect(ui->pageAssetInfo, &AssetInfo::backClicked, [this]{
         showPage(ui->pageManager);
+    });
+
+    connect(&Http::instance(), &Http::started, [this](){
+        showPage(ui->pageBusy);
+        qDebug() << "Busy Page show up.";
+    });
+    connect(&Http::instance(), &Http::finished, [this](){
+//        hide();
+        showPrevPage();
+        qDebug() << "Busy Page hide.";
     });
 }

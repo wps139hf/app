@@ -18,6 +18,7 @@ public:
 
     static Http &instance();
 signals:
+    void started();
     void finished();
 public slots:
     void onAuthenticationRequired(QNetworkReply *, QAuthenticator *);

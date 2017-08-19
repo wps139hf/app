@@ -17,11 +17,14 @@ public:
      * @param page
      */
     void showPage(QWidget *page);
+    void showPrevPage();
 protected:
     virtual void setupConnections();
     void resizeEvent(QResizeEvent *e);
 private:
     QList<QWidget *>m_pageList;
+    QWidget *m_prevPage = Q_NULLPTR;
+    QWidget *m_curPage = Q_NULLPTR;
 };
 
 #endif // ABSTRACTPAGEMANAGER_H

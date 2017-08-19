@@ -28,12 +28,13 @@ void LoginPage::init()
 void LoginPage::on_btnLogin_clicked()
 {
     QAuthenticator auth;
-    auth.setUser(ui->username->currentText());
-    auth.setPassword(ui->password->text());
+    auth.setUser("sa");
+    auth.setPassword("123");
     Http::instance().setAuthenticator(auth);
 
 //    Http::instance().startRequest(QUrl("https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3Dmac%2520mini%26enc%3Dutf-8%26wq%3Dmac%2520mini%26pvid%3D2034e5a06e35487fba1f3ef6aff1aab6"));
-    Http::instance().startRequest(QUrl("https://www.baidu.com/index.html"));
+//    Http::instance().startRequest(QUrl("http://180.153.158.111:89/app/assets.asmx"));
+    Http::instance().startRequest(QUrl("http://180.153.158.111:89/app/assets.asmx?op=GetAsset"));
 }
 
 void LoginPage::on_checkBox_clicked(bool checked)

@@ -18,6 +18,9 @@ void Http::startRequest(const QUrl &requestedUrl)
     qDebug() << "username:" << m_authenticator.user();
     qDebug() << "password:" << m_authenticator.password();
     qDebug() << "requestedUrl:" << requestedUrl.toString();
+
+    emit started();
+
     m_content.clear();
 
     m_url = requestedUrl;
