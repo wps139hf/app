@@ -14,15 +14,19 @@ MessagePage::MessagePage(QWidget *parent)
     ui->titleBar_2->hide();
 
     QStringList content;
-    content<< "  This is message One" << "  This is message Two" << "  This is message Three"
-           << "  This is message Four" << "  This is message Five" << "  This is message Six"
-           << "  This is message Seven" << "  This is message Eight" << "  This is message Nine"
-           << "  This is message Ten" << "  This is message Eleven" << "  This is message Twelve"
-           << "  This is message Thirteen";
+    content<< "  八点三十分，开大客车，前往浦东分校，请准时出发。"
+           << "  您的用车申请已通过审批。"
+           << "  您的用车申请已通过审批。"
+           << "  八点三十分，开大客车，前往浦东分校，请准时出发。";
 
     m_pMessageList = new MessageList(content,this);
 
-    m_pMessageList->move(0,44);
+    m_pMessageList->move(0,60);
+    m_pMessageList->setStyleSheet("QListWidget{border:1px solid gray; color:black; }"
+                               "QListWidget{background-color:rgb(255,255,255); }"
+                               "QListWidget::item:selected{background:lightgray; color:red; }"
+                               "QListWidget::item:selected:!active{border-width:0px; background:lightgreen; }"
+                               );
 
     m_pMessageTime = new QLabel(this);
     m_pMessageTime -> move(MESSAGE_WID_TIME_X,MESSAGE_WID_TIME_Y);
@@ -32,7 +36,7 @@ MessagePage::MessagePage(QWidget *parent)
     m_pMessageTime -> hide();
 
     m_pMessageText = new QLabel(this);
-    m_pMessageText -> move(MESSAGE_WID_TEXT_X,MESSAGE_WID_TEXT_Y);
+    m_pMessageText -> move(0,MESSAGE_WID_TEXT_Y);
     m_pMessageText -> resize(MESSAGE_WID_TEXT_WIDTH,MESSAGE_WID_TEXT_HEIGHT);
     m_pMessageText -> setText("");
     m_pMessageText -> setStyleSheet("background-color:rgb(200,200,200)");//背景色
@@ -121,10 +125,10 @@ MessageList::~MessageList()
 void MessageList::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
-    m_pList->resize(width(),height()*0.06*gMessageNum);
+    m_pList->resize(width(),height()*0.1*gMessageNum);
     for(int i=0;i<gMessageNum;i++)
     {
-        m_pList->item(i)->setSizeHint(QSize(width(),height()*0.06));
+        m_pList->item(i)->setSizeHint(QSize(width(),height()*0.1));
     }
 }
 
@@ -139,13 +143,15 @@ MessageBox::MessageBox(const QDateTime &time, QWidget *parent, QString message)
     resize(MESSAGE_BOX_WIDTH, MESSAGE_BOX_HEIGHT);
 
     m_pMessageIcon = new QLabel(this);
-    m_pMessageIcon->setStyleSheet("background:green");
+    m_pMessageIcon->setStyleSheet("background:black");
 
     m_pMessageText = new QLabel(this);
     m_pMessageText->setText(m_sContent);
+    m_pMessageText->setStyleSheet("background:white");
 
     m_pMessageTime= new QLabel(this);
     m_pMessageTime->setText(m_sTime);
+    m_pMessageTime->setStyleSheet("background:white");
 }
 
 MessageBox::~MessageBox()
@@ -157,13 +163,13 @@ void MessageBox::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
 
-    m_pMessageIcon->resize(parentWidget()->width()*0.2,parentWidget()->height()*0.03);
+    m_pMessageIcon->resize(parentWidget()->width()*0.2,parentWidget()->height()*0.2);
     m_pMessageIcon->move(0,0);
 
-    m_pMessageText->resize(parentWidget()->width()*0.6,parentWidget()->height()*0.03);
+    m_pMessageText->resize(parentWidget()->width()*0.6,parentWidget()->height()*0.2);
     m_pMessageText->move(parentWidget()->width()*0.2,0);
 
-    m_pMessageTime->resize(parentWidget()->width()*0.2,parentWidget()->height()*0.03);
+    m_pMessageTime->resize(parentWidget()->width()*0.2,parentWidget()->height()*0.2);
     m_pMessageTime->move(parentWidget()->width()*0.8,0);
 }
 
