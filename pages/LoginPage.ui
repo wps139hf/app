@@ -115,8 +115,8 @@
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
-         <pointsize>14</pointsize>
+         <family>宋体</family>
+         <pointsize>16</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -141,6 +141,10 @@ QComboBox::drop-down {
 
 QComboBox::down-arrow {
 	image: url(:/icons/icon-down-arrow.png);
+}
+
+QComboBox QAbstractItemView::item {
+    height: 50px;
 }</string>
        </property>
        <property name="editable">

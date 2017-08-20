@@ -29,7 +29,7 @@ void RoomPage::updatePage()
         ui2->applicant->setText(model->value("申请人").toString());
         ui2->serialNum->setText(model->value("编号").toString());
         ui2->peoples->setText(model->value("使用人数").toString());
-        ui2->demands->setText(model->value("桌椅要求").toString());
+        ui2->deskAndChair->setText(model->value("桌椅要求").toString());
 
         QString date = model->value("使用日期").toString();
         QString timeStart = model->value("使用开始").toString();
