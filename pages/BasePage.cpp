@@ -84,12 +84,19 @@ void BasePage::init()
 {
 }
 
+void BasePage::updatePage()
+{
+
+}
+
 void BasePage::showEvent(QShowEvent *e)
 {
     QWidget::showEvent(e);
     raise();
     qDebug() << objectName() << "show up.";
     init();
+
+    updatePage();
 }
 
 void BasePage::paintEvent(QPaintEvent *e)

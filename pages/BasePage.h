@@ -32,6 +32,7 @@ signals:
 
 protected:
     virtual void init();
+    virtual void updatePage();
     void showEvent(QShowEvent *e);
     void paintEvent(QPaintEvent *e);
 protected:

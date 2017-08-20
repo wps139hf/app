@@ -3,7 +3,6 @@
 #include "Http.h"
 #include "ModelManager.h"
 
-
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -20,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     }else{
         showPage(ui->pageManager);
     }
+
+    bindModels();
 }
 
 MainWindow::~MainWindow()
@@ -31,6 +32,17 @@ MainWindow *MainWindow::instance()
 {
     static MainWindow mainWindow;
     return &mainWindow;
+}
+
+void MainWindow::showBusyPage(bool enabled)
+{
+    if(enabled){
+        ui->pageBusy->show();
+        ui->pageBusy->raise();
+        wait(50);
+    }else{
+        ui->pageBusy->hide();
+    }
 }
 
 QWidget *MainWindow::busyPage()
@@ -67,8 +79,12 @@ void MainWindow::setupConnections()
             showPage(ui->pagePrint);
             break;
         case App::Room:
-            showPage(ui->pageRoom);
+        {
+            showBusyPage(true);
+            MutiRoomModel *model = ModelManager::instance()->multiRoom();
+            model->commit();
             break;
+        }
         case App::Asset:
             showPage(ui->pageAssetScan);
             break;
@@ -117,17 +133,25 @@ void MainWindow::setupConnections()
     connect(ui->pageAssetInfo, &AssetInfo::backClicked, [this]{
         showPage(ui->pageManager);
     });
-/*
-    connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){
-        ui->pageBusy->raise();
-        ui->pageBusy->show();
-//        showPage(ui->pageBusy);
-        qDebug() << "Busy Page show up.";
+}
+
+void MainWindow::bindModels()
+{
+    //multi-room
+    MutiRoomModel *model = ModelManager::instance()->multiRoom();
+    connect(model, &MutiRoomModel::requestFinish, [this, model](){
+        showBusyPage(false);
+        if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+            showPage(ui->pageRoom);
+        }else{
+            qDebug() << "Error:"<< model->errorMsg();
+        }
     });
-    connect(ModelManager::instance(), &ModelManager::requestFinish, [this](){
-        ui->pageBusy->hide();
-//        showPrevPage();
-        qDebug() << "Busy Page hide.";
-    });
-*/
+}
+
+void MainWindow::wait(int msecond)
+{
+    QEventLoop loop;
+    QTimer::singleShot(msecond, &loop, SLOT(quit()));
+    loop.exec();
 }
