@@ -16,9 +16,11 @@ public:
     ~AssetQuery();
 
 signals:
-    void okClicked();
+    void showInfo();
 protected:
     void init();
+private slots:
+    void on_btnOk_clicked();
 private:
     Ui::AssetQuery *ui;
 };
