@@ -4,6 +4,7 @@
 #include <QObject>
 #include "ApplicationModel.h"
 #include "AssetModel.h"
+#include "MutiRoomModel.h"
 
 class ModelManager : public QObject
 {
@@ -12,6 +13,8 @@ public:
     explicit ModelManager(QObject *parent = nullptr);
     ApplicationModel *application();
     AssetModel *asset();
+    MutiRoomModel *multiRoom();
+
 
     static ModelManager *instance();
 signals:

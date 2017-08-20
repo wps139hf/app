@@ -4,7 +4,7 @@
 #include "AnimatedPage.h"
 
 namespace Ui {
-class RoomPage;
+class RoomPage2;
 }
 
 class RoomPage : public AnimatedPage
@@ -17,8 +17,9 @@ public:
 
 protected:
     void init();
+    void updatePage();
 private:
-    Ui::RoomPage *ui;
+    Ui::RoomPage2 *ui2;
 };
 
 #endif // ROOMPAGE_H

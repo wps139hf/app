@@ -71,11 +71,6 @@ Asset *AssetModel::getAsset()
     return &m_asset;
 }
 
-QString AssetModel::info()
-{
-    return m_info;
-}
-
 void AssetModel::handleRequest()
 {
     setRequestMethod("GetAsset");
@@ -85,7 +80,6 @@ void AssetModel::handleRequest()
 
 void AssetModel::handleResponse()
 {
-    m_info = getValueByTag("GetAssetResult");
-    m_asset.fromJsonString(m_info);
+    m_asset.fromJsonString(getValueByTag("GetAssetResult"));
     m_errorMsg = getValueByTag("msg");
 }

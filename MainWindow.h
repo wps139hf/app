@@ -19,12 +19,15 @@ public:
 
     static MainWindow *instance();
 
+    void showBusyPage(bool enabled);
     QWidget *busyPage();
 
 protected:
     void setupConnections();
 private:
+    void bindModels();
     Ui::MainWindow *ui;
+    void wait(int msecond);
 };
 
 #endif // MAINWINDOW_H

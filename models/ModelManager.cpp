@@ -17,6 +17,12 @@ AssetModel *ModelManager::asset()
     return &asset;
 }
 
+MutiRoomModel *ModelManager::multiRoom()
+{
+    static MutiRoomModel room(this);
+    return &room;
+}
+
 ModelManager *ModelManager::m_instance = Q_NULLPTR;
 ModelManager *ModelManager::instance()
 {
