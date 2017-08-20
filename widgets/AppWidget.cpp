@@ -9,22 +9,22 @@ AppWidget::AppWidget(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->btnCar->setText(tr("Use Car"));
+    ui->btnCar->setText(tr("用车"));
     ui->btnCar->setPixmap(QPixmap("://icons/icon-car.png"));
 
-    ui->btnRepair->setText(tr("Repair"));
+    ui->btnRepair->setText(tr("维修"));
     ui->btnRepair->setPixmap(QPixmap("://icons/icon-repair.png"));
 
-    ui->btnBuy->setText(tr("Buy"));
+    ui->btnBuy->setText(tr("请购"));
     ui->btnBuy->setPixmap(QPixmap("://icons/icon-buy.png"));
 
-    ui->btnPrint->setText(tr("Print"));
+    ui->btnPrint->setText(tr("文印"));
     ui->btnPrint->setPixmap(QPixmap("://icons/icon-print.png"));
 
-    ui->btnRoom->setText(tr("Room"));
+    ui->btnRoom->setText(tr("多功能厅"));
     ui->btnRoom->setPixmap(QPixmap("://icons/icon-room.png"));
 
-    ui->btnAsset->setText(tr("Asset"));
+    ui->btnAsset->setText(tr("资产"));
     ui->btnAsset->setPixmap(QPixmap("://icons/icon-asset.png"));
 
     m_btnGrp = new QButtonGroup(this);

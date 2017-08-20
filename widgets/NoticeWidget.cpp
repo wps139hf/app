@@ -11,27 +11,22 @@ NoticeWidget::NoticeWidget(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("0张小名荣获第二届少年文艺大赛二等奖....")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("1我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("2我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("3张小名荣获第二届少年文艺大赛二等奖....")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("4我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("5我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("6我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("7我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("8我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("9我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("10我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("11我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("12我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("13我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("14我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("15我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("16我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("17我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("18我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("19我校近期讲举行新生接待会.......")));
-    ui->listWidget->addItem(new AbbrNoticeItem(tr("20我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("张小名荣获第二届少年文艺大赛二等奖....")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("张小名荣获第二届少年文艺大赛二等奖....")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
+    ui->listWidget->addItem(new AbbrNoticeItem(tr("我校近期讲举行新生接待会.......")));
 
     int i = 0;
     m_timer.setInterval(2000);

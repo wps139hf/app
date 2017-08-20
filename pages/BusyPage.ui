@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(170, 85, 255);</string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
@@ -38,7 +38,7 @@
       </font>
      </property>
      <property name="text">
-      <string>WAITING</string>
+      <string>Waiting...</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

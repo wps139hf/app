@@ -145,7 +145,11 @@ QComboBox::down-arrow {
 
 QComboBox QAbstractItemView::item {
     height: 50px;
-}</string>
+}
+QComboBox:on { /* shift the text when the popup opens */  
+     padding-top: 3px;  
+     padding-left: 4px;  
+}  </string>
        </property>
        <property name="editable">
         <bool>true</bool>

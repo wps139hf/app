@@ -58,6 +58,9 @@
          <pointsize>20</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent</string>
+       </property>
        <property name="text">
         <string>请输入资产编号：</string>
        </property>
@@ -73,6 +76,9 @@
          <family>宋体</family>
          <pointsize>20</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent</string>
        </property>
        <property name="text">
         <string>604990000</string>

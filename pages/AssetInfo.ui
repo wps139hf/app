@@ -20,6 +20,18 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="TitleBar" name="titleBar" native="true">
      <property name="minimumSize">
@@ -35,6 +47,9 @@
    </item>
    <item>
     <layout class="QGridLayout" name="gridLayout">
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="minimumSize">
