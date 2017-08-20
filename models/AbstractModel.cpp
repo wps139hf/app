@@ -28,7 +28,7 @@ QString AbstractModel::errorMsg()
 
 QString AbstractModel::getValueByTag(const QString &tag)
 {
-    QString strResult;
+    QString strResult("");
     QDomDocument doc;
     doc.setContent(m_response.toXmlString());
 

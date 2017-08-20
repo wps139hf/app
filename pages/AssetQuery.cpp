@@ -1,6 +1,8 @@
 #include "AssetQuery.h"
 #include "ui_AssetQuery.h"
 
+#include "ModelManager.h"
+
 AssetQuery::AssetQuery(QWidget *parent) :
     AnimatedPage(parent),
     ui(new Ui::AssetQuery)
@@ -9,7 +11,19 @@ AssetQuery::AssetQuery(QWidget *parent) :
 
     setTitleBar(ui->titleBar);
 
-    connect(ui->btnOk, SIGNAL(clicked(bool)), this, SIGNAL(okClicked()));
+    AssetModel *model = ModelManager::instance()->asset();
+    connect(model, &AssetModel::requestFinish, [this, model](){
+        hideBusyPage();
+
+        if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+            emit showInfo();
+            qDebug() << "Info:" << model->info();
+            model->getAsset()->debug("ASSET");
+            qDebug() << "toJsonString:" << model->getAsset()->toJsonString();
+        }else{
+            qDebug() << "Error:"<< model->errorMsg();
+        }
+    });
 }
 
 AssetQuery::~AssetQuery()
@@ -22,4 +36,13 @@ void AssetQuery::init()
     setTitle(tr("资产查询"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
+}
+
+void AssetQuery::on_btnOk_clicked()
+{
+    showBusyPage();
+
+    AssetModel *model = ModelManager::instance()->asset();
+    model->setNumber(ui->lineEdit->text());
+    model->commit();
 }

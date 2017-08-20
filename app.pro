@@ -60,7 +60,8 @@ SOURCES += \
     models/ApplicationModel.cpp \
     models/ModelManager.cpp \
     models/AbstractModel.cpp \
-    models/AssetModel.cpp
+    models/AssetModel.cpp \
+    models/AbstractData.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -97,7 +98,8 @@ HEADERS += \
     models/ModelManager.h \
     models/AbstractModel.h \
     utils/config.h \
-    models/AssetModel.h
+    models/AssetModel.h \
+    models/AbstractData.h
 
 FORMS += \
     pages/HomePage.ui \

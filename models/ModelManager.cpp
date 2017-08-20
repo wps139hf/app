@@ -11,6 +11,12 @@ ApplicationModel *ModelManager::application()
     return &app;
 }
 
+AssetModel *ModelManager::asset()
+{
+    static AssetModel asset(this);
+    return &asset;
+}
+
 ModelManager *ModelManager::m_instance = Q_NULLPTR;
 ModelManager *ModelManager::instance()
 {

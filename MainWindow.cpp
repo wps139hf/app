@@ -106,7 +106,7 @@ void MainWindow::setupConnections()
         showPage(ui->pageAssetQuery);
     });
 
-    connect(ui->pageAssetQuery, &AssetQuery::okClicked, [this]{
+    connect(ui->pageAssetQuery, &AssetQuery::showInfo, [this]{
         showPage(ui->pageAssetInfo);
     });
 

@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include "ApplicationModel.h"
+#include "AssetModel.h"
 
 class ModelManager : public QObject
 {
@@ -10,6 +11,7 @@ class ModelManager : public QObject
 public:
     explicit ModelManager(QObject *parent = nullptr);
     ApplicationModel *application();
+    AssetModel *asset();
 
     static ModelManager *instance();
 signals:
