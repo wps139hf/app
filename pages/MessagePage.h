@@ -32,12 +32,12 @@ class MessageWidget;
 
 #define       MESSAGE_WID_BACK_HEIGHT            40
 #define       MESSAGE_WID_BACK_WIDTH             80
-#define       MESSAGE_WID_TIME_X                 210
-#define       MESSAGE_WID_TIME_Y                 250
+#define       MESSAGE_WID_TIME_X                 180
+#define       MESSAGE_WID_TIME_Y                 50
 #define       MESSAGE_WID_TIME_HEIGHT            15
 #define       MESSAGE_WID_TIME_WIDTH             60
 #define       MESSAGE_WID_TEXT_X                 40
-#define       MESSAGE_WID_TEXT_Y                 280
+#define       MESSAGE_WID_TEXT_Y                 80
 #define       MESSAGE_WID_TEXT_HEIGHT            300
 #define       MESSAGE_WID_TEXT_WIDTH             400
 

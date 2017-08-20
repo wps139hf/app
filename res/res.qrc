@@ -23,5 +23,6 @@
         <file>icons/icon-checkbox-normal.png</file>
         <file>icons/icon-down-arrow.png</file>
         <file>icons/icon-room.png</file>
+        <file>icons/loading.gif</file>
     </qresource>
 </RCC>

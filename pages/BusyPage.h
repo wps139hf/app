@@ -2,6 +2,7 @@
 #define BUSYPAGE_H
 
 #include <QWidget>
+#include <QMovie>
 
 namespace Ui {
 class BusyPage;
@@ -15,6 +16,10 @@ public:
     explicit BusyPage(QWidget *parent = 0);
     ~BusyPage();
     static BusyPage *instance();
+
+protected:
+    void resizeEvent(QResizeEvent *e);
+
 private:
     Ui::BusyPage *ui;
 };
