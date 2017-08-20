@@ -20,6 +20,7 @@ public:
     ~SliderPicture();
 
 protected:
+    void resizeEvent(QResizeEvent *e);
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
