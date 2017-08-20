@@ -33,14 +33,12 @@ public:
     explicit AssetModel(QObject *parent = nullptr);
     void setNumber(const QString &number);
     Asset *getAsset();
-    QString info();
 protected:
     void handleRequest();
     void handleResponse();
 private:
     QString m_number;
     Asset m_asset;
-    QString m_info;
 };
 
 #endif // ASSETMODEL_H

@@ -17,7 +17,6 @@ AssetQuery::AssetQuery(QWidget *parent) :
 
         if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
             emit showInfo();
-            qDebug() << "Info:" << model->info();
             model->getAsset()->debug("ASSET");
             qDebug() << "toJsonString:" << model->getAsset()->toJsonString();
         }else{
