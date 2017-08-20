@@ -41,7 +41,7 @@ SOURCES += \
     pages/NoticeDisplay.cpp \
     pages/MessagePage.cpp \
     pages/MinePage.cpp \
-    widgets/sliderpicture.cpp \
+    widgets/SliderPicture.cpp \
     pages/PageManager.cpp \
     pages/WelcomePage.cpp \
     pages/LoginPage.cpp \
@@ -78,7 +78,7 @@ HEADERS += \
     pages/NoticeDisplay.h \
     pages/MessagePage.h \
     pages/MinePage.h \
-    widgets/sliderpicture.h \
+    widgets/SliderPicture.h \
     pages/PageManager.h \
     pages/WelcomePage.h \
     pages/LoginPage.h \

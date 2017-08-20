@@ -1,4 +1,4 @@
-#include "sliderpicture.h"
+#include "SliderPicture.h"
 
 SliderPicture::SliderPicture(QWidget *parent)
     : QWidget(parent)
@@ -11,27 +11,29 @@ SliderPicture::SliderPicture(QWidget *parent)
     , strUnselected("QLabel{background:rgb(255,255,255);}")
 {
 //    setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
-//    resize(680, 370);
+    setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
+
+//    printf("@@@@@@@@@@@%d,%d\n",width(),height());
 
     background_label = new QLabel(this);
-    background_label->setPixmap(QPixmap(":/bg_bottom"));
-    background_label->setGeometry(QRect(0, 0, this->width(), this->height()));
+    background_label->setPixmap(QPixmap(":/icons/bg_bottom"));
+    //background_label->setGeometry(QRect(0, 0, 4*width(), 4*height()));
 
-    QPixmap pixmap(QSize(this->width()*4, this->height()));
-    QPainter painter(&pixmap);
-    for(int i = 0; i < 4; i++){
-        painter.drawImage(QRect(this->width()*i, 0, this->width(), this->height()),
-                          QImage(QString(":/desktop_%1").arg(i)));
-    }
+//    QPixmap pixmap(QSize(this->width()*4*4, this->height()*4));
+//    QPainter painter(&pixmap);
+//    for(int i = 0; i < 4; i++){
+//        painter.drawImage(QRect(this->width()*i*4, 0, this->width()*4, this->height()*4),
+//                          QImage(QString(":/desktop_%1").arg(i)));
+//    }
     total_label = new QLabel(this);
-    total_label->resize(pixmap.size());
-    total_label->setPixmap(pixmap);
+//    total_label->resize(pixmap.size());
+//    total_label->setPixmap(pixmap);
     total_label->move(0, 0);
 
     for(int index = 0; index < 4; index++) {
         QLabel *label = new QLabel(this);
-        label->resize(QSize(15, 15));
-        label->move(298+index*23, 319);
+//        label->resize(QSize((15/680)*width(), (15/370)*height()));
+//        label->move((298+index*23)/680*width(), (319/370)*height());
         label->setStyleSheet(strUnselected);
         label_array.append(label);
     }
@@ -44,14 +46,33 @@ SliderPicture::~SliderPicture()
 
 }
 
+void SliderPicture::resizeEvent(QResizeEvent *e)
+{
+    Q_UNUSED(e);
+    qDebug()<<"@@@@@@@@@@@"<<width()<<height();
+    background_label->setGeometry(QRect(0, 0, width(), height()));
+
+    total_label->move(rect().topLeft());
+    total_label->resize(4*width(), height());
+
+    QPixmap pixmap(QSize(width()*4, height()));
+    QPainter painter(&pixmap);
+    for(int i = 0; i < 4; i++){
+        painter.drawImage(QRect(width()*i, 0, width(), height()),
+                             QImage(QString(":/icons/desktop_%1").arg(i)));
+    }
+    total_label->setPixmap(pixmap);
+
+    for(int index = 0; index < 4; index++) {
+        label_array.at(index)->resize(QSize(0.022*width(), 0.040*height()));
+        label_array.at(index)->move((0.43+index*0.033)*width(), 0.86*height());
+    }
+}
+
 void SliderPicture::mousePressEvent(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton) {
         m_mouseSrcPos = event->pos();
-//        if(m_mouseSrcPos.y() <= 40) {
-//            mouse_move = true;
-//        }
-//        else
         {
             current_pos_x = total_label->x();
             mouse_press = true;
@@ -106,14 +127,10 @@ void SliderPicture::mouseReleaseEvent(QMouseEvent *event)
         }
         mouse_press = false;
     }
-//    else if(mouse_move){
-//        mouse_move = false;
-//    }
 }
 
 void SliderPicture::mouseMoveEvent(QMouseEvent *event)
 {
-    qDebug() << "SliderPicture::mouseMoveEvent";
     int xPos = 0;
     if(mouse_press) {
         if(label_move) {
@@ -125,10 +142,6 @@ void SliderPicture::mouseMoveEvent(QMouseEvent *event)
             setLabelMove(true);
         }
     }
-//    else if(mouse_move) {
-//        m_mouseDstPos = event->pos();
-//        this->move(this->pos() + m_mouseDstPos - m_mouseSrcPos);
-//    }
 }
 
 void SliderPicture::moveCurrentPage(bool direction)
@@ -152,7 +165,7 @@ void SliderPicture::moveCurrentPage(bool direction)
     //index=3, move-680*3
     setLabelMove(false);
     int current_pos_x = total_label->x();    //label position
-    int dest_pos_x = -680 * current_index;
+    int dest_pos_x = -width() * current_index;
     if(direction) {
         while(current_pos_x > dest_pos_x) {
             total_label->move(current_pos_x-20, 0);
