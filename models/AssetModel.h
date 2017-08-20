@@ -7,25 +7,23 @@
 class Asset : public AbstractData
 {
 public:
-    QString serialNum = "1111";
-    QString name = "222";
-    QString classification = "333";
-    QString qrCode = "444";
-    QString department = "555";
-    QString storage = "666";
-    QString state = "777";
-    QString specification = "888";
-    QString dateOfPurchase = "999";
-    QString dateOfStorage = "000";
+    QString serialNum = "";
+    QString name = "";
+    QString classification = "";
+    QString qrCode = "";
+    QString department = "";
+    QString storage = "";
+    QString state = "";
+    QString specification = "";
+    QString dateOfPurchase = "";
+    QString dateOfStorage = "";
 
 public:
     explicit Asset();
+    void debug(const QString &tag);
+protected:
     QJsonObject toJson();
     void fromJson(const QJsonObject &object);
-    void debug(const QString &tag);
-
-    QString toJsonString();
-    bool fromJsonString(const QString &jsonString);
 };
 
 class AssetModel : public AbstractModel

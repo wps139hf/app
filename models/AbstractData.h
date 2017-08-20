@@ -1,30 +1,23 @@
 #ifndef ABSTRACTDATA_H
 #define ABSTRACTDATA_H
 
-#include <QObject>
 #include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonValue>
 
-class AbstractData : public QObject
+class AbstractData
 {
-    Q_OBJECT
 public:
-    explicit AbstractData(QObject *parent = nullptr);
+    explicit AbstractData();
 
-//    QString toJsonString();
-//    bool fromJsonString(const QString &jsonString);
-
-//    virtual void debug(const QString &tag) = 0;
+    QString toJsonString();
+    bool fromJsonString(const QString &jsonString);
+    virtual void debug(const QString &tag);
 
 protected:
-//    virtual QJsonObject toJson(){
-//        QJsonObject obj{
-//            {"1", 1},
-//        };
-//        return obj;
-//    }
-//    virtual void fromJson(const QJsonObject &object){
-//        Q_UNUSED(object);
-//    }
+    virtual QJsonObject toJson();
+    virtual void fromJson(const QJsonObject &object);
 };
 
 #endif // ABSTRACTDATA_H

@@ -55,48 +55,6 @@ void Asset::debug(const QString &tag)
              << "入库日期:" << dateOfStorage;
 }
 
-QString Asset::toJsonString()
-{
-    QJsonArray array{
-        {QJsonValue(toJson())}
-    };
-#ifdef QT_DEBUG
-    return QString(QJsonDocument(array).toJson(QJsonDocument::Indented));
-#else
-    return QString(QJsonDocument(array).toJson(QJsonDocument::Compact));
-#endif
-}
-
-bool Asset::fromJsonString(const QString &jsonString)
-{
-    qDebug() << "fromJsonString, " << jsonString;
-    QJsonParseError jsonParseError;
-    auto doc = QJsonDocument::fromJson(jsonString.toUtf8(), &jsonParseError);
-    if(jsonParseError.error == QJsonParseError::NoError){
-        if(doc.isArray()){
-            qDebug() << "fromJsonString, isArray.";
-            QJsonArray array = doc.array();
-            if(array.isEmpty()){
-                return false;
-            }
-            QJsonValue value = array.first();
-            if(value.isObject()){
-                QJsonObject obj = value.toObject();
-                fromJson(obj);
-            }
-            return true;
-        }else if(doc.isObject()){
-            qDebug() << "fromJsonString, isObject.";
-            QJsonObject obj = doc.object();
-            fromJson(obj);
-            return true;
-        }
-    }else{
-        qDebug() << jsonParseError.errorString();
-    }
-    return false;
-}
-
 AssetModel::AssetModel(QObject *parent)
     : AbstractModel(parent)
 {
