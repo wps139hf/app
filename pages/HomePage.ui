@@ -44,7 +44,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(38, 190, 255);</string>
+    <string notr="true"/>
    </property>
   </widget>
   <widget class="NoticeWidget" name="notice" native="true">
@@ -57,7 +57,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 119, 7);</string>
+    <string notr="true">background-color: transparent</string>
    </property>
   </widget>
   <widget class="TitleBar" name="titleBar" native="true">
