@@ -3,7 +3,6 @@
 #include "ApplicationModel.h"
 #include "ModelManager.h"
 #include "BusyPage.h"
-#include "MainWindow.h"
 
 LoginPage::LoginPage(QWidget *parent) :
     AnimatedPage(parent),
@@ -12,19 +11,6 @@ LoginPage::LoginPage(QWidget *parent) :
     ui->setupUi(this);
 
     setTitleBar(ui->titleBar);
-
-    ApplicationModel *app = ModelManager::instance()->application();
-    connect(app, &ApplicationModel::requestFinish, [this, app](){
-        hideBusyPage();
-
-        if(app->valid()){
-            app->setLogin(true);
-            qDebug() << "emit logined";
-            emit logined();
-        }else{
-            qDebug() << app->errorMsg();
-        }
-    });
 }
 
 LoginPage::~LoginPage()
@@ -40,12 +26,18 @@ void LoginPage::init()
 
 void LoginPage::on_btnLogin_clicked()
 {
-    showBusyPage();
+    ApplicationModel *model = ModelManager::instance()->application();
+    model->setUser(ui->username->currentText());
+    model->setPassword(ui->password->text());
+    model->request();
 
-    ApplicationModel *app = ModelManager::instance()->application();
-    app->setUser(ui->username->currentText());
-    app->setPassword(ui->password->text());
-    app->request();
+    if(model->valid()){
+        model->setLogin(true);
+        qDebug() << "emit logined";
+        emit logined();
+    }else{
+        sendError(model->errorMsg());
+    }
 }
 
 void LoginPage::on_checkBox_clicked(bool checked)
