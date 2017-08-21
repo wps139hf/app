@@ -108,9 +108,13 @@ void MainWindow::setupConnections()
     connect(ui->pagePrint, &PrintPage::backClicked, [this]{
         showPage(ui->pageManager);
     });
-    //asset pages
-    connect(ui->pageRoom, &RoomPage::backClicked, [this]{
+    //roomList pages
+    connect(ui->pageRoomList, &RoomPage::backClicked, [this]{
         showPage(ui->pageManager);
+    });
+    //room pages
+    connect(ui->pageRoom, &RoomPage::backClicked, [this]{
+        showPage(ui->pageRoomList);
     });
 
     //asset pages

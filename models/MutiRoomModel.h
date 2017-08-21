@@ -4,6 +4,8 @@
 #include "AbstractModel.h"
 #include "AbstractData.h"
 
+#include <QVariantList>
+
 class MultiRoom : public AbstractData
 {
 public:
@@ -35,11 +37,13 @@ class MutiRoomModel : public AbstractModel
 public:
     explicit MutiRoomModel(QObject *parent = nullptr);
     QJsonValue value(const QString &key) const;
-    void request();
+    QJsonObject object(const QString &timestamp);
+protected:
+    void handleRequest();
 private:
     MultiRoom m_room;
-    QMap<QString, QJsonObject>m_map;
-    QList<QJsonObject>m_jsonObjectList;
+    QList<QJsonObject> m_objectList;
+    QMap<QString, QJsonObject>m_objectMap;
 };
 
 #endif // MUTIROOMMODEL_H

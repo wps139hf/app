@@ -35,3 +35,24 @@ QJsonObject JSON::toObject(const QString &jsonString)
     }
     return jsonObject;
 }
+
+
+QList<QJsonObject> JSON::toList(const QString &jsonString)
+{
+    QList<QJsonObject> list;
+    QJsonParseError jsonParseError;
+
+    auto doc = QJsonDocument::fromJson(jsonString.toUtf8(), &jsonParseError);
+    if(jsonParseError.error != QJsonParseError::NoError){
+        qDebug() << jsonParseError.errorString();
+        return list;
+    }
+
+    if(doc.isArray()){
+        QJsonArray array = doc.array();
+        for(int i = 0; i < array.size(); i++){
+            list.append(array.at(i).toObject());
+        }
+    }
+    return list;
+}
