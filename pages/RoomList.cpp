@@ -21,7 +21,7 @@ void RoomList::init()
     setTitleButtonVisible(TitleBar::Custom, false);
 }
 
-void RoomList::updatePage()
+void RoomList::refresh()
 {
 
 }

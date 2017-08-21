@@ -17,7 +17,7 @@ public:
 
 protected:
     void init();
-    void updatePage();
+    void refresh();
 private:
     Ui::RoomPage2 *ui2;
 };
