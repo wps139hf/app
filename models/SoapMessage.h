@@ -1,41 +1,36 @@
-#ifndef ABSTRACTMODEL_H
-#define ABSTRACTMODEL_H
+#ifndef SOAPMESSAGE_H
+#define SOAPMESSAGE_H
 
 #include <QObject>
+#include <QEventLoop>
 #include "qtsoap.h"
-#include "SoapMessage.h"
+
+#define HOST    "180.153.158.111"
+#define PORT    88
 
 #define XML_NS  "http://localhost/"
 #define DEFAULT_POST_PATH   "/assets.asmx"
 
-
-class AbstractModel : public QObject
+class SoapMessage : public QObject
 {
     Q_OBJECT
 public:
-    explicit AbstractModel(QObject *parent = nullptr);
-    void request();
-    QString errorMsg();
+    explicit SoapMessage(QObject *parent = nullptr);
 
-    QString getValueByTag(const QString &tag);
     void setRequestMethod(const QString &method);
     void addRequestArg(const QString&name, const QString &value);
     void sendRequest(const QString &path = DEFAULT_POST_PATH);
+
+    QString getValueByTag(const QString &tag);
 signals:
-    void requestLaunch();
-    void requestFinish();
 public slots:
     void onResponseReady(const QtSoapMessage &response);
-protected:
-    virtual void handleRequest();
-    virtual void handleResponse();
-    QString m_errorMsg;
 protected:
     QtSoapHttpTransport *m_http = Q_NULLPTR;
     QtSoapMessage m_request;
     QtSoapMessage m_response;
 
-    SoapMessage *m_soap = Q_NULLPTR;
+    QEventLoop m_eventLoop;
 };
 
-#endif // ABSTRACTMODEL_H
+#endif // SOAPMESSAGE_H

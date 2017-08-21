@@ -12,6 +12,8 @@ AbstractModel::AbstractModel(QObject *parent) : QObject(parent)
 
     m_http = new QtSoapHttpTransport(this);
     connect(m_http, SIGNAL(responseReady(QtSoapMessage)), this, SLOT(onResponseReady(QtSoapMessage)));
+
+    m_soap = new SoapMessage(this);
 }
 
 void AbstractModel::request()

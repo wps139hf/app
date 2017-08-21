@@ -64,7 +64,8 @@ SOURCES += \
     models/AbstractData.cpp \
     models/CarModel.cpp \
     models/MutiRoomModel.cpp \
-    pages/RoomList.cpp
+    pages/RoomList.cpp \
+    models/SoapMessage.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -105,7 +106,8 @@ HEADERS += \
     models/AbstractData.h \
     models/CarModel.h \
     models/MutiRoomModel.h \
-    pages/RoomList.h
+    pages/RoomList.h \
+    models/SoapMessage.h
 
 FORMS += \
     pages/HomePage.ui \

@@ -34,9 +34,13 @@ void MutiRoomModel::handleRequest()
     addRequestArg("userNo", "sa");
     sendRequest();
 #endif
-    setRequestMethod("GetMoltiRoomQuantity");
-    addRequestArg("userNo", "sa");
-    sendRequest();
+
+    qDebug() << "m_soap->sendRequest()..start";
+    m_soap->setRequestMethod("GetMoltiRoomQuantity");
+    m_soap->addRequestArg("userNo", "sa");
+    m_soap->sendRequest();
+    qDebug() << "m_soap->sendRequest()..end";
+    qDebug() << "GetMoltiRoomQuantityResult:" << m_soap->getValueByTag("GetMoltiRoomQuantityResult");
 }
 
 void MutiRoomModel::handleResponse()
