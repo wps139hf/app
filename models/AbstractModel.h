@@ -4,6 +4,7 @@
 #include <QObject>
 #include "qtsoap.h"
 #include "SoapMessage.h"
+#include "JSON.h"
 
 #define XML_NS  "http://localhost/"
 #define DEFAULT_POST_PATH   "/assets.asmx"

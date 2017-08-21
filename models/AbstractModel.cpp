@@ -1,6 +1,5 @@
 #include "AbstractModel.h"
 #include "ModelManager.h"
-#include "config.h"
 
 AbstractModel::AbstractModel(QObject *parent) : QObject(parent)
 {

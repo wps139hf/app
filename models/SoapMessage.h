@@ -19,10 +19,11 @@ public:
 
     void setRequestMethod(const QString &method);
     void addRequestArg(const QString&name, const QString &value);
-    void sendRequest(const QString &path = DEFAULT_POST_PATH);
+    void submit(const QString &path = DEFAULT_POST_PATH);
 
     QString getValueByTag(const QString &tag);
-signals:
+    QString errorString();
+
 public slots:
     void onResponseReady(const QtSoapMessage &response);
 protected:
