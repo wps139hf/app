@@ -26,7 +26,20 @@ QJsonValue MutiRoomModel::value(const QString &key) const
     return m_room.data.value(key);
 }
 
-void MutiRoomModel::request()
+QJsonObject MutiRoomModel::object(const QString &timestamp)
+{
+    for(auto object : m_objectList){
+        for(auto key : object.keys()){
+            if(key == timestamp){
+                return object;
+            }
+        }
+    }
+
+    return QJsonObject();
+}
+
+void MutiRoomModel::handleRequest()
 {
     m_soap->setRequestMethod("GetMoltiRoomQuantity");
     m_soap->addRequestArg("userNo", "sa");
@@ -35,14 +48,19 @@ void MutiRoomModel::request()
     QJsonObject quantity = JSON::toObject(m_soap->getValueByTag("GetMoltiRoomQuantityResult"));
     int count = quantity.value("Quantity").toInt();
 
-    for(int i = 0; i < count; i++){
-        m_soap->setRequestMethod("GetMoltiRoomList");
-        m_soap->addRequestArg("topQuantity", "1");
-        m_soap->addRequestArg("userNo", "sa");
-        m_soap->submit();
-        m_jsonObjectList.append(JSON::toObject(m_soap->getValueByTag("GetMoltiRoomListResult")));
-    }
+    qDebug() << "MutiRoomModel, count=" << count;
 
-    m_room.fromJsonString(m_soap->getValueByTag("GetMoltiRoomListResult"));
+    m_soap->setRequestMethod("GetMoltiRoomList");
+    m_soap->addRequestArg("topQuantity", QString().setNum(count));
+    m_soap->addRequestArg("userNo", "sa");
+    m_soap->submit();
+
+    m_objectList = JSON::toList(m_soap->getValueByTag("GetMoltiRoomListResult"));
+    for(auto object : m_objectList){
+        qDebug() << "---------------";
+        for(auto key : object.keys()){
+            qDebug() << key << ":" << object.value(key);
+        }
+    }
 }
 

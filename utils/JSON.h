@@ -10,6 +10,7 @@ class JSON : public QObject
 public:
     explicit JSON(QObject *parent = nullptr);
     static QJsonObject toObject(const QString &jsonString);
+    static QList<QJsonObject> toList(const QString &jsonString);
 };
 
 #endif // JSON_H
