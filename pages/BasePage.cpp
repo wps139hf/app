@@ -1,8 +1,6 @@
 #include "BasePage.h"
-#include "MainWindow.h"
 
 #include <QPainter>
-#include <QEventLoop>
 #include <QTimer>
 
 BasePage::BasePage(QWidget *parent) :
@@ -58,26 +56,6 @@ void BasePage::setBackgroundColor(const QColor &color)
 {
     m_backgoundColor = color;
     update();
-}
-
-void BasePage::wait(int msecond)
-{
-    QEventLoop loop;
-    QTimer::singleShot(msecond, &loop, SLOT(quit()));
-    loop.exec();
-}
-
-void BasePage::showBusyPage()
-{
-    m_busypage = MainWindow::instance()->busyPage();
-    m_busypage->show();
-    m_busypage->raise();
-    wait();
-}
-
-void BasePage::hideBusyPage()
-{
-    m_busypage->hide();
 }
 
 void BasePage::init()

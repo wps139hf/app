@@ -16,18 +16,13 @@ class MainWindow : public AbstractPageManager
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
     static MainWindow *instance();
-
-    void showBusyPage(bool enabled);
-    QWidget *busyPage();
-
 protected:
     void setupConnections();
 private:
-    void bindModels();
-    Ui::MainWindow *ui;
+    void startUp();
     void wait(int msecond);
+    Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H

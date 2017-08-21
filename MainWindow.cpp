@@ -13,14 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initilize();
 
-    ApplicationModel *app = ModelManager::instance()->application();
-    if(!app->logined()){
-        showPage(ui->pageWelcome);
-    }else{
-        showPage(ui->pageManager);
-    }
-
-    bindModels();
+    startUp();
 }
 
 MainWindow::~MainWindow()
@@ -34,24 +27,17 @@ MainWindow *MainWindow::instance()
     return &mainWindow;
 }
 
-void MainWindow::showBusyPage(bool enabled)
+void MainWindow::setupConnections()
 {
-    if(enabled){
+    connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){
         ui->pageBusy->show();
         ui->pageBusy->raise();
         wait(50);
-    }else{
+    });
+    connect(ModelManager::instance(), &ModelManager::requestFinish, [this](){
         ui->pageBusy->hide();
-    }
-}
+    });
 
-QWidget *MainWindow::busyPage()
-{
-    return ui->pageBusy;
-}
-
-void MainWindow::setupConnections()
-{
     connect(ui->pageWelcome, &WelcomePage::loginClicked, [this]{
         showPage(ui->pageLogin);
     });
@@ -80,9 +66,13 @@ void MainWindow::setupConnections()
             break;
         case App::Room:
         {
-            showBusyPage(true);
             MutiRoomModel *model = ModelManager::instance()->multiRoom();
             model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+                showPage(ui->pageRoomList);
+            }else{
+                qDebug() << "Error:"<< model->errorMsg();
+            }
             break;
         }
         case App::Asset:
@@ -139,19 +129,14 @@ void MainWindow::setupConnections()
     });
 }
 
-void MainWindow::bindModels()
+void MainWindow::startUp()
 {
-    //multi-room
-    MutiRoomModel *model = ModelManager::instance()->multiRoom();
-    connect(model, &MutiRoomModel::requestFinish, [this, model](){
-        showBusyPage(false);
-        if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
-//            showPage(ui->pageRoom);
-            showPage(ui->pageRoomList);
-        }else{
-            qDebug() << "Error:"<< model->errorMsg();
-        }
-    });
+    ApplicationModel *app = ModelManager::instance()->application();
+    if(!app->logined()){
+        showPage(ui->pageWelcome);
+    }else{
+        showPage(ui->pageManager);
+    }
 }
 
 void MainWindow::wait(int msecond)

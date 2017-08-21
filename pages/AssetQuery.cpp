@@ -10,19 +10,6 @@ AssetQuery::AssetQuery(QWidget *parent) :
     ui->setupUi(this);
 
     setTitleBar(ui->titleBar);
-
-    AssetModel *model = ModelManager::instance()->asset();
-    connect(model, &AssetModel::requestFinish, [this, model](){
-        hideBusyPage();
-
-        if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
-            emit showInfo();
-            model->getAsset()->debug("ASSET");
-            qDebug() << "toJsonString:" << model->getAsset()->toJsonString();
-        }else{
-            qDebug() << "Error:"<< model->errorMsg();
-        }
-    });
 }
 
 AssetQuery::~AssetQuery()
@@ -39,9 +26,14 @@ void AssetQuery::init()
 
 void AssetQuery::on_btnOk_clicked()
 {
-    showBusyPage();
-
     AssetModel *model = ModelManager::instance()->asset();
     model->setNumber(ui->lineEdit->text());
     model->request();
+
+    if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+        emit showInfo();
+        model->getAsset()->debug("ASSET");
+    }else{
+        qDebug() << "Error:"<< model->errorMsg();
+    }
 }
