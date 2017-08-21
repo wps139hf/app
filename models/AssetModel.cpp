@@ -73,13 +73,10 @@ Asset *AssetModel::getAsset()
 
 void AssetModel::handleRequest()
 {
-    setRequestMethod("GetAsset");
-    addRequestArg("barcode", m_number);
-    sendRequest();
-}
+    m_soap->setRequestMethod("GetAsset");
+    m_soap->addRequestArg("barcode", m_number);
+    m_soap->submit();
 
-void AssetModel::handleResponse()
-{
-    m_asset.fromJsonString(getValueByTag("GetAssetResult"));
-    m_errorMsg = getValueByTag("msg");
+    m_asset.fromJsonString(m_soap->getValueByTag("GetAssetResult"));
+    m_asset.debug("ASSET");
 }

@@ -15,7 +15,6 @@ public:
     AssetModel *asset();
     MutiRoomModel *multiRoom();
 
-
     static ModelManager *instance();
 signals:
     void requestLaunch();
