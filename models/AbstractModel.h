@@ -17,6 +17,7 @@ signals:
     void requestLaunch();
     void requestFinish();
 protected:
+    virtual void init();
     virtual void handleRequest();
     QString m_errorMsg;
 protected:

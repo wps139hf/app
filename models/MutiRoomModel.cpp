@@ -26,17 +26,20 @@ QJsonValue MutiRoomModel::value(const QString &key) const
     return m_room.data.value(key);
 }
 
-QJsonObject MutiRoomModel::object(const QString &timestamp)
+QJsonObject MutiRoomModel::object(const QString &sn)
 {
-    for(auto object : m_objectList){
-        for(auto key : object.keys()){
-            if(key == timestamp){
-                return object;
-            }
-        }
-    }
+    return m_mapBySN.value(sn);
+}
 
-    return QJsonObject();
+int MutiRoomModel::size()
+{
+    return m_mapBySN.size();
+}
+
+void MutiRoomModel::init()
+{
+    m_objectList.clear();
+    m_mapBySN.clear();
 }
 
 void MutiRoomModel::handleRequest()
@@ -57,6 +60,7 @@ void MutiRoomModel::handleRequest()
 
     m_objectList = JSON::toList(m_soap->getValueByTag("GetMoltiRoomListResult"));
     for(auto object : m_objectList){
+        m_mapBySN.insert(object.value("编号").toString(), object);
         qDebug() << "---------------";
         for(auto key : object.keys()){
             qDebug() << key << ":" << object.value(key);

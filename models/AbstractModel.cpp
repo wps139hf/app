@@ -16,6 +16,7 @@ void AbstractModel::request()
 {
     emit requestLaunch();
 
+    init();
     handleRequest();
 
     m_errorMsg = m_soap->getValueByTag("msg");
@@ -25,6 +26,11 @@ void AbstractModel::request()
 QString AbstractModel::errorMsg()
 {
     return m_errorMsg;
+}
+
+void AbstractModel::init()
+{
+
 }
 
 void AbstractModel::handleRequest()
