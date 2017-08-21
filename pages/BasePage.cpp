@@ -67,7 +67,7 @@ void BasePage::init()
 {
 }
 
-void BasePage::updatePage()
+void BasePage::refresh()
 {
 
 }
@@ -79,7 +79,7 @@ void BasePage::showEvent(QShowEvent *e)
     qDebug() << objectName() << "show up.";
     init();
 
-    updatePage();
+    refresh();
 }
 
 void BasePage::paintEvent(QPaintEvent *e)

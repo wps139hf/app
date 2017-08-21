@@ -16,7 +16,7 @@ public:
     ~RoomList();
 protected:
     void init();
-    void updatePage();
+    void refresh();
 private:
     Ui::RoomList *ui;
 };

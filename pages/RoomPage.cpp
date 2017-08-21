@@ -22,7 +22,7 @@ void RoomPage::init()
     setTitleButtonVisible(TitleBar::Custom, false);
 }
 
-void RoomPage::updatePage()
+void RoomPage::refresh()
 {
     MutiRoomModel *model = ModelManager::instance()->multiRoom();
     if(model){

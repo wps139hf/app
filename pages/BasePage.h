@@ -30,7 +30,7 @@ signals:
     void error(const QString &err);
 protected:
     virtual void init();
-    virtual void updatePage();
+    virtual void refresh();
     void showEvent(QShowEvent *e);
     void paintEvent(QPaintEvent *e);
 protected:
