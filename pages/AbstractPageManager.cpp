@@ -11,10 +11,15 @@ AbstractPageManager::AbstractPageManager(QWidget *parent)
 void AbstractPageManager::initilize()
 {
     for(auto child : children()){
-        QWidget *page = qobject_cast<QWidget *>(child);
+        QWidget *widget = qobject_cast<QWidget *>(child);
+        if(widget){
+            widget->hide();
+            m_pageList.append(widget);
+        }
+
+        BasePage *page = qobject_cast<BasePage*>(widget);
         if(page){
-            page->hide();
-            m_pageList.append(page);
+            connect(page, SIGNAL(error(QString)), this, SIGNAL(error(QString)));
         }
     }
 
@@ -50,6 +55,11 @@ void AbstractPageManager::showPrevPage()
         m_prevPage = m_curPage;
         m_curPage = page;
     }
+}
+
+void AbstractPageManager::sendError(const QString &err)
+{
+    emit error(err);
 }
 
 void AbstractPageManager::setupConnections()

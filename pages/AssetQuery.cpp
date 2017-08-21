@@ -34,6 +34,6 @@ void AssetQuery::on_btnOk_clicked()
         emit showInfo();
         model->getAsset()->debug("ASSET");
     }else{
-        qDebug() << "Error:"<< model->errorMsg();
+        sendError(model->errorMsg());
     }
 }

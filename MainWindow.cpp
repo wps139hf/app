@@ -29,6 +29,10 @@ MainWindow *MainWindow::instance()
 
 void MainWindow::setupConnections()
 {
+    connect(this, &MainWindow::error, [this](const QString &err){
+        qDebug() << "Error hintline:" << err;
+    });
+
     connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){
         ui->pageBusy->show();
         ui->pageBusy->raise();
@@ -71,7 +75,7 @@ void MainWindow::setupConnections()
             if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
                 showPage(ui->pageRoomList);
             }else{
-                qDebug() << "Error:"<< model->errorMsg();
+                sendError(model->errorMsg());
             }
             break;
         }

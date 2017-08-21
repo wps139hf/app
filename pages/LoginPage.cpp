@@ -36,7 +36,7 @@ void LoginPage::on_btnLogin_clicked()
         qDebug() << "emit logined";
         emit logined();
     }else{
-        qDebug() << model->errorMsg();
+        sendError(model->errorMsg());
     }
 }
 

@@ -23,10 +23,11 @@ public:
     void setToolButtonChecked(ToolBar::Button btn);
 
     void setBackgroundColor(const QColor &color);
+    void sendError(const QString &err);
 signals:
     void backClicked(bool);
     void customClicked(bool);
-
+    void error(const QString &err);
 protected:
     virtual void init();
     virtual void updatePage();
