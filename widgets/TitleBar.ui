@@ -72,9 +72,8 @@ QToolButton:press{
     <string/>
    </property>
    <property name="icon">
-    <iconset>
-     <normalon>:/icons/icon-back.png</normalon>
-    </iconset>
+    <iconset resource="../res/res.qrc">
+     <normaloff>:/icons/icon-back.jpg</normaloff>:/icons/icon-back.jpg</iconset>
    </property>
    <property name="iconSize">
     <size>
