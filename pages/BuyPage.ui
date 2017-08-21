@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>600</height>
+    <width>500</width>
+    <height>677</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
-    <number>10</number>
+    <number>0</number>
    </property>
    <property name="leftMargin">
     <number>0</number>
@@ -62,31 +62,31 @@
      <property name="text">
       <string>   2017年8月1日9:00 请购详单</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="" native="true">
+    <widget class="QWidget" name="widget" native="true">
      <property name="toolTipDuration">
       <number>0</number>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
+     </property>
      <layout class="QGridLayout" name="gridLayout">
-      <property name="sizeConstraint">
-       <enum>QLayout::SetNoConstraint</enum>
-      </property>
-      <property name="leftMargin">
-       <number>20</number>
-      </property>
       <property name="rightMargin">
-       <number>20</number>
+       <number>12</number>
       </property>
-      <property name="horizontalSpacing">
-       <number>0</number>
-      </property>
-      <property name="verticalSpacing">
-       <number>2</number>
-      </property>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_6">
+      <item row="0" column="1">
+       <widget class="QLabel" name="applicant_2">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>宋体</family>
@@ -94,24 +94,32 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
+         <string notr="true">QLabel{
+	border:1px solid rgb(136, 194, 248);
+	border-radius: 6px;
+	background-color: rgb(255,255,255);
+}</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
+         <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="text">
-         <string>所属部门：</string>
+         <string>张三</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_2">
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_37">
         <property name="minimumSize">
          <size>
           <width>50</width>
           <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="palette">
@@ -119,28 +127,28 @@ background-color: rgb(200,200,200);</string>
           <active>
            <colorrole role="Button">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
            <colorrole role="Base">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
            <colorrole role="Window">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
@@ -148,28 +156,28 @@ background-color: rgb(200,200,200);</string>
           <inactive>
            <colorrole role="Button">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
            <colorrole role="Base">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
            <colorrole role="Window">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
@@ -177,28 +185,28 @@ background-color: rgb(200,200,200);</string>
           <disabled>
            <colorrole role="Button">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
            <colorrole role="Base">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
            <colorrole role="Window">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>200</red>
-              <green>200</green>
-              <blue>200</blue>
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </brush>
            </colorrole>
@@ -212,22 +220,27 @@ background-color: rgb(200,200,200);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(200,200,200);</string>
+         <string notr="true">QLabel{
+	background-color: transparent
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>请购人：</string>
+         <string>编号</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_9">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_16">
         <property name="minimumSize">
          <size>
-          <width>0</width>
-          <height>0</height>
+          <width>60</width>
+          <height>40</height>
          </size>
         </property>
         <property name="font">
@@ -237,39 +250,26 @@ background-color: rgb(200,200,200);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
+         <string notr="true">QLabel{
+	background-color: transparent
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>规格：</string>
+         <string>采购主题</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
-       <widget class="QLineEdit" name="lineEdit_5">
-        <property name="toolTipDuration">
-         <number>0</number>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background: white；</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="label_10">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
+      <item row="1" column="1" colspan="4">
+       <widget class="QLabel" name="timeOfUse_2">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>80</width>
           <height>22</height>
          </size>
         </property>
@@ -280,59 +280,124 @@ background-color: rgb(200,200,200);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
+         <string notr="true">QLabel{
+	border:1px solid rgb(136, 194, 248);
+	border-radius: 6px;
+	background-color: rgb(255,255,255);
+}</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
+         <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="text">
-         <string>用途说明：</string>
+         <string>2017.08.05 10：00</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="4">
-       <widget class="QLineEdit" name="lineEdit_6">
-        <property name="styleSheet">
-         <string notr="true">background: white；</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
-       <widget class="QLabel" name="label_11">
-        <property name="minimumSize">
-         <size>
-          <width>70</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="text">
-         <string>部门审批：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0">
-       <widget class="QLabel" name="label_12">
+      <item row="0" column="0">
+       <widget class="QLabel" name="nameApplicant_2">
         <property name="minimumSize">
          <size>
           <width>50</width>
-          <height>20</height>
+          <height>40</height>
          </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
         </property>
         <property name="font">
          <font>
@@ -341,24 +406,27 @@ background-color: rgb(200,200,200);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
+         <string notr="true">QLabel{
+	background-color: transparent
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>总务处审批：</string>
+         <string>申请人</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="10" column="0">
-       <widget class="QLabel" name="label_24">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_14">
         <property name="minimumSize">
          <size>
           <width>50</width>
-          <height>20</height>
+          <height>40</height>
          </size>
         </property>
         <property name="font">
@@ -368,133 +436,173 @@ background-color: rgb(200,200,200);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
+         <string notr="true">QLabel{
+	background-color: transparent
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>校长意见</string>
+         <string>采购日期</string>
         </property>
-       </widget>
-      </item>
-      <item row="9" column="2">
-       <widget class="QCheckBox" name="checkBox_2">
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>同意</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="2">
-       <widget class="QCheckBox" name="checkBox_3">
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>同意</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="4">
-       <widget class="QLineEdit" name="lineEdit_8">
-        <property name="styleSheet">
-         <string notr="true">background: white；</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="2">
-       <widget class="QLabel" name="label_22">
-        <property name="minimumSize">
-         <size>
-          <width>30</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="text">
-         <string>总价：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1" colspan="9">
-       <widget class="QLineEdit" name="lineEdit_4">
-        <property name="styleSheet">
-         <string notr="true">background: white；</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1" colspan="9">
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background: white；</string>
-        </property>
-        <property name="text">
-         <string>张三</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2" colspan="2">
-       <widget class="QLabel" name="label_19">
-        <property name="minimumSize">
-         <size>
-          <width>30</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="text">
-         <string>数量：</string>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QLabel" name="label_15">
+       <widget class="QLabel" name="label_13">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>50</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	background-color: transparent
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="text">
+         <string>审批人</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_23">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	background-color: transparent
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="text">
+         <string>审批状态</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="4">
+       <widget class="QLabel" name="destination_2">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	border:1px solid rgb(136, 194, 248);
+	border-radius: 6px;
+	background-color: rgb(255,255,255);
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="text">
+         <string>区教育局</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="4">
+       <widget class="QLabel" name="instruction_2">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	border:1px solid rgb(136, 194, 248);
+	border-radius: 6px;
+	background-color: rgb(255,255,255);
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="text">
+         <string>商务车</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" colspan="4">
+       <widget class="QLabel" name="agreeable_2">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	border:1px solid rgb(136, 194, 248);
+	border-radius: 6px;
+	background-color: rgb(255,255,255);
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="text">
+         <string>初期</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" colspan="2">
+       <widget class="QLabel" name="serialNum_2">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
           <height>0</height>
          </size>
         </property>
@@ -505,95 +613,17 @@ background-color: rgb(200,200,200);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(200,200,200);</string>
+         <string notr="true">QLabel{
+	border:1px solid rgb(136, 194, 248);
+	border-radius: 6px;
+	background-color: rgb(255,255,255);
+}</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
+         <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="text">
-         <string>物品名称：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QLineEdit" name="lineEdit_7">
-        <property name="styleSheet">
-         <string notr="true">background: white；</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0" colspan="10">
-       <widget class="QLineEdit" name="lineEdit_9">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>50</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background: white；</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_3">
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background: white；</string>
-        </property>
-        <property name="text">
-         <string>教务处</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_20">
-        <property name="minimumSize">
-         <size>
-          <width>30</width>
-          <height>20</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-color: rgb(99, 99, 99);
-border-width：2px solid;
-background-color: rgb(200,200,200);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="text">
-         <string>单价：</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="2">
-       <widget class="QCheckBox" name="checkBox">
-        <property name="font">
-         <font>
-          <family>宋体</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>同意</string>
+         <string/>
         </property>
        </widget>
       </item>
