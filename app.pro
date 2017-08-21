@@ -63,7 +63,8 @@ SOURCES += \
     models/AssetModel.cpp \
     models/AbstractData.cpp \
     models/CarModel.cpp \
-    models/MutiRoomModel.cpp
+    models/MutiRoomModel.cpp \
+    pages/RoomList.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -103,7 +104,8 @@ HEADERS += \
     models/AssetModel.h \
     models/AbstractData.h \
     models/CarModel.h \
-    models/MutiRoomModel.h
+    models/MutiRoomModel.h \
+    pages/RoomList.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -127,7 +129,8 @@ FORMS += \
     pages/AssetInfo.ui \
     pages/AssetScan.ui \
     pages/BusyPage.ui \
-    pages/RoomPage2.ui
+    pages/RoomPage2.ui \
+    pages/RoomList.ui
 
 CONFIG += mobility
 MOBILITY = 

@@ -13,7 +13,7 @@ class AbstractModel : public QObject
     Q_OBJECT
 public:
     explicit AbstractModel(QObject *parent = nullptr);
-    void commit();
+    void request();
     QString errorMsg();
 
     QString getValueByTag(const QString &tag);

@@ -43,5 +43,5 @@ void AssetQuery::on_btnOk_clicked()
 
     AssetModel *model = ModelManager::instance()->asset();
     model->setNumber(ui->lineEdit->text());
-    model->commit();
+    model->request();
 }

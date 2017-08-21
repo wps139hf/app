@@ -82,7 +82,7 @@ void MainWindow::setupConnections()
         {
             showBusyPage(true);
             MutiRoomModel *model = ModelManager::instance()->multiRoom();
-            model->commit();
+            model->request();
             break;
         }
         case App::Asset:
@@ -142,7 +142,8 @@ void MainWindow::bindModels()
     connect(model, &MutiRoomModel::requestFinish, [this, model](){
         showBusyPage(false);
         if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
-            showPage(ui->pageRoom);
+//            showPage(ui->pageRoom);
+            showPage(ui->pageRoomList);
         }else{
             qDebug() << "Error:"<< model->errorMsg();
         }

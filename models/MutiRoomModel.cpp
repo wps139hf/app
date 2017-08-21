@@ -28,14 +28,20 @@ QJsonValue MutiRoomModel::value(const QString &key) const
 
 void MutiRoomModel::handleRequest()
 {
+#if 0
     setRequestMethod("GetMoltiRoomList");
     addRequestArg("topQuantity", "1");
+    addRequestArg("userNo", "sa");
+    sendRequest();
+#endif
+    setRequestMethod("GetMoltiRoomQuantity");
     addRequestArg("userNo", "sa");
     sendRequest();
 }
 
 void MutiRoomModel::handleResponse()
 {
-    m_room.fromJsonString(getValueByTag("GetMoltiRoomListResult"));
+    qDebug() << "GetMoltiRoomQuantityResult:" << getValueByTag("GetMoltiRoomQuantityResult");
+//    m_room.fromJsonString(getValueByTag("GetMoltiRoomListResult"));
     m_errorMsg = getValueByTag("msg");
 }

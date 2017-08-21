@@ -45,7 +45,7 @@ void LoginPage::on_btnLogin_clicked()
     ApplicationModel *app = ModelManager::instance()->application();
     app->setUser(ui->username->currentText());
     app->setPassword(ui->password->text());
-    app->commit();
+    app->request();
 }
 
 void LoginPage::on_checkBox_clicked(bool checked)

@@ -14,7 +14,7 @@ AbstractModel::AbstractModel(QObject *parent) : QObject(parent)
     connect(m_http, SIGNAL(responseReady(QtSoapMessage)), this, SLOT(onResponseReady(QtSoapMessage)));
 }
 
-void AbstractModel::commit()
+void AbstractModel::request()
 {
     emit requestLaunch();
 
