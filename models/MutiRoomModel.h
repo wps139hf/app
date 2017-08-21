@@ -35,11 +35,11 @@ class MutiRoomModel : public AbstractModel
 public:
     explicit MutiRoomModel(QObject *parent = nullptr);
     QJsonValue value(const QString &key) const;
-protected:
-    void handleRequest();
-    void handleResponse();
+    void request();
 private:
     MultiRoom m_room;
+    QMap<QString, QJsonObject>m_map;
+    QList<QJsonObject>m_jsonObjectList;
 };
 
 #endif // MUTIROOMMODEL_H

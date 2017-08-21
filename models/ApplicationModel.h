@@ -21,7 +21,6 @@ public:
     bool valid();
 protected:
     void handleRequest();
-    void handleResponse();
 private:
     QString m_username;
     QString m_password;

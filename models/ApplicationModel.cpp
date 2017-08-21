@@ -45,17 +45,14 @@ bool ApplicationModel::valid()
 
 void ApplicationModel::handleRequest()
 {
-    setRequestMethod("Login");
-    addRequestArg("userno", m_username);
-    addRequestArg("password", m_password);
-    sendRequest();
-}
+    m_soap->setRequestMethod("Login");
+    m_soap->addRequestArg("userno", m_username);
+    m_soap->addRequestArg("password", m_password);
+    m_soap->submit();
 
-void ApplicationModel::handleResponse()
-{
-    m_isUserValid = getValueByTag("LoginResult") == "true" ? true : false;
-    m_errorMsg = getValueByTag("msg");
-    qDebug() << "LoginResult:" << getValueByTag("LoginResult");
-    qDebug() << "username:" << getValueByTag("username");
-    qDebug() << "msg:" << getValueByTag("msg");
+    m_isUserValid = m_soap->getValueByTag("LoginResult") == "true" ? true : false;
+    m_errorMsg = m_soap->getValueByTag("msg");
+    qDebug() << "LoginResult:" << m_soap->getValueByTag("LoginResult");
+    qDebug() << "username:" << m_soap->getValueByTag("username");
+    qDebug() << "msg:" << errorMsg();
 }

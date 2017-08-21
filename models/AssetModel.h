@@ -35,7 +35,6 @@ public:
     Asset *getAsset();
 protected:
     void handleRequest();
-    void handleResponse();
 private:
     QString m_number;
     Asset m_asset;

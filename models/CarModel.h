@@ -8,10 +8,6 @@ class CarModel : public AbstractModel
     Q_OBJECT
 public:
     explicit CarModel(QObject *parent = nullptr);
-
-protected:
-    void handleRequest();
-    void handleResponse();
 private:
 };
 
