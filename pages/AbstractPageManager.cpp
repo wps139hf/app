@@ -19,7 +19,7 @@ void AbstractPageManager::initilize()
 
         BasePage *page = qobject_cast<BasePage*>(widget);
         if(page){
-            connect(page, SIGNAL(error(QString)), this, SIGNAL(error(QString)));
+            connect(page, SIGNAL(notified(QString)), this, SIGNAL(notified(QString)));
         }
     }
 
@@ -59,7 +59,7 @@ void AbstractPageManager::showPrevPage()
 
 void AbstractPageManager::sendError(const QString &err)
 {
-    emit error(err);
+    emit notified(err);
 }
 
 void AbstractPageManager::setupConnections()
