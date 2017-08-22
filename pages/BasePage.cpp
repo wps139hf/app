@@ -58,9 +58,9 @@ void BasePage::setBackgroundColor(const QColor &color)
     update();
 }
 
-void BasePage::sendError(const QString &err)
+void BasePage::sendNotification(const QString &notification)
 {
-    emit error(err);
+    emit notified(notification);
 }
 
 void BasePage::init()

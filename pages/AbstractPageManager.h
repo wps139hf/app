@@ -20,7 +20,7 @@ public:
     void showPrevPage();
     void sendError(const QString &err);
 signals:
-    void error(const QString &err);
+    void notified(const QString &err);
 protected:
     virtual void setupConnections();
     void resizeEvent(QResizeEvent *e);

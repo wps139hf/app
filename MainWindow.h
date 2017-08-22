@@ -4,6 +4,7 @@
 #include "BasePage.h"
 
 #include "AbstractPageManager.h"
+#include "Notification.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +24,7 @@ private:
     void startUp();
     void wait(int msecond);
     Ui::MainWindow *ui;
+    QSharedPointer<Notification> m_notification;
 };
 
 #endif // MAINWINDOW_H

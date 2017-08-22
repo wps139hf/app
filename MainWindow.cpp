@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initilize();
 
+    m_notification = QSharedPointer<Notification>::create(this);
+
     startUp();
 }
 
@@ -29,8 +31,8 @@ MainWindow *MainWindow::instance()
 
 void MainWindow::setupConnections()
 {
-    connect(this, &MainWindow::error, [this](const QString &err){
-        qDebug() << "Error hintline:" << err;
+    connect(this, &MainWindow::notified, [this](const QString &notification){
+        m_notification->setText(notification);
     });
 
     connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){

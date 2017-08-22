@@ -66,7 +66,8 @@ SOURCES += \
     models/MutiRoomModel.cpp \
     pages/RoomList.cpp \
     models/SoapMessage.cpp \
-    utils/JSON.cpp
+    utils/JSON.cpp \
+    widgets/Notification.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -108,7 +109,8 @@ HEADERS += \
     models/MutiRoomModel.h \
     pages/RoomList.h \
     models/SoapMessage.h \
-    utils/JSON.h
+    utils/JSON.h \
+    widgets/Notification.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -133,7 +135,8 @@ FORMS += \
     pages/AssetScan.ui \
     pages/BusyPage.ui \
     pages/RoomPage2.ui \
-    pages/RoomList.ui
+    pages/RoomList.ui \
+    widgets/Notification.ui
 
 CONFIG += mobility
 MOBILITY = 

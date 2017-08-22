@@ -33,10 +33,10 @@ void LoginPage::on_btnLogin_clicked()
 
     if(model->valid()){
         model->setLogin(true);
-        qDebug() << "emit logined";
         emit logined();
+        sendNotification("登录成功");
     }else{
-        sendError(model->errorMsg());
+        sendNotification(model->errorMsg());
     }
 }
 
