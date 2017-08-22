@@ -3,12 +3,19 @@
 #include "ModelManager.h"
 #include "ListItem.h"
 
+#include <QVBoxLayout>
+
 RoomList::RoomList(QWidget *parent) :
     AnimatedPage(parent),
     ui(new Ui::RoomList)
 {
     ui->setupUi(this);
     setTitleBar(ui->titleBar);
+
+    m_vLayout = new QVBoxLayout;
+    m_vLayout->setContentsMargins(10, 20, 10, 20);
+
+    ui->tray->setLayout(m_vLayout);
 }
 
 RoomList::~RoomList()
@@ -37,8 +44,6 @@ void RoomList::refresh()
             QString applicant = object.value("申请人").toString();
             QString dateOfUse = object.value("使用日期").toString();
             QString timeOfUse = object.value("使用开始").toString();
-//            QString info = QString("申请记录：") + key + "-" + applicant + " "
-//                    + dateOfUse + " " + timeOfUse;
             QString info = applicant + " " + dateOfUse + " " + timeOfUse + " 申请单";
             ListItem *listItem = new ListItem(info, key, this);
 
@@ -48,10 +53,19 @@ void RoomList::refresh()
                 emit itemSelected();
             });
 
-            ui->verticalLayout->addWidget(listItem);
-            ui->verticalLayout->addStretch(2);
+            m_vLayout->addWidget(listItem, 1);
+            m_vLayout->addStretch(2);
         }
     }
+}
+
+void RoomList::resizeEvent(QResizeEvent *e)
+{
+    AnimatedPage::resizeEvent(e);
+    ui->titleBar->setGeometry(0, 0, width(), ui->titleBar->height());
+
+    int y = ui->titleBar->height() + ui->label->height();
+    ui->tray->setGeometry(0, y, width(), height() - y);
 }
 
 bool RoomList::contains(const QString &key)

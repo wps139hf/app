@@ -106,63 +106,39 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="username">
+      <widget class="QLineEdit" name="username">
        <property name="minimumSize">
         <size>
-         <width>87</width>
+         <width>200</width>
          <height>50</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
-         <pointsize>16</pointsize>
+         <pointsize>15</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QComboBox {
-	background-color: rgb(255, 255, 255);
+        <string notr="true">QLineEdit {
     border: 1px solid gray;
     border-radius: 5px;
-    padding: 1px 2px 1px 2px;  
-    min-width: 9em;
-	font-size:25pt;
+    background: white;
+    selection-background-color: green;
+    font-size: 15pt ;
 }
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 40px;
  
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid; /* just a single line */
-    border-top-right-radius: 3px; /* same radius as the QComboBox */
-    border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {
-	image: url(:/icons/icon-down-arrow.png);
-}
-
-QComboBox QAbstractItemView::item {
-    height: 50px;
-}
-QComboBox:on { /* shift the text when the popup opens */  
-     padding-top: 3px;  
-     padding-left: 4px;  
-}  </string>
+QLineEdit:hover {
+    border: 1px solid blue;
+}</string>
        </property>
-       <property name="editable">
-        <bool>true</bool>
-       </property>
-       <property name="currentText">
+       <property name="text">
         <string>sa</string>
        </property>
-       <item>
-        <property name="text">
-         <string>sa</string>
-        </property>
-       </item>
+       <property name="echoMode">
+        <enum>QLineEdit::Normal</enum>
+       </property>
       </widget>
      </item>
      <item>

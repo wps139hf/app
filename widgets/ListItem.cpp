@@ -43,12 +43,12 @@ ListItem::~ListItem()
 void ListItem::mousePressEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    setStyleSheet(PRESS_STYLE);
+//    setStyleSheet(PRESS_STYLE);
 }
 
 void ListItem::mouseReleaseEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    setStyleSheet(NORMAL_STYLE);
+//    setStyleSheet(NORMAL_STYLE);
     emit itemselected(m_keyword);
 }
