@@ -49,7 +49,7 @@
      </property>
      <property name="font">
       <font>
-       <family>宋体</family>
+       <family>微软雅黑</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -177,7 +177,7 @@
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -204,7 +204,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -231,7 +231,7 @@ background-color: rgb(255,255,255);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -258,7 +258,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -376,7 +376,7 @@ background-color: rgb(255,255,255);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -403,7 +403,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -430,7 +430,7 @@ background-color: rgb(255,255,255);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -457,7 +457,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -484,7 +484,7 @@ background-color: rgb(255,255,255);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -511,7 +511,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -538,7 +538,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -565,7 +565,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -592,7 +592,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -619,7 +619,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -646,7 +646,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -673,7 +673,7 @@ background-color: rgb(200,200,200);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -700,7 +700,7 @@ background-color: rgb(255,255,255);</string>
         </property>
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -742,7 +742,7 @@ background-color: rgb(255,255,255);</string>
        <widget class="QCheckBox" name="checkBox">
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -755,7 +755,7 @@ background-color: rgb(255,255,255);</string>
        <widget class="QCheckBox" name="checkBox_2">
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -768,7 +768,7 @@ background-color: rgb(255,255,255);</string>
        <widget class="QCheckBox" name="checkBox_3">
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -781,7 +781,7 @@ background-color: rgb(255,255,255);</string>
        <widget class="QCheckBox" name="checkBox_4">
         <property name="font">
          <font>
-          <family>宋体</family>
+          <family>微软雅黑</family>
           <pointsize>12</pointsize>
          </font>
         </property>
