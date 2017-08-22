@@ -31,6 +31,11 @@ QJsonObject MutiRoomModel::object(const QString &sn)
     return m_mapBySN.value(sn);
 }
 
+JsonMap MutiRoomModel::map()
+{
+    return m_mapBySN;
+}
+
 int MutiRoomModel::size()
 {
     return m_mapBySN.size();
