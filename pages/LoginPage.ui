@@ -126,6 +126,7 @@
     border-radius: 5px;
     padding: 1px 2px 1px 2px;  
     min-width: 9em;
+	font-size:25pt;
 }
 QComboBox::drop-down {
     subcontrol-origin: padding;
@@ -199,7 +200,7 @@ QComboBox:on { /* shift the text when the popup opens */
        </property>
        <property name="font">
         <font>
-         <pointsize>-1</pointsize>
+         <pointsize>15</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -208,7 +209,7 @@ QComboBox:on { /* shift the text when the popup opens */
     border-radius: 5px;
     background: white;
     selection-background-color: green;
-    font-size: 14px ;
+    font-size: 15pt ;
 }
  
 QLineEdit:hover {

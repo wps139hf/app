@@ -105,8 +105,12 @@ void MainWindow::setupConnections()
         showPage(ui->pageManager);
     });
     //roomList pages
-    connect(ui->pageRoomList, &RoomPage::backClicked, [this]{
+    connect(ui->pageRoomList, &RoomList::backClicked, [this]{
         showPage(ui->pageManager);
+    });
+
+    connect(ui->pageRoomList, &RoomList::itemSelected, [this]{
+        showPage(ui->pageRoom);
     });
     //room pages
     connect(ui->pageRoom, &RoomPage::backClicked, [this]{
