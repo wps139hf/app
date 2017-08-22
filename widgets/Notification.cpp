@@ -24,7 +24,7 @@ void Notification::setText(const QString &text)
 
     QFontMetrics fm(ui->label->font());
     int w = fm.width(text);
-    resize(w + 120, height());
+    resize(w + 80, height());
 
     int x = parentWidget()->width()/2 - width()/2;
     int y = parentWidget()->height() - height() - 20;
