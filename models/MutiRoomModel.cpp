@@ -21,11 +21,6 @@ MutiRoomModel::MutiRoomModel(QObject *parent)
 
 }
 
-QJsonValue MutiRoomModel::value(const QString &key) const
-{
-    return m_room.data.value(key);
-}
-
 QJsonObject MutiRoomModel::object(const QString &sn)
 {
     return m_mapBySN.value(sn);
@@ -39,6 +34,16 @@ JsonMap MutiRoomModel::map()
 int MutiRoomModel::size()
 {
     return m_mapBySN.size();
+}
+
+void MutiRoomModel::setCurrentObject(const QJsonObject &object)
+{
+    m_currentObject = object;
+}
+
+QJsonObject MutiRoomModel::currentObject()
+{
+    return m_currentObject;
 }
 
 void MutiRoomModel::init()

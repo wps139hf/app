@@ -34,13 +34,29 @@
        <height>44</height>
       </size>
      </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>44</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(57, 179, 255);</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QListWidget" name="list"/>
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">font-family:Microsoft YaHei;
+font-size:16pt;
+padding-left:10px;
+background-color:transparent;</string>
+     </property>
+     <property name="text">
+      <string>多功能厅申请信息:</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
