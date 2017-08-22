@@ -145,6 +145,7 @@ RESOURCES += \
     res/res.qrc
 
 DISTFILES += \
-    android-sources/AndroidManifest.xml
+    android-sources/AndroidManifest.xml \
+    res/fonts/microsoftyh.ttf
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android-sources
 

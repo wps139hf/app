@@ -107,7 +107,7 @@
      </property>
      <property name="font">
       <font>
-       <family>华文宋体</family>
+       <family>微软雅黑 Light</family>
        <pointsize>12</pointsize>
       </font>
      </property>
@@ -160,7 +160,7 @@
        </property>
        <property name="font">
         <font>
-         <family>宋体</family>
+         <family>微软雅黑 Light</family>
          <pointsize>18</pointsize>
         </font>
        </property>

@@ -24,5 +24,6 @@
         <file>icons/icon-repair.jpg</file>
         <file>icons/icon-room.jpg</file>
         <file>icons/icon-back.jpg</file>
+        <file>fonts/MicrosoftYaHei.ttf</file>
     </qresource>
 </RCC>
