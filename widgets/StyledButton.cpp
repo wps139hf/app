@@ -160,11 +160,11 @@ StyledButton::StyledButton(QWidget *parent)
                   "}" \
                   "QToolButton:pressed {"\
                                     "border: 0;"\
-                                    "background-color:rgb(240, 240, 240);"\
+                                    "background-color:rgb(240, 240, 235);"\
                                     "}"\
                   "QToolButton:checked {"\
                                     "border: 0;"\
-                                    "background-color:gray;"\
+                                    "background-color:rgb(240, 240, 235);"\
                                     "border-radius:6px;"\
                                     "}");
 }

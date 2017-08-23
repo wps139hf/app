@@ -26,7 +26,6 @@ protected:
 private:
     bool contains(const QString &key);
     Ui::RoomList *ui;
-    QVBoxLayout *m_vLayout;
     QList<QString>m_keyList;
 };
 

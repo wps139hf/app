@@ -51,7 +51,28 @@ color:white</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">QListWidget{
+	border:none;
+	background-color:rgb(255,255,255);
+	color:black;
+}
+QListWidget:item{
+	background-color:transparent;
+	border:none;
+	color:black;
+}
+QListWidget:item:!selected {
+	background-color:transparent;
+	border:none;
+	color:black;
+}
+
+QListWidget:item:selected {
+	background-color:transparent;
+	border:none;
+	color:black;
+}
+</string>
    </property>
    <property name="verticalScrollBarPolicy">
     <enum>Qt::ScrollBarAlwaysOff</enum>

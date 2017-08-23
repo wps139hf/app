@@ -68,7 +68,8 @@ SOURCES += \
     models/SoapMessage.cpp \
     utils/JSON.cpp \
     widgets/Notification.cpp \
-    widgets/ListItem.cpp
+    widgets/ListItem.cpp \
+    widgets/StyledList.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -112,7 +113,8 @@ HEADERS += \
     models/SoapMessage.h \
     utils/JSON.h \
     widgets/Notification.h \
-    widgets/ListItem.h
+    widgets/ListItem.h \
+    widgets/StyledList.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -139,7 +141,8 @@ FORMS += \
     pages/RoomPage2.ui \
     pages/RoomList.ui \
     widgets/Notification.ui \
-    widgets/ListItem.ui
+    widgets/ListItem.ui \
+    widgets/StyledList.ui
 
 CONFIG += mobility
 MOBILITY = 
