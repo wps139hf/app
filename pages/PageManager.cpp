@@ -34,6 +34,11 @@ MinePage *PageManager::minePage()
     return ui->pageMine;
 }
 
+void PageManager::sendNotification(const QString &notification)
+{
+    emit notified(notification);
+}
+
 void PageManager::resizeEvent(QResizeEvent *e)
 {
     Q_UNUSED(e);
@@ -88,7 +93,8 @@ void PageManager::initConnections()
         qDebug() << "toolbar: clicked:" << btnIndex;
         switch (btnIndex) {
         case ToolBar::Message:
-            showPage(ui->pageMsg);
+//            showPage(ui->pageMsg);
+            sendNotification("功能正在开发中");
             break;
         case ToolBar::Home:
             showPage(ui->pageHome);

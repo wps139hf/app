@@ -57,9 +57,9 @@ void AbstractPageManager::showPrevPage()
     }
 }
 
-void AbstractPageManager::sendError(const QString &err)
+void AbstractPageManager::sendNotification(const QString &notification)
 {
-    emit notified(err);
+    emit notified(notification);
 }
 
 void AbstractPageManager::setupConnections()

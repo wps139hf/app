@@ -31,18 +31,8 @@ MainWindow *MainWindow::instance()
 
 void MainWindow::setupConnections()
 {
-    connect(this, &MainWindow::notified, [this](const QString &notification){
-        m_notification->setText(notification);
-    });
-
-    connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){
-        ui->pageBusy->show();
-        ui->pageBusy->raise();
-        wait(50);
-    });
-    connect(ModelManager::instance(), &ModelManager::requestFinish, [this](){
-        ui->pageBusy->hide();
-    });
+    connectionsOnNotification();
+    connectionsOnBusyPage();
 
     connect(ui->pageWelcome, &WelcomePage::loginClicked, [this]{
         showPage(ui->pageLogin);
@@ -77,7 +67,7 @@ void MainWindow::setupConnections()
             if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
                 showPage(ui->pageRoomList);
             }else{
-                sendError(model->errorMsg());
+                sendNotification(model->errorMsg());
             }
             break;
         }
@@ -154,4 +144,26 @@ void MainWindow::wait(int msecond)
     QEventLoop loop;
     QTimer::singleShot(msecond, &loop, SLOT(quit()));
     loop.exec();
+}
+
+void MainWindow::connectionsOnNotification()
+{
+    connect(this, &MainWindow::notified, [this](const QString &notification){
+        m_notification->setText(notification);
+    });
+    connect(ui->pageManager, &PageManager::notified, [this](const QString &notification){
+        m_notification->setText(notification);
+    });
+}
+
+void MainWindow::connectionsOnBusyPage()
+{
+    connect(ModelManager::instance(), &ModelManager::requestLaunch, [this](){
+        ui->pageBusy->show();
+        ui->pageBusy->raise();
+        wait(50);
+    });
+    connect(ModelManager::instance(), &ModelManager::requestFinish, [this](){
+        ui->pageBusy->hide();
+    });
 }
