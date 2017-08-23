@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
     <number>0</number>
@@ -31,19 +34,26 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>0</height>
+       <height>26</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>26</height>
       </size>
      </property>
      <property name="font">
       <font>
-       <family>宋体</family>
-       <pointsize>18</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <family>微软雅黑</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(57, 179, 255);</string>
+      <string notr="true">background-color: rgb(135, 36, 79);
+color:white</string>
      </property>
      <property name="text">
       <string>常见应用</string>
@@ -77,12 +87,9 @@
       <widget class="StyledButton" name="btnAsset" native="true">
        <property name="minimumSize">
         <size>
-         <width>60</width>
-         <height>60</height>
+         <width>80</width>
+         <height>80</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: transparent;</string>
        </property>
       </widget>
      </item>
@@ -90,12 +97,9 @@
       <widget class="StyledButton" name="btnRepair" native="true">
        <property name="minimumSize">
         <size>
-         <width>75</width>
-         <height>75</height>
+         <width>80</width>
+         <height>80</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: transparent;</string>
        </property>
       </widget>
      </item>
@@ -103,12 +107,9 @@
       <widget class="StyledButton" name="btnBuy" native="true">
        <property name="minimumSize">
         <size>
-         <width>60</width>
-         <height>60</height>
+         <width>80</width>
+         <height>80</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: transparent;</string>
        </property>
       </widget>
      </item>
@@ -120,9 +121,6 @@
          <height>80</height>
         </size>
        </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: transparent;</string>
-       </property>
       </widget>
      </item>
      <item row="1" column="0">
@@ -133,21 +131,15 @@
          <height>80</height>
         </size>
        </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: transparent;</string>
-       </property>
       </widget>
      </item>
      <item row="0" column="3">
       <widget class="StyledButton" name="btnPrint" native="true">
        <property name="minimumSize">
         <size>
-         <width>60</width>
-         <height>60</height>
+         <width>80</width>
+         <height>80</height>
         </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: transparent;</string>
        </property>
       </widget>
      </item>

@@ -25,8 +25,8 @@ signals:
     void clicked(int btnIndex);
 
 protected:
-    void resizeEvent(QResizeEvent *e);
-    void paintEvent(QPaintEvent *e);
+//    void resizeEvent(QResizeEvent *e);
+//    void paintEvent(QPaintEvent *e);
 private:
     void relayout();
 
