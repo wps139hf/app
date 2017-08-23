@@ -17,7 +17,6 @@ public:
     ~BusyPage();
 protected:
     void resizeEvent(QResizeEvent *e);
-
 private:
     Ui::BusyPage *ui;
 };

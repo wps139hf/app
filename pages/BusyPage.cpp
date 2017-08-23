@@ -1,5 +1,7 @@
 #include "BusyPage.h"
 #include "ui_BusyPage.h"
+#include <QDebug>
+#include <QPoint>
 
 BusyPage::BusyPage(QWidget *parent) :
     QWidget(parent),
