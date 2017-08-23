@@ -41,7 +41,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>50</y>
      <width>194</width>
      <height>40</height>
@@ -60,14 +60,13 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
-padding-left:15px;</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>多功能厅申请信息:</string>
    </property>
   </widget>
-  <widget class="QWidget" name="tray" native="true">
+  <widget class="StyledList" name="list" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -83,9 +82,7 @@ padding-left:15px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(211, 211, 211);
-border:1px solid rgb(211, 211, 211);
-border-radius:10px</string>
+    <string notr="true"/>
    </property>
   </widget>
  </widget>
@@ -94,6 +91,12 @@ border-radius:10px</string>
    <class>TitleBar</class>
    <extends>QWidget</extends>
    <header>widgets/TitleBar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>StyledList</class>
+   <extends>QWidget</extends>
+   <header>widgets/StyledList.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

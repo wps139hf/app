@@ -82,10 +82,10 @@ void BasePage::showEvent(QShowEvent *e)
     refresh();
 }
 
-void BasePage::paintEvent(QPaintEvent *e)
-{
-    QWidget::paintEvent(e);
-    QPainter painter(this);
-    painter.fillRect(rect(), m_backgoundColor);
-}
+//void BasePage::paintEvent(QPaintEvent *e)
+//{
+//    QWidget::paintEvent(e);
+//    QPainter painter(this);
+//    painter.fillRect(rect(), m_backgoundColor);
+//}
 

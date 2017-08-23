@@ -11,11 +11,6 @@ RoomList::RoomList(QWidget *parent) :
 {
     ui->setupUi(this);
     setTitleBar(ui->titleBar);
-
-    m_vLayout = new QVBoxLayout;
-    m_vLayout->setContentsMargins(10, 20, 10, 20);
-
-    ui->tray->setLayout(m_vLayout);
 }
 
 RoomList::~RoomList()
@@ -45,16 +40,16 @@ void RoomList::refresh()
             QString dateOfUse = object.value("使用日期").toString();
             QString timeOfUse = object.value("使用开始").toString();
             QString info = applicant + " " + dateOfUse + " " + timeOfUse + " 申请单";
-            ListItem *listItem = new ListItem(info, key, this);
+            qDebug() << "info=" << info;
+            ListItem *item = new ListItem(info, key, this);
 
-            connect(listItem, &ListItem::itemselected, [this, model](const QString &key){
+            connect(item, &ListItem::itemselected, [this, model](const QString &key){
                 qDebug() << "key=" << key;
                 model->setCurrentObject(model->object(key));
                 emit itemSelected();
             });
 
-            m_vLayout->addWidget(listItem, 1);
-            m_vLayout->addStretch(2);
+            ui->list->addItem(item);
         }
     }
 }
@@ -65,7 +60,7 @@ void RoomList::resizeEvent(QResizeEvent *e)
     ui->titleBar->setGeometry(0, 0, width(), ui->titleBar->height());
 
     int y = ui->titleBar->height() + ui->label->height();
-    ui->tray->setGeometry(0, y, width(), height() - y);
+    ui->list->setGeometry(0, y, width(), height() - y);
 }
 
 bool RoomList::contains(const QString &key)
