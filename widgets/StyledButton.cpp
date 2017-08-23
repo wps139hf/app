@@ -152,9 +152,21 @@ StyledButton::StyledButton(QWidget *parent)
     setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     setIconSize(QSize(50, 50));
     setAutoRaise(true);
-    setStyleSheet("QToolButton{\
-                  border: 0;\
-              }");
+    setFocusPolicy(Qt::NoFocus);
+    setStyleSheet("QToolButton{"\
+                  "border: 0;"\
+                  "background-color:white;"\
+                  "border-radius:6px;"\
+                  "}" \
+                  "QToolButton:pressed {"\
+                                    "border: 0;"\
+                                    "background-color:rgb(240, 240, 240);"\
+                                    "}"\
+                  "QToolButton:checked {"\
+                                    "border: 0;"\
+                                    "background-color:gray;"\
+                                    "border-radius:6px;"\
+                                    "}");
 }
 
 void StyledButton::setPixmap(const QPixmap &pixmap)

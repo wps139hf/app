@@ -19,19 +19,20 @@
      <x>0</x>
      <y>0</y>
      <width>561</width>
-     <height>35</height>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>宋体</family>
-     <pointsize>18</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>微软雅黑</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(57, 179, 255);</string>
+    <string notr="true">background-color: rgb(135, 36, 79);
+color:white</string>
    </property>
    <property name="text">
     <string>通知公告</string>
@@ -44,9 +45,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>35</y>
+     <y>26</y>
      <width>561</width>
-     <height>192</height>
+     <height>201</height>
     </rect>
    </property>
    <property name="styleSheet">

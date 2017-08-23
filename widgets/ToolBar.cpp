@@ -53,19 +53,19 @@ void ToolBar::setChecked(int btnIndex)
     m_btnGrp->button(btnIndex)->click();
 }
 
-void ToolBar::resizeEvent(QResizeEvent *e)
-{
-    Q_UNUSED(e);
-    relayout();
-}
+//void ToolBar::resizeEvent(QResizeEvent *e)
+//{
+//    Q_UNUSED(e);
+////    relayout();
+//}
 
-void ToolBar::paintEvent(QPaintEvent *e)
-{
-    Q_UNUSED(e);
-    QPainter painter(this);
+//void ToolBar::paintEvent(QPaintEvent *e)
+//{
+//    Q_UNUSED(e);
+//    QPainter painter(this);
 
-    painter.fillRect(rect(), Qt::lightGray);
-}
+//    painter.fillRect(rect(), Qt::lightGray);
+//}
 
 void ToolBar::relayout()
 {

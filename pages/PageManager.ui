@@ -38,7 +38,6 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 170, 0);</string>
    </property>
-   <zorder>pageMine</zorder>
   </widget>
   <widget class="MinePage" name="pageMine" native="true">
    <property name="geometry">
@@ -63,7 +62,9 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(202, 202, 202);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid rgb(255, 255, 255);
+border-top-color: rgb(203, 203, 203);</string>
    </property>
   </widget>
  </widget>
