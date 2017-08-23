@@ -60,7 +60,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;
+    <string notr="true">background-color: rgb(255, 255, 255);
 padding-left:15px;</string>
    </property>
    <property name="text">
@@ -75,6 +75,12 @@ padding-left:15px;</string>
      <width>501</width>
      <height>401</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>15</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(211, 211, 211);
