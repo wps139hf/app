@@ -71,14 +71,29 @@
      </item>
      <item>
       <widget class="QLineEdit" name="lineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="font">
         <font>
-         <family>微软雅黑</family>
-         <pointsize>20</pointsize>
+         <pointsize>15</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: transparent</string>
+        <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: white;
+    selection-background-color: green;
+    font-size: 15pt ;
+}
+ 
+QLineEdit:hover {
+    border: 1px solid blue;
+}</string>
        </property>
        <property name="text">
         <string>604990000</string>

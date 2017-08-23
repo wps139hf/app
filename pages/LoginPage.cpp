@@ -27,7 +27,7 @@ void LoginPage::init()
 void LoginPage::on_btnLogin_clicked()
 {
     ApplicationModel *model = ModelManager::instance()->application();
-    model->setUser(ui->username->currentText());
+    model->setUser(ui->username->text());
     model->setPassword(ui->password->text());
     model->request();
 

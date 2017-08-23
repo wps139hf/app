@@ -3,6 +3,8 @@
 
 #include "AnimatedPage.h"
 #include "ListItem.h"
+#include <QResizeEvent>
+#include <QVBoxLayout>
 
 namespace Ui {
 class RoomList;
@@ -20,10 +22,11 @@ signals:
 protected:
     void init();
     void refresh();
+    void resizeEvent(QResizeEvent *e);
 private:
     bool contains(const QString &key);
     Ui::RoomList *ui;
-
+    QVBoxLayout *m_vLayout;
     QList<QString>m_keyList;
 };
 

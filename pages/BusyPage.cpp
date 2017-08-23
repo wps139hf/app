@@ -20,6 +20,7 @@ BusyPage::~BusyPage()
 void BusyPage::resizeEvent(QResizeEvent *e)
 {
     QWidget::resizeEvent(e);
-    ui->gifLabel->move(0.5*width()-0.5*ui->gifLabel->width(),0.25*height());
-    ui->textLabel->move(0.5*width()-0.5*ui->textLabel->width(),0.75*height());
+    int x = width()/2 - ui->tray->width()/2;
+    int y = height()/2 - ui->tray->height()/2;
+    ui->tray->move(x, y);
 }
