@@ -57,9 +57,9 @@ void AbstractPageManager::showPrevPage()
     }
 }
 
-void AbstractPageManager::sendError(const QString &err)
+void AbstractPageManager::sendNotification(const QString &notification)
 {
-    emit notified(err);
+    emit notified(notification);
 }
 
 void AbstractPageManager::setupConnections()
@@ -69,7 +69,7 @@ void AbstractPageManager::setupConnections()
 
 void AbstractPageManager::resizeEvent(QResizeEvent *e)
 {
-    Q_UNUSED(e);
+    QWidget::resizeEvent(e);
 
     for(auto page : m_pageList){
         page->resize(size());

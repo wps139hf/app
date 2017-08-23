@@ -24,7 +24,9 @@ public:
     MessagePage *messagePage();
     HomePage *homePage();
     MinePage *minePage();
-
+    void sendNotification(const QString &notification);
+signals:
+    void notified(const QString &notification);
 protected:
     void resizeEvent(QResizeEvent *e);
 

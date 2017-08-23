@@ -18,9 +18,9 @@ public:
      */
     void showPage(QWidget *page);
     void showPrevPage();
-    void sendError(const QString &err);
+    void sendNotification(const QString &notification);
 signals:
-    void notified(const QString &err);
+    void notified(const QString &notification);
 protected:
     virtual void setupConnections();
     void resizeEvent(QResizeEvent *e);

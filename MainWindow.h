@@ -23,6 +23,8 @@ protected:
 private:
     void startUp();
     void wait(int msecond);
+    void connectionsOnNotification();
+    void connectionsOnBusyPage();
     Ui::MainWindow *ui;
     QSharedPointer<Notification> m_notification;
 };
