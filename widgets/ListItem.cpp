@@ -19,11 +19,15 @@
 
 #define NORMAL_STYLE    "background-color:white; "\
     "font-family:Microsoft YaHei;" \
-    "font-size:14pt;"
+    "font-size:14pt;"\
+    "border:none;"\
+    "border-radius:0px;"
 
-#define PRESS_STYLE    "background-color:rgb(80,80,80,150); "\
+#define PRESS_STYLE    "background-color:rgb(150,150,150,150); "\
     "font-family:Microsoft YaHei;" \
-    "font-size:14pt;"
+    "font-size:14pt;"\
+    "border:none;"\
+    "border-radius:0px;"
 
 ListItem::ListItem(const QString &text, const QString &key, QWidget *parent)
     : QLabel(parent)
