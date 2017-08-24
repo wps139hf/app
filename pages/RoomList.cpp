@@ -49,7 +49,7 @@ void RoomList::refresh()
                 emit itemSelected();
             });
 
-            ui->list->addItem(item);
+            ui->list->addItem(item, QSize(ui->list->width(), item->height()));
         }
     }
 }
@@ -60,7 +60,8 @@ void RoomList::resizeEvent(QResizeEvent *e)
     ui->titleBar->setGeometry(0, 0, width(), ui->titleBar->height());
 
     int y = ui->titleBar->height() + ui->label->height();
-    ui->list->setGeometry(0, y, width(), height() - y);
+    ui->tray->setGeometry(10, y, width() - 20, height() - y);
+    ui->list->setGeometry(5, 5, ui->tray->width() - 10, ui->tray->height() - 10);
 }
 
 bool RoomList::contains(const QString &key)

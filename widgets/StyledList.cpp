@@ -25,9 +25,10 @@ StyledList::~StyledList()
     delete ui;
 }
 
-void StyledList::addItem(QWidget *w)
+void StyledList::addItem(QWidget *w, const QSize &sizeHint)
 {
     Q_ASSERT(w);
-    QListWidgetItem *item = new QListWidgetItem;
+    QListWidgetItem *item = new QListWidgetItem(ui->list);
+    item->setSizeHint(sizeHint);
     ui->list->setItemWidget(item, w);
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>499</width>
-    <height>494</height>
+    <width>733</width>
+    <height>715</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -66,24 +66,39 @@
     <string>多功能厅申请信息:</string>
    </property>
   </widget>
-  <widget class="StyledList" name="list" native="true">
+  <widget class="QWidget" name="tray" native="true">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>90</y>
-     <width>501</width>
-     <height>401</height>
+     <x>30</x>
+     <y>110</y>
+     <width>451</width>
+     <height>331</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>微软雅黑</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(255, 255, 255);
+border:1px solid rgb(212, 212, 212);
+border-radius:10px;</string>
    </property>
+   <widget class="StyledList" name="list" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>341</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <customwidgets>
