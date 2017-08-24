@@ -8,12 +8,16 @@
 
 int main(int argc, char *argv[])
 {
+
     installLogcatMessageHandler("APP");
 
     qRegisterMetaType<QtSoapMessage>("QtSoapMessage");
 
     QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
+
+    QCoreApplication::setOrganizationName("爱菊小学");
+    QCoreApplication::setApplicationName("爱菊微后勤");
 
     //set font
     int fontId = QFontDatabase::addApplicationFont(":/fonts/MicrosoftYaHei.ttf");
