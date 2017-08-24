@@ -1,4 +1,5 @@
 #include "MutiRoomModel.h"
+#include "ModelManager.h"
 
 MultiRoom::MultiRoom()
 {
@@ -48,6 +49,7 @@ QJsonObject MutiRoomModel::currentObject()
 
 void MutiRoomModel::init()
 {
+    m_username = ModelManager::instance()->application()->user();
     m_objectList.clear();
     m_mapBySN.clear();
 }

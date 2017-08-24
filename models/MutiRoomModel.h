@@ -30,7 +30,6 @@ protected:
     QJsonObject toJson();
     void fromJson(const QJsonObject &object);
 };
-typedef QMap<QString, QJsonObject> JsonMap;
 
 class MutiRoomModel : public AbstractModel
 {
@@ -46,6 +45,7 @@ protected:
     void init();
     void handleRequest();
 private:
+    QString m_username;
     MultiRoom m_room;
     QList<QJsonObject> m_objectList;
     JsonMap m_mapBySN;

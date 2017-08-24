@@ -69,7 +69,10 @@ SOURCES += \
     widgets/Notification.cpp \
     widgets/ListItem.cpp \
     widgets/StyledList.cpp \
-    widgets/BannerWidget.cpp
+    widgets/BannerWidget.cpp \
+    models/RepairModel.cpp \
+    models/BuyModel.cpp \
+    models/PrintModel.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -114,7 +117,10 @@ HEADERS += \
     widgets/Notification.h \
     widgets/ListItem.h \
     widgets/StyledList.h \
-    widgets/BannerWidget.h
+    widgets/BannerWidget.h \
+    models/RepairModel.h \
+    models/BuyModel.h \
+    models/PrintModel.h
 
 FORMS += \
     pages/HomePage.ui \

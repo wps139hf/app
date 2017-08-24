@@ -93,8 +93,8 @@ void PageManager::initConnections()
         qDebug() << "toolbar: clicked:" << btnIndex;
         switch (btnIndex) {
         case ToolBar::Message:
-//            showPage(ui->pageMsg);
-            sendNotification("功能正在开发中");
+            showPage(ui->pageMsg);
+//            sendNotification("功能正在开发中");
             break;
         case ToolBar::Home:
             showPage(ui->pageHome);
