@@ -1,23 +1,22 @@
-#ifndef SLIDERPICTURE_H
-#define SLIDERPICTURE_H
+#ifndef BANNERWIDGET_H
+#define BANNERWIDGET_H
 
 #include <QApplication>
 #include <QWidget>
-#include <QPushButton>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QVector>
 #include <QDebug>
-/************SliderPicture**************/
-class SliderPicture : public QWidget
+/************BannerWidget**************/
+class BannerWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit SliderPicture(QWidget *parent = 0);
-    ~SliderPicture();
+    explicit BannerWidget(QWidget *parent = 0);
+    ~BannerWidget();
 
 protected:
     void resizeEvent(QResizeEvent *e);
@@ -45,4 +44,4 @@ private:
     int current_pos_x;
 };
 
-#endif // SLIDERPICTURE_H
+#endif // BANNERWIDGET_H

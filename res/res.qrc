@@ -14,16 +14,16 @@
         <file>icons/icon-checkbox-normal.png</file>
         <file>icons/icon-down-arrow.png</file>
         <file>icons/loading.gif</file>
-        <file>icons/icon-asset.jpg</file>
-        <file>icons/icon-buy.jpg</file>
-        <file>icons/icon-car.jpg</file>
-        <file>icons/icon-home.jpg</file>
-        <file>icons/icon-mine.jpg</file>
-        <file>icons/icon-msg.jpg</file>
-        <file>icons/icon-print.jpg</file>
-        <file>icons/icon-repair.jpg</file>
-        <file>icons/icon-room.jpg</file>
-        <file>icons/icon-back.jpg</file>
         <file>fonts/MicrosoftYaHei.ttf</file>
+        <file>icons/icon-home.png</file>
+        <file>icons/icon-asset.png</file>
+        <file>icons/icon-back.png</file>
+        <file>icons/icon-buy.png</file>
+        <file>icons/icon-car.png</file>
+        <file>icons/icon-mine.png</file>
+        <file>icons/icon-msg.png</file>
+        <file>icons/icon-print.png</file>
+        <file>icons/icon-repair.png</file>
+        <file>icons/icon-room.png</file>
     </qresource>
 </RCC>

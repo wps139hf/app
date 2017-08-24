@@ -41,7 +41,6 @@ SOURCES += \
     pages/NoticeDisplay.cpp \
     pages/MessagePage.cpp \
     pages/MinePage.cpp \
-    widgets/SliderPicture.cpp \
     pages/PageManager.cpp \
     pages/WelcomePage.cpp \
     pages/LoginPage.cpp \
@@ -69,7 +68,8 @@ SOURCES += \
     utils/JSON.cpp \
     widgets/Notification.cpp \
     widgets/ListItem.cpp \
-    widgets/StyledList.cpp
+    widgets/StyledList.cpp \
+    widgets/BannerWidget.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -86,7 +86,6 @@ HEADERS += \
     pages/NoticeDisplay.h \
     pages/MessagePage.h \
     pages/MinePage.h \
-    widgets/SliderPicture.h \
     pages/PageManager.h \
     pages/WelcomePage.h \
     pages/LoginPage.h \
@@ -114,7 +113,8 @@ HEADERS += \
     utils/JSON.h \
     widgets/Notification.h \
     widgets/ListItem.h \
-    widgets/StyledList.h
+    widgets/StyledList.h \
+    widgets/BannerWidget.h
 
 FORMS += \
     pages/HomePage.ui \
