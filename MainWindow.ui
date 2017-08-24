@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="PageManager" name="pageManager" native="true">
    <property name="geometry">
     <rect>
@@ -23,7 +26,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="WelcomePage" name="pageWelcome" native="true">
@@ -36,7 +39,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="CarPage" name="pageCar" native="true">
@@ -49,7 +52,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="RepairPage" name="pageRepair" native="true">
@@ -62,7 +65,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="BuyPage" name="pageBuy" native="true">
@@ -75,7 +78,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="LoginPage" name="pageLogin" native="true">
@@ -88,7 +91,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="PrintPage" name="pagePrint" native="true">
@@ -101,7 +104,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="RoomPage" name="pageRoom" native="true">
@@ -114,7 +117,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="AssetScan" name="pageAssetScan" native="true">
@@ -127,7 +130,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="AssetQuery" name="pageAssetQuery" native="true">
@@ -140,7 +143,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="AssetInfo" name="pageAssetInfo" native="true">
@@ -153,7 +156,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="BusyPage" name="pageBusy" native="true">
@@ -166,7 +169,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0, 120);</string>
+    <string notr="true">background-color: rgb(0, 0, 0, 200);</string>
    </property>
   </widget>
   <widget class="RoomList" name="pageRoomList" native="true">
@@ -179,7 +182,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(213, 213, 213);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
  </widget>

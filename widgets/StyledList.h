@@ -15,7 +15,7 @@ public:
     explicit StyledList(QWidget *parent = 0);
     ~StyledList();
 
-    void addItem(QWidget *w);
+    void addItem(QWidget *w, const QSize &sizeHint);
 
 private:
     Ui::StyledList *ui;

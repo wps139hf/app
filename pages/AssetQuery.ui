@@ -23,6 +23,9 @@
    <property name="rightMargin">
     <number>0</number>
    </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="TitleBar" name="titleBar" native="true">
      <property name="minimumSize">
@@ -39,10 +42,16 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <property name="leftMargin">
-      <number>10</number>
+      <number>15</number>
+     </property>
+     <property name="topMargin">
+      <number>9</number>
      </property>
      <property name="rightMargin">
-      <number>10</number>
+      <number>15</number>
+     </property>
+     <property name="bottomMargin">
+      <number>9</number>
      </property>
      <item>
       <widget class="QLabel" name="label">
@@ -55,7 +64,7 @@
        <property name="font">
         <font>
          <family>微软雅黑</family>
-         <pointsize>20</pointsize>
+         <pointsize>18</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -100,18 +109,38 @@ QLineEdit:hover {
        </property>
       </widget>
      </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>48</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <spacer name="verticalSpacer">
+      <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType">
         <enum>QSizePolicy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>20</width>
-         <height>40</height>
+         <width>40</width>
+         <height>20</height>
         </size>
        </property>
       </spacer>
@@ -120,8 +149,8 @@ QLineEdit:hover {
       <widget class="QPushButton" name="btnOk">
        <property name="minimumSize">
         <size>
-         <width>0</width>
-         <height>50</height>
+         <width>100</width>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
@@ -130,12 +159,15 @@ QLineEdit:hover {
          <pointsize>16</pointsize>
         </font>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
     border: none;
 	background-color: rgb(0, 170, 255);
 	color: white;   
-	border-radius: 25px;                        
+	border-radius: 20px;                        
 }
 
 QPushButton:pressed{
@@ -147,6 +179,22 @@ QPushButton:pressed{
         <string>确认</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>

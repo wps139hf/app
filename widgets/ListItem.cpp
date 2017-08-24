@@ -17,15 +17,13 @@
  "}"
 #endif
 
-#define NORMAL_STYLE    "background-color:transparent; "\
-    "padding-left:20px;"\
+#define NORMAL_STYLE    "background-color:white; "\
     "font-family:Microsoft YaHei;" \
-    "font-size:16pt;"
+    "font-size:14pt;"
 
-#define PRESS_STYLE    "background-color:transparent; "\
-    "padding-left:20px;"\
+#define PRESS_STYLE    "background-color:rgb(80,80,80,150); "\
     "font-family:Microsoft YaHei;" \
-    "font-size:16pt;"
+    "font-size:14pt;"
 
 ListItem::ListItem(const QString &text, const QString &key, QWidget *parent)
     : QLabel(parent)
@@ -43,12 +41,12 @@ ListItem::~ListItem()
 void ListItem::mousePressEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-//    setStyleSheet(PRESS_STYLE);
+    setStyleSheet(PRESS_STYLE);
 }
 
 void ListItem::mouseReleaseEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-//    setStyleSheet(NORMAL_STYLE);
+    setStyleSheet(NORMAL_STYLE);
     emit itemselected(m_keyword);
 }
