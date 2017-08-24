@@ -46,6 +46,10 @@ void MainWindow::setupConnections()
         showPage(ui->pageManager);
     });
 
+    connect(ui->pageManager->minePage(), &MinePage::logout, [this](){
+        showPage(ui->pageWelcome);
+    });
+
     connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
         switch (app) {
         case App::Car:

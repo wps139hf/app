@@ -6,6 +6,7 @@
 ApplicationModel::ApplicationModel(QObject *parent)
     : AbstractModel(parent)
 {
+    m_isLogined = m_setting.value("isLogined", false).toBool();
 }
 
 void ApplicationModel::setUser(const QString &user)
@@ -21,6 +22,7 @@ void ApplicationModel::setPassword(const QString &password)
 void ApplicationModel::setLogin(bool enable)
 {
     m_isLogined = enable;
+    m_setting.setValue("isLogined", m_isLogined);
 }
 
 QString ApplicationModel::user()

@@ -26,6 +26,7 @@ private:
     QString m_password;
     bool m_isLogined = false;
     bool m_isUserValid = false;
+    QSettings m_setting;
 };
 
 #endif // APPLICATIONMODEL_H
