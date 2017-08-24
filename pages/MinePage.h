@@ -14,8 +14,12 @@ class MinePage : public BasePage
 public:
     explicit MinePage(QWidget *parent = 0);
     ~MinePage();
+signals:
+    void logout();
 protected:
     void init();
+private slots:
+    void on_btnLogout_clicked();
 private:
     Ui::MinePage *ui;
 };
