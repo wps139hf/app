@@ -5,6 +5,7 @@
 #include "SoapMessage.h"
 #include "JSON.h"
 
+typedef QMap<QString, QJsonObject> JsonMap;
 
 class AbstractModel : public QObject
 {

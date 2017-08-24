@@ -52,14 +52,44 @@ void MainWindow::setupConnections()
             showPage(ui->pageCar);
             break;
         case App::Repair:
-            showPage(ui->pageRepair);
+        {
+//            sendNotification(tr("功能正在开发中"));
+#if 1
+//            showPage(ui->pageRepair);
+            RepairModel *model = ModelManager::instance()->repair();
+            model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+
+            }else{
+                sendNotification(model->errorMsg());
+            }
+#endif
             break;
+        }
         case App::Buy:
-            showPage(ui->pageBuy);
+        {
+//            showPage(ui->pageBuy);
+            BuyModel *model = ModelManager::instance()->buy();
+            model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+
+            }else{
+                sendNotification(model->errorMsg());
+            }
             break;
+        }
         case App::Print:
-            showPage(ui->pagePrint);
+        {
+//            showPage(ui->pagePrint);
+            PrintModel *model = ModelManager::instance()->print();
+            model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+
+            }else{
+                sendNotification(model->errorMsg());
+            }
             break;
+        }
         case App::Room:
         {
             MutiRoomModel *model = ModelManager::instance()->multiRoom();

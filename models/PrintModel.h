@@ -12,6 +12,10 @@ public:
 protected:
     void init();
     void handleRequest();
+private:
+    QList<QJsonObject> m_objectList;
+    QString m_username;
+    JsonMap m_mapBySN;
 };
 
 #endif // PRINTMODEL_H
