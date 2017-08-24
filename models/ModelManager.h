@@ -5,6 +5,10 @@
 #include "ApplicationModel.h"
 #include "AssetModel.h"
 #include "MutiRoomModel.h"
+#include "PrintModel.h"
+#include "BuyModel.h"
+#include "CarModel.h"
+#include "RepairModel.h"
 
 class ModelManager : public QObject
 {
@@ -12,8 +16,12 @@ class ModelManager : public QObject
 public:
     explicit ModelManager(QObject *parent = nullptr);
     ApplicationModel *application();
+    CarModel *car();
     AssetModel *asset();
     MutiRoomModel *multiRoom();
+    PrintModel *print();
+    BuyModel *buy();
+    RepairModel *repair();
 
     static ModelManager *instance();
 signals:

@@ -11,16 +11,40 @@ ApplicationModel *ModelManager::application()
     return &app;
 }
 
+CarModel *ModelManager::car()
+{
+    static CarModel c(this);
+    return &c;
+}
+
 AssetModel *ModelManager::asset()
 {
-    static AssetModel asset(this);
-    return &asset;
+    static AssetModel a(this);
+    return &a;
 }
 
 MutiRoomModel *ModelManager::multiRoom()
 {
     static MutiRoomModel room(this);
     return &room;
+}
+
+PrintModel *ModelManager::print()
+{
+    static PrintModel p(this);
+    return &p;
+}
+
+BuyModel *ModelManager::buy()
+{
+    static BuyModel b(this);
+    return &b;
+}
+
+RepairModel *ModelManager::repair()
+{
+    static RepairModel r(this);
+    return &r;
 }
 
 ModelManager *ModelManager::m_instance = Q_NULLPTR;
