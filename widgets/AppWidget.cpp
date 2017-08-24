@@ -10,22 +10,22 @@ AppWidget::AppWidget(QWidget *parent) :
     ui->setupUi(this);
 
     ui->btnCar->setText(tr("用车"));
-    ui->btnCar->setPixmap(QPixmap("://icons/icon-car.jpg"));
+    ui->btnCar->setPixmap(QPixmap("://icons/icon-car.png"));
 
     ui->btnRepair->setText(tr("维修"));
-    ui->btnRepair->setPixmap(QPixmap("://icons/icon-repair.jpg"));
+    ui->btnRepair->setPixmap(QPixmap("://icons/icon-repair.png"));
 
     ui->btnBuy->setText(tr("请购"));
-    ui->btnBuy->setPixmap(QPixmap("://icons/icon-buy.jpg"));
+    ui->btnBuy->setPixmap(QPixmap("://icons/icon-buy.png"));
 
     ui->btnPrint->setText(tr("文印"));
-    ui->btnPrint->setPixmap(QPixmap("://icons/icon-print.jpg"));
+    ui->btnPrint->setPixmap(QPixmap("://icons/icon-print.png"));
 
     ui->btnRoom->setText(tr("多功能厅"));
-    ui->btnRoom->setPixmap(QPixmap("://icons/icon-room.jpg"));
+    ui->btnRoom->setPixmap(QPixmap("://icons/icon-room.png"));
 
     ui->btnAsset->setText(tr("资产"));
-    ui->btnAsset->setPixmap(QPixmap("://icons/icon-asset.jpg"));
+    ui->btnAsset->setPixmap(QPixmap("://icons/icon-asset.png"));
 
     m_btnGrp = new QButtonGroup(this);
     m_btnGrp->addButton(ui->btnCar, App::Car);
