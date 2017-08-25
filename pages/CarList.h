@@ -2,6 +2,7 @@
 #define CARLIST_H
 
 #include "AnimatedPage.h"
+#include "ModelManager.h"
 
 namespace Ui {
 class CarList;
@@ -19,10 +20,12 @@ signals:
 protected:
     void init();
     void refresh();
-//    void resizeEvent(QResizeEvent *e);
+    void resizeEvent(QResizeEvent *e);
 private:
-    bool contains(const QString &key);
+    bool contains(int key);
+    void addItems(const JsonObjectMap &map);
     Ui::CarList *ui;
+    QList<int>m_keyList;
 };
 
 #endif // CARLIST_H

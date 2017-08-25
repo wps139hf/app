@@ -132,7 +132,7 @@ void MainWindow::connectionsOnCar()
     });
 
     connect(ui->pageCar, &CarPage::backClicked, [this]{
-        showPage(ui->pageCar);
+        showPage(ui->pageCarList);
     });
 }
 

@@ -9,15 +9,15 @@ class ListItem : public QLabel
     Q_OBJECT
 
 public:
-    explicit ListItem(const QString &text, const QString &key, QWidget *parent = 0);
+    explicit ListItem(const QString &text, int index, QWidget *parent = 0);
     ~ListItem();
 signals:
-    void itemselected(const QString &keyword);
+    void itemselected(int index);
 protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
 private:
-    QString m_keyword;
+    int m_index = 0;
 };
 
 #endif // LISTITEM_H

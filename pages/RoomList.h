@@ -2,9 +2,8 @@
 #define ROOMLIST_H
 
 #include "AnimatedPage.h"
-#include "ListItem.h"
-#include <QResizeEvent>
-#include <QVBoxLayout>
+#include "ModelManager.h"
+
 
 namespace Ui {
 class RoomList;
@@ -24,9 +23,10 @@ protected:
     void refresh();
     void resizeEvent(QResizeEvent *e);
 private:
-    bool contains(const QString &key);
+    bool contains(int index);
+    void addItems(const JsonObjectMap &map);
     Ui::RoomList *ui;
-    QList<QString>m_keyList;
+    QList<int>m_keyList;
 };
 
 #endif // ROOMLIST_H

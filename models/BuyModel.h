@@ -1,20 +1,17 @@
 #ifndef BUYMODEL_H
 #define BUYMODEL_H
 
-#include "AbstractModel.h"
+#include "AppBaseModel.h"
 
-class BuyModel : public AbstractModel
+class BuyModel : public AppBaseModel
 {
     Q_OBJECT
 public:
     explicit BuyModel(QObject *parent = nullptr);
-
 protected:
-    void init();
-    void handleRequest();
-private:
-    QList<QJsonObject> m_objectList;
-    QString m_username;
+    void getQuantity() override;
+    void getList() override;
+    void filterObjects() override;
 };
 
 #endif // BUYMODEL_H

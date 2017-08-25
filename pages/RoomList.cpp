@@ -27,31 +27,8 @@ void RoomList::init()
 
 void RoomList::refresh()
 {
-    MutiRoomModel *model = ModelManager::instance()->multiRoom();
-    if(model){
-        JsonMap jsonMap = model->map();
-        for(auto key : jsonMap.keys()){
-            if(contains(key)){
-                continue;
-            }
-            m_keyList.append(key);
-            QJsonObject object = jsonMap.value(key);
-            QString applicant = object.value("申请人").toString();
-            QString dateOfUse = object.value("使用日期").toString();
-            QString timeOfUse = object.value("使用开始").toString();
-            QString info = applicant + " " + dateOfUse + " " + timeOfUse + " 申请单";
-            qDebug() << "info=" << info;
-            ListItem *item = new ListItem(info, key, this);
-
-            connect(item, &ListItem::itemselected, [this, model](const QString &key){
-                qDebug() << "key=" << key;
-                model->setCurrentObject(model->object(key));
-                emit itemSelected();
-            });
-
-            ui->list->addItem(item, QSize(ui->list->width(), item->height()));
-        }
-    }
+    addItems(ModelManager::instance()->multiRoom()->pendingMap());
+    addItems(ModelManager::instance()->multiRoom()->doneMap());
 }
 
 void RoomList::resizeEvent(QResizeEvent *e)
@@ -64,13 +41,38 @@ void RoomList::resizeEvent(QResizeEvent *e)
     ui->list->setGeometry(5, 5, ui->tray->width() - 10, ui->tray->height() - 10);
 }
 
-bool RoomList::contains(const QString &key)
+bool RoomList::contains(int index)
 {
     for(auto item : m_keyList){
-        if(item == key){
+        if(item == index){
             return true;
         }
     }
     return false;
+}
+
+void RoomList::addItems(const JsonObjectMap &map)
+{
+    for(auto index : map.keys()){
+        if(contains(index)){
+            continue;
+        }
+        m_keyList.append(index);
+
+        QJsonObject object = map.value(index);
+        QString applicant = object.value("申请人").toString();
+        QString dateOfUse = object.value("使用日期").toString();
+        QString timeOfUse = object.value("使用开始").toString();
+        QString info = applicant + " " + dateOfUse + " " + timeOfUse + " 申请单";
+
+        ListItem *item = new ListItem(info, index, this);
+
+        connect(item, &ListItem::itemselected, [this](int index){
+            ModelManager::instance()->multiRoom()->setCurrentObject(index);
+            emit itemSelected();
+        });
+
+        ui->list->addItem(item, QSize(ui->list->width(), item->height()));
+    }
 }
 

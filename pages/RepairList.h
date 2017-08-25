@@ -2,6 +2,7 @@
 #define REPAIRLIST_H
 
 #include "AnimatedPage.h"
+#include "ModelManager.h"
 
 namespace Ui {
 class RepairList;
@@ -19,8 +20,12 @@ signals:
 protected:
     void init();
     void refresh();
+    void resizeEvent(QResizeEvent *e);
 private:
+    bool contains(int key);
+    void addItems(const JsonObjectMap &map);
     Ui::RepairList *ui;
+    QList<int>m_keyList;
 };
 
 #endif // REPAIRLIST_H

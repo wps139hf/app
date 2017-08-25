@@ -2,6 +2,7 @@
 #define BUYLIST_H
 
 #include "AnimatedPage.h"
+#include "ModelManager.h"
 
 namespace Ui {
 class BuyList;
@@ -19,8 +20,12 @@ signals:
 protected:
     void init();
     void refresh();
+    void resizeEvent(QResizeEvent *e);
 private:
+    bool contains(int key);
+    void addItems(const JsonObjectMap &map);
     Ui::BuyList *ui;
+    QList<int>m_keyList;
 };
 
 #endif // BUYLIST_H
