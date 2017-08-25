@@ -46,7 +46,6 @@ protected:
     void handleRequest();
 private:
     QString m_username;
-    MultiRoom m_room;
     QList<QJsonObject> m_objectList;
     JsonMap m_mapBySN;
     QJsonObject m_currentObject;

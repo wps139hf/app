@@ -6,6 +6,8 @@
 #include "AbstractPageManager.h"
 #include "Notification.h"
 
+#include <QEvent>
+
 namespace Ui {
 class MainWindow;
 }
@@ -20,11 +22,19 @@ public:
     static MainWindow *instance();
 protected:
     void setupConnections();
+    void keyReleaseEvent(QKeyEvent *event);
 private:
     void startUp();
     void wait(int msecond);
+    void connectionsOnLogin();
     void connectionsOnNotification();
     void connectionsOnBusyPage();
+    void connectionsOnCar();
+    void connectionsOnRepair();
+    void connectionsOnBuy();
+    void connectionsOnPrint();
+    void connectionsOnRoom();
+    void connectionsOnAsset();
     Ui::MainWindow *ui;
     QSharedPointer<Notification> m_notification;
 };

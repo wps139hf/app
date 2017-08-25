@@ -1,14 +1,17 @@
 #ifndef CARMODEL_H
 #define CARMODEL_H
 
-#include "AbstractModel.h"
+#include "AppBaseModel.h"
 
-class CarModel : public AbstractModel
+class CarModel : public AppBaseModel
 {
     Q_OBJECT
 public:
     explicit CarModel(QObject *parent = nullptr);
-private:
+protected:
+    void getQuantity() override;
+    void getList() override;
+    void filterObjects() override;
 };
 
 #endif // CARMODEL_H

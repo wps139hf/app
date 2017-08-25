@@ -72,7 +72,12 @@ SOURCES += \
     widgets/BannerWidget.cpp \
     models/RepairModel.cpp \
     models/BuyModel.cpp \
-    models/PrintModel.cpp
+    models/PrintModel.cpp \
+    models/AppBaseModel.cpp \
+    pages/CarList.cpp \
+    pages/RepairList.cpp \
+    pages/BuyList.cpp \
+    pages/PrintList.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -120,7 +125,12 @@ HEADERS += \
     widgets/BannerWidget.h \
     models/RepairModel.h \
     models/BuyModel.h \
-    models/PrintModel.h
+    models/PrintModel.h \
+    models/AppBaseModel.h \
+    pages/CarList.h \
+    pages/RepairList.h \
+    pages/BuyList.h \
+    pages/PrintList.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -148,7 +158,11 @@ FORMS += \
     pages/RoomList.ui \
     widgets/Notification.ui \
     widgets/ListItem.ui \
-    widgets/StyledList.ui
+    widgets/StyledList.ui \
+    pages/CarList.ui \
+    pages/RepairList.ui \
+    pages/BuyList.ui \
+    pages/PrintList.ui
 
 CONFIG += mobility
 MOBILITY = 
