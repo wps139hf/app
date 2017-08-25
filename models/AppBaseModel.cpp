@@ -1,6 +1,6 @@
 #include "AppBaseModel.h"
 #include "ModelManager.h"
-
+#include <QDebug>
 
 AppBaseModel::AppBaseModel(QObject *parent)
     : AbstractModel(parent)
@@ -45,6 +45,7 @@ void AppBaseModel::handleRequest()
 {
     getQuantity();
     if(m_count > 0){
+        qDebug() << "count = " << m_count;
         getList();
         filterObjects();
         outputObject();

@@ -23,7 +23,7 @@ void PrintModel::getList()
     m_soap->addRequestArg("userNo", m_username);
     m_soap->submit();
 
-    m_objectList = JSON::toList(m_soap->getValueByTag("GetDocumentQuantityResult"));
+    m_objectList = JSON::toList(m_soap->getValueByTag("GetDocumentListResult"));
 }
 
 void PrintModel::filterObjects()

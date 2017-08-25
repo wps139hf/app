@@ -24,7 +24,7 @@ void RepairModel::getList()
     m_soap->addRequestArg("userNo", m_username);
     m_soap->submit();
 
-    m_objectList = JSON::toList(m_soap->getValueByTag("GetRepairQuantityResult"));
+    m_objectList = JSON::toList(m_soap->getValueByTag("GetRepairListResult"));
 }
 
 void RepairModel::filterObjects()

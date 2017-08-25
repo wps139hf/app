@@ -57,10 +57,9 @@ void PrintList::addItems(const JsonObjectMap &map)
         m_keyList.append(index);
 
         QJsonObject object = map.value(index);
-        QString applicant = object.value("申请人").toString();
-        QString dateOfUse = object.value("使用日期").toString();
-        QString timeOfUse = object.value("使用开始").toString();
-        QString info = applicant + " " + dateOfUse + " " + timeOfUse + " 申请单";
+        QString applicant = object.value("送印人").toString();
+        QString date = object.value("送印时间").toString();
+        QString info = applicant + " " + date;
 
         ListItem *item = new ListItem(info, index, this);
         ui->list->addItem(item, QSize(ui->list->width(), item->height()));
