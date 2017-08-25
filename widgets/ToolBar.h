@@ -26,7 +26,7 @@ signals:
 
 protected:
 //    void resizeEvent(QResizeEvent *e);
-//    void paintEvent(QPaintEvent *e);
+    void paintEvent(QPaintEvent *e);
 private:
     void relayout();
 

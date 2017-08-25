@@ -14,16 +14,16 @@ ToolBar::ToolBar(QWidget *parent) :
 
     ui->btnMsg->setCheckable(true);
     ui->btnMsg->setText(tr("消息"));
-    ui->btnMsg->setPixmap(QPixmap("://icons/icon-msg.png"));
+    ui->btnMsg->setPixmap(QPixmap("://icons/icon-msg-unselected.jpg"));
     ui->btnMsg->setMsgCount(10);
 
     ui->btnHome->setCheckable(true);
     ui->btnHome->setText(tr("主页"));
-    ui->btnHome->setPixmap(QPixmap("://icons/icon-home.png"));
+    ui->btnHome->setPixmap(QPixmap("://icons/icon-home-unselected.jpg"));
 
     ui->btnMine->setCheckable(true);
     ui->btnMine->setText(tr("我的"));
-    ui->btnMine->setPixmap(QPixmap("://icons/icon-mine.png"));
+    ui->btnMine->setPixmap(QPixmap("://icons/icon-mine-unselected.jpg"));
 
     m_btnGrp = new QButtonGroup(this);
     m_btnGrp->addButton(ui->btnMsg, ToolBar::Message);
@@ -51,6 +51,24 @@ void ToolBar::setChecked(int btnIndex)
 {
 //    emit clicked(btnIndex);
     m_btnGrp->button(btnIndex)->click();
+    if(btnIndex == ToolBar::Message)
+    {
+        ui->btnMsg->setPixmap(QPixmap("://icons/icon-msg.png"));
+        ui->btnHome->setPixmap(QPixmap("://icons/icon-home-unselected.jpg"));
+        ui->btnMine->setPixmap(QPixmap("://icons/icon-mine-unselected.jpg"));
+    }
+    else if(btnIndex == ToolBar::Home)
+    {
+        ui->btnMsg->setPixmap(QPixmap("://icons/icon-msg-unselected.jpg"));
+        ui->btnHome->setPixmap(QPixmap("://icons/icon-home.png"));
+        ui->btnMine->setPixmap(QPixmap("://icons/icon-mine-unselected.jpg"));
+    }
+    else if(btnIndex == ToolBar::Mine)
+    {
+        ui->btnMsg->setPixmap(QPixmap("://icons/icon-msg-unselected.jpg"));
+        ui->btnHome->setPixmap(QPixmap("://icons/icon-home-unselected.jpg"));
+        ui->btnMine->setPixmap(QPixmap("://icons/icon-mine.png"));
+    }
 }
 
 //void ToolBar::resizeEvent(QResizeEvent *e)
@@ -59,13 +77,14 @@ void ToolBar::setChecked(int btnIndex)
 ////    relayout();
 //}
 
-//void ToolBar::paintEvent(QPaintEvent *e)
-//{
-//    Q_UNUSED(e);
-//    QPainter painter(this);
+void ToolBar::paintEvent(QPaintEvent *e)
+{
+    Q_UNUSED(e);
+    QPainter painter(this);
 
-//    painter.fillRect(rect(), Qt::lightGray);
-//}
+    painter.setPen(QColor(220, 220, 220));
+    painter.drawLine(0,0,width(),0);
+}
 
 void ToolBar::relayout()
 {

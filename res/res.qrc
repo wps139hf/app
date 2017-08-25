@@ -25,5 +25,8 @@
         <file>icons/icon-print.png</file>
         <file>icons/icon-repair.png</file>
         <file>icons/icon-room.png</file>
+        <file>icons/icon-home-unselected.jpg</file>
+        <file>icons/icon-msg-unselected.jpg</file>
+        <file>icons/icon-mine-unselected.jpg</file>
     </qresource>
 </RCC>

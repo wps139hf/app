@@ -22,10 +22,10 @@ MessagePage::MessagePage(QWidget *parent)
     m_pMessageList = new MessageList(content,this);
 
     m_pMessageList->move(0,60);
-    m_pMessageList->setStyleSheet("QListWidget{border:1px solid gray; color:black; }"
+    m_pMessageList->setStyleSheet("QListWidget{border:1px solid gray; color:rgb(196, 19, 111); }"
                                "QListWidget{background-color:rgb(255,255,255); }"
-                               "QListWidget::item:selected{background:lightgray; color:red; }"
-                               "QListWidget::item:selected:!active{border-width:0px; background:lightgreen; }"
+                               "QListWidget::item:selected{background:lightgray; color:rgb(196, 19, 111); }"
+                               "QListWidget::item:selected:!active{border-width:0px; background:rgb(196, 19, 111); }"
                                );
 
     m_pMessageTime = new QLabel(this);
@@ -65,7 +65,6 @@ void MessagePage::resizeEvent(QResizeEvent *e)
     BasePage::resizeEvent(e);
 
     m_pMessageList->resize(width(),height());
-    //m_pMessageWid->resize(width(),height());
 }
 
 void MessagePage::setMessageContent(QString time, QString content)
@@ -73,6 +72,7 @@ void MessagePage::setMessageContent(QString time, QString content)
     qDebug()<<"MessagePage::setMessageContent"<<time<<content;
     m_pMessageTime -> setText(time);
     m_pMessageText -> setText(content);
+
     m_pMessageList->hide();
     m_pMessageTime -> show();
     m_pMessageText -> show();
@@ -143,7 +143,7 @@ MessageBox::MessageBox(const QDateTime &time, QWidget *parent, QString message)
     resize(MESSAGE_BOX_WIDTH, MESSAGE_BOX_HEIGHT);
 
     m_pMessageIcon = new QLabel(this);
-    m_pMessageIcon->setStyleSheet("background:black");
+    m_pMessageIcon->setStyleSheet("background:rgb(196, 19, 111)");
 
     m_pMessageText = new QLabel(this);
     m_pMessageText->setText(m_sContent);
