@@ -29,12 +29,12 @@
     "border:none;"\
     "border-radius:0px;"
 
-ListItem::ListItem(const QString &text, const QString &key, QWidget *parent)
+ListItem::ListItem(const QString &text, int index, QWidget *parent)
     : QLabel(parent)
 {
     setStyleSheet(NORMAL_STYLE);
     setText("<u>" + text + "</u>");
-    m_keyword = key;
+    m_index = index;
     setFixedHeight(40);
 }
 
@@ -52,5 +52,5 @@ void ListItem::mouseReleaseEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
     setStyleSheet(NORMAL_STYLE);
-    emit itemselected(m_keyword);
+    emit itemselected(m_index);
 }

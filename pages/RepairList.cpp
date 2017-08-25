@@ -1,57 +1,54 @@
-#include "RoomList.h"
-#include "ui_RoomList.h"
-#include "ModelManager.h"
+#include "RepairList.h"
+#include "ui_RepairList.h"
 #include "ListItem.h"
 
-#include <QVBoxLayout>
-
-RoomList::RoomList(QWidget *parent) :
+RepairList::RepairList(QWidget *parent) :
     AnimatedPage(parent),
-    ui(new Ui::RoomList)
+    ui(new Ui::RepairList)
 {
     ui->setupUi(this);
     setTitleBar(ui->titleBar);
 }
 
-RoomList::~RoomList()
+RepairList::~RepairList()
 {
     delete ui;
 }
 
-void RoomList::init()
+void RepairList::init()
 {
-    setTitle(tr("多功能厅信息"));
+    setTitle(tr("维修申请信息"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
 }
 
-void RoomList::refresh()
+void RepairList::refresh()
 {
-    addItems(ModelManager::instance()->multiRoom()->pendingMap());
-    addItems(ModelManager::instance()->multiRoom()->doneMap());
+    addItems(ModelManager::instance()->repair()->pendingMap());
+    addItems(ModelManager::instance()->repair()->doneMap());
 }
 
-void RoomList::resizeEvent(QResizeEvent *e)
+void RepairList::resizeEvent(QResizeEvent *e)
 {
     AnimatedPage::resizeEvent(e);
     ui->titleBar->setGeometry(0, 0, width(), ui->titleBar->height());
 
-    int y = ui->titleBar->height() + ui->label->height();
+    int y = ui->titleBar->height() + 20;
     ui->tray->setGeometry(10, y, width() - 20, height() - y);
     ui->list->setGeometry(5, 5, ui->tray->width() - 10, ui->tray->height() - 10);
 }
 
-bool RoomList::contains(int index)
+bool RepairList::contains(int key)
 {
     for(auto item : m_keyList){
-        if(item == index){
+        if(item == key){
             return true;
         }
     }
     return false;
 }
 
-void RoomList::addItems(const JsonObjectMap &map)
+void RepairList::addItems(const JsonObjectMap &map)
 {
     for(auto index : map.keys()){
         if(contains(index)){
@@ -66,13 +63,10 @@ void RoomList::addItems(const JsonObjectMap &map)
         QString info = applicant + " " + dateOfUse + " " + timeOfUse + " 申请单";
 
         ListItem *item = new ListItem(info, index, this);
-
+        ui->list->addItem(item, QSize(ui->list->width(), item->height()));
         connect(item, &ListItem::itemselected, [this](int index){
-            ModelManager::instance()->multiRoom()->setCurrentObject(index);
+            ModelManager::instance()->repair()->setCurrentObject(index);
             emit itemSelected();
         });
-
-        ui->list->addItem(item, QSize(ui->list->width(), item->height()));
     }
 }
-

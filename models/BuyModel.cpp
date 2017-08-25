@@ -2,38 +2,40 @@
 #include "ModelManager.h"
 
 BuyModel::BuyModel(QObject *parent)
-    : AbstractModel(parent)
+    : AppBaseModel(parent)
 {
 }
 
-void BuyModel::init()
-{
-    m_username = ModelManager::instance()->application()->user();
-    m_objectList.clear();
-}
-
-void BuyModel::handleRequest()
+void BuyModel::getQuantity()
 {
     m_soap->setRequestMethod("GetPurchaseQuantity");
     m_soap->addRequestArg("userNo", m_username);
     m_soap->submit();
 
     QJsonObject quantity = JSON::toObject(m_soap->getValueByTag("GetPurchaseQuantityResult"));
-    int count = quantity.value("Quantity").toInt();
+    m_count = quantity.value("Quantity").toInt();
+}
 
-    qDebug() << "BuyModel, count=" << count;
-
+void BuyModel::getList()
+{
     m_soap->setRequestMethod("GetPurchaseList");
-    m_soap->addRequestArg("topQuantity", QString().setNum(count));
+    m_soap->addRequestArg("topQuantity", QString().setNum(m_count));
     m_soap->addRequestArg("userNo", m_username);
     m_soap->submit();
 
     m_objectList = JSON::toList(m_soap->getValueByTag("GetPurchaseListResult"));
+}
+
+void BuyModel::filterObjects()
+{
+    int index = 0;
     for(auto object : m_objectList){
-//        m_mapBySN.insert(object.value("编号").toString(), object);
-        qDebug() << "---------------";
-        for(auto key : object.keys()){
-            qDebug() << key << ":" << object.value(key);
+        QString state = object.value("审批状态").toString();
+        if(state == QString("已审批")){
+            m_doneMap.insert(index, object);
+        }else{
+            m_pendingMap.insert(index, object);
         }
+        index++;
     }
 }

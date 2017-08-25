@@ -1,21 +1,20 @@
-#ifndef ROOMLIST_H
-#define ROOMLIST_H
+#ifndef REPAIRLIST_H
+#define REPAIRLIST_H
 
 #include "AnimatedPage.h"
 #include "ModelManager.h"
 
-
 namespace Ui {
-class RoomList;
+class RepairList;
 }
 
-class RoomList : public AnimatedPage
+class RepairList : public AnimatedPage
 {
     Q_OBJECT
 
 public:
-    explicit RoomList(QWidget *parent = 0);
-    ~RoomList();
+    explicit RepairList(QWidget *parent = 0);
+    ~RepairList();
 signals:
     void itemSelected();
 protected:
@@ -23,10 +22,10 @@ protected:
     void refresh();
     void resizeEvent(QResizeEvent *e);
 private:
-    bool contains(int index);
+    bool contains(int key);
     void addItems(const JsonObjectMap &map);
-    Ui::RoomList *ui;
+    Ui::RepairList *ui;
     QList<int>m_keyList;
 };
 
-#endif // ROOMLIST_H
+#endif // REPAIRLIST_H

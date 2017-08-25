@@ -1,82 +1,43 @@
 #include "MutiRoomModel.h"
 #include "ModelManager.h"
 
-MultiRoom::MultiRoom()
-{
-
-}
-
-QJsonObject MultiRoom::toJson()
-{
-    return data;
-}
-
-void MultiRoom::fromJson(const QJsonObject &object)
-{
-    data = object;
-}
-
 MutiRoomModel::MutiRoomModel(QObject *parent)
-    : AbstractModel(parent)
+    : AppBaseModel(parent)
 {
 
 }
 
-QJsonObject MutiRoomModel::object(const QString &sn)
-{
-    return m_mapBySN.value(sn);
-}
-
-JsonMap MutiRoomModel::map()
-{
-    return m_mapBySN;
-}
-
-int MutiRoomModel::size()
-{
-    return m_mapBySN.size();
-}
-
-void MutiRoomModel::setCurrentObject(const QJsonObject &object)
-{
-    m_currentObject = object;
-}
-
-QJsonObject MutiRoomModel::currentObject()
-{
-    return m_currentObject;
-}
-
-void MutiRoomModel::init()
-{
-    m_username = ModelManager::instance()->application()->user();
-    m_objectList.clear();
-    m_mapBySN.clear();
-}
-
-void MutiRoomModel::handleRequest()
+void MutiRoomModel::getQuantity()
 {
     m_soap->setRequestMethod("GetMoltiRoomQuantity");
     m_soap->addRequestArg("userNo", "sa");
     m_soap->submit();
 
     QJsonObject quantity = JSON::toObject(m_soap->getValueByTag("GetMoltiRoomQuantityResult"));
-    int count = quantity.value("Quantity").toInt();
+    m_count = quantity.value("Quantity").toInt();
+}
 
-    qDebug() << "MutiRoomModel, count=" << count;
-
+void MutiRoomModel::getList()
+{
     m_soap->setRequestMethod("GetMoltiRoomList");
-    m_soap->addRequestArg("topQuantity", QString().setNum(count));
+    m_soap->addRequestArg("topQuantity", QString().setNum(m_count));
     m_soap->addRequestArg("userNo", "sa");
     m_soap->submit();
 
     m_objectList = JSON::toList(m_soap->getValueByTag("GetMoltiRoomListResult"));
+}
+
+void MutiRoomModel::filterObjects()
+{
+    int index = 0;
     for(auto object : m_objectList){
-        m_mapBySN.insert(object.value("编号").toString(), object);
-        qDebug() << "---------------";
-        for(auto key : object.keys()){
-            qDebug() << key << ":" << object.value(key);
+        QString state = object.value("审批状态").toString();
+        if(state == QString("已审批")){
+            m_doneMap.insert(index, object);
+        }else{
+            m_pendingMap.insert(index, object);
         }
+        index++;
     }
 }
 

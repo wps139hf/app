@@ -169,7 +169,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0, 200);</string>
+    <string notr="true">background-color: rgb(0, 0, 0);</string>
    </property>
   </widget>
   <widget class="RoomList" name="pageRoomList" native="true">
@@ -177,6 +177,58 @@
     <rect>
      <x>0</x>
      <y>360</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="CarList" name="pageCarList" native="true">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>360</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="RepairList" name="pageRepairList" native="true">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>360</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="BuyList" name="pageBuyList" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>450</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="PrintList" name="pagePrintList" native="true">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>450</y>
      <width>120</width>
      <height>80</height>
     </rect>
@@ -263,6 +315,30 @@
    <class>RoomList</class>
    <extends>QWidget</extends>
    <header>pages/RoomList.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CarList</class>
+   <extends>QWidget</extends>
+   <header>pages/CarList.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RepairList</class>
+   <extends>QWidget</extends>
+   <header>pages/RepairList.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BuyList</class>
+   <extends>QWidget</extends>
+   <header>pages/BuyList.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PrintList</class>
+   <extends>QWidget</extends>
+   <header>pages/PrintList.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

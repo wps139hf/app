@@ -1,21 +1,17 @@
 #ifndef PRINTMODEL_H
 #define PRINTMODEL_H
 
-#include "AbstractModel.h"
+#include "AppBaseModel.h"
 
-class PrintModel : public AbstractModel
+class PrintModel : public AppBaseModel
 {
     Q_OBJECT
 public:
     explicit PrintModel(QObject *parent = nullptr);
-
 protected:
-    void init();
-    void handleRequest();
-private:
-    QList<QJsonObject> m_objectList;
-    QString m_username;
-    JsonMap m_mapBySN;
+    void getQuantity() override;
+    void getList() override;
+    void filterObjects() override;
 };
 
 #endif // PRINTMODEL_H

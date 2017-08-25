@@ -1,57 +1,54 @@
-#include "RoomList.h"
-#include "ui_RoomList.h"
-#include "ModelManager.h"
+#include "CarList.h"
+#include "ui_CarList.h"
 #include "ListItem.h"
 
-#include <QVBoxLayout>
-
-RoomList::RoomList(QWidget *parent) :
+CarList::CarList(QWidget *parent) :
     AnimatedPage(parent),
-    ui(new Ui::RoomList)
+    ui(new Ui::CarList)
 {
     ui->setupUi(this);
     setTitleBar(ui->titleBar);
 }
 
-RoomList::~RoomList()
+CarList::~CarList()
 {
     delete ui;
 }
 
-void RoomList::init()
+void CarList::init()
 {
-    setTitle(tr("多功能厅信息"));
+    setTitle(tr("用车申请信息"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
 }
 
-void RoomList::refresh()
+void CarList::refresh()
 {
-    addItems(ModelManager::instance()->multiRoom()->pendingMap());
-    addItems(ModelManager::instance()->multiRoom()->doneMap());
+    addItems(ModelManager::instance()->car()->pendingMap());
+    addItems(ModelManager::instance()->car()->doneMap());
 }
 
-void RoomList::resizeEvent(QResizeEvent *e)
+void CarList::resizeEvent(QResizeEvent *e)
 {
     AnimatedPage::resizeEvent(e);
     ui->titleBar->setGeometry(0, 0, width(), ui->titleBar->height());
 
-    int y = ui->titleBar->height() + ui->label->height();
+    int y = ui->titleBar->height() + 20;
     ui->tray->setGeometry(10, y, width() - 20, height() - y);
     ui->list->setGeometry(5, 5, ui->tray->width() - 10, ui->tray->height() - 10);
 }
 
-bool RoomList::contains(int index)
+bool CarList::contains(int key)
 {
     for(auto item : m_keyList){
-        if(item == index){
+        if(item == key){
             return true;
         }
     }
     return false;
 }
 
-void RoomList::addItems(const JsonObjectMap &map)
+void CarList::addItems(const JsonObjectMap &map)
 {
     for(auto index : map.keys()){
         if(contains(index)){
@@ -66,13 +63,10 @@ void RoomList::addItems(const JsonObjectMap &map)
         QString info = applicant + " " + dateOfUse + " " + timeOfUse + " 申请单";
 
         ListItem *item = new ListItem(info, index, this);
-
+        ui->list->addItem(item, QSize(ui->list->width(), item->height()));
         connect(item, &ListItem::itemselected, [this](int index){
-            ModelManager::instance()->multiRoom()->setCurrentObject(index);
+            ModelManager::instance()->car()->setCurrentObject(index);
             emit itemSelected();
         });
-
-        ui->list->addItem(item, QSize(ui->list->width(), item->height()));
     }
 }
-

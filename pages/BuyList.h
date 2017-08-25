@@ -1,21 +1,20 @@
-#ifndef ROOMLIST_H
-#define ROOMLIST_H
+#ifndef BUYLIST_H
+#define BUYLIST_H
 
 #include "AnimatedPage.h"
 #include "ModelManager.h"
 
-
 namespace Ui {
-class RoomList;
+class BuyList;
 }
 
-class RoomList : public AnimatedPage
+class BuyList : public AnimatedPage
 {
     Q_OBJECT
 
 public:
-    explicit RoomList(QWidget *parent = 0);
-    ~RoomList();
+    explicit BuyList(QWidget *parent = 0);
+    ~BuyList();
 signals:
     void itemSelected();
 protected:
@@ -23,10 +22,10 @@ protected:
     void refresh();
     void resizeEvent(QResizeEvent *e);
 private:
-    bool contains(int index);
+    bool contains(int key);
     void addItems(const JsonObjectMap &map);
-    Ui::RoomList *ui;
+    Ui::BuyList *ui;
     QList<int>m_keyList;
 };
 
-#endif // ROOMLIST_H
+#endif // BUYLIST_H

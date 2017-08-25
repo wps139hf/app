@@ -31,136 +31,24 @@ MainWindow *MainWindow::instance()
 
 void MainWindow::setupConnections()
 {
+    connectionsOnLogin();
     connectionsOnNotification();
     connectionsOnBusyPage();
 
-    connect(ui->pageWelcome, &WelcomePage::loginClicked, [this]{
-        showPage(ui->pageLogin);
-    });
+    connectionsOnCar();
+    connectionsOnRepair();
+    connectionsOnBuy();
+    connectionsOnPrint();
+    connectionsOnRoom();
+    connectionsOnAsset();
+}
 
-    connect(ui->pageLogin, &LoginPage::backClicked, [this]{
-        showPage(ui->pageWelcome);
-    });
-
-    connect(ui->pageLogin, &LoginPage::logined, [this]{
-        showPage(ui->pageManager);
-    });
-
-    connect(ui->pageManager->minePage(), &MinePage::logout, [this](){
-        showPage(ui->pageWelcome);
-    });
-
-    connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
-        switch (app) {
-        case App::Car:
-            showPage(ui->pageCar);
-            break;
-        case App::Repair:
-        {
-//            sendNotification(tr("功能正在开发中"));
-#if 1
-//            showPage(ui->pageRepair);
-            RepairModel *model = ModelManager::instance()->repair();
-            model->request();
-            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
-
-            }else{
-                sendNotification(model->errorMsg());
-            }
-#endif
-            break;
-        }
-        case App::Buy:
-        {
-//            showPage(ui->pageBuy);
-            BuyModel *model = ModelManager::instance()->buy();
-            model->request();
-            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
-
-            }else{
-                sendNotification(model->errorMsg());
-            }
-            break;
-        }
-        case App::Print:
-        {
-//            showPage(ui->pagePrint);
-            PrintModel *model = ModelManager::instance()->print();
-            model->request();
-            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
-
-            }else{
-                sendNotification(model->errorMsg());
-            }
-            break;
-        }
-        case App::Room:
-        {
-            MutiRoomModel *model = ModelManager::instance()->multiRoom();
-            model->request();
-            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
-                showPage(ui->pageRoomList);
-            }else{
-                sendNotification(model->errorMsg());
-            }
-            break;
-        }
-        case App::Asset:
-            showPage(ui->pageAssetScan);
-            break;
-        default:
-            break;
-        }
-    });
-
-    connect(ui->pageCar, &CarPage::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-    //asset pages
-    connect(ui->pageRepair, &RepairPage::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-    //asset pages
-    connect(ui->pageBuy, &BuyPage::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-    //asset pages
-    connect(ui->pagePrint, &PrintPage::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-    //roomList pages
-    connect(ui->pageRoomList, &RoomList::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-
-    connect(ui->pageRoomList, &RoomList::itemSelected, [this]{
-        showPage(ui->pageRoom);
-    });
-    //room pages
-    connect(ui->pageRoom, &RoomPage::backClicked, [this]{
-        showPage(ui->pageRoomList);
-    });
-
-    //asset pages
-    connect(ui->pageAssetScan, &AssetScan::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-
-    connect(ui->pageAssetScan, &AssetScan::inputQcClicked, [this]{
-        showPage(ui->pageAssetQuery);
-    });
-
-    connect(ui->pageAssetQuery, &AssetQuery::showInfo, [this]{
-        showPage(ui->pageAssetInfo);
-    });
-
-    connect(ui->pageAssetQuery, &AssetQuery::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
-
-    connect(ui->pageAssetInfo, &AssetInfo::backClicked, [this]{
-        showPage(ui->pageManager);
-    });
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    switch(event->key()){
+    case Qt::Key_Back:
+        break;
+    }
 }
 
 void MainWindow::startUp()
@@ -178,6 +66,25 @@ void MainWindow::wait(int msecond)
     QEventLoop loop;
     QTimer::singleShot(msecond, &loop, SLOT(quit()));
     loop.exec();
+}
+
+void MainWindow::connectionsOnLogin()
+{
+    connect(ui->pageWelcome, &WelcomePage::loginClicked, [this]{
+        showPage(ui->pageLogin);
+    });
+
+    connect(ui->pageLogin, &LoginPage::backClicked, [this]{
+        showPage(ui->pageWelcome);
+    });
+
+    connect(ui->pageLogin, &LoginPage::logined, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageManager->minePage(), &MinePage::logout, [this](){
+        showPage(ui->pageWelcome);
+    });
 }
 
 void MainWindow::connectionsOnNotification()
@@ -199,5 +106,169 @@ void MainWindow::connectionsOnBusyPage()
     });
     connect(ModelManager::instance(), &ModelManager::requestFinish, [this](){
         ui->pageBusy->hide();
+    });
+}
+
+void MainWindow::connectionsOnCar()
+{
+    connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
+        if(app == App::Car) {
+            CarModel *model = ModelManager::instance()->car();
+            model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+                showPage(ui->pageCarList);
+            }else{
+                sendNotification(model->errorMsg());
+            }
+        }
+
+    });
+    connect(ui->pageCarList, &CarList::itemSelected, [this]{
+        showPage(ui->pageCar);
+    });
+
+    connect(ui->pageCarList, &CarList::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageCar, &CarPage::backClicked, [this]{
+        showPage(ui->pageCarList);
+    });
+}
+
+void MainWindow::connectionsOnRepair()
+{
+    connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
+        if(app == App::Repair){
+            RepairModel *model = ModelManager::instance()->repair();
+            model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+                showPage(ui->pageRepairList);
+            }else{
+                sendNotification(model->errorMsg());
+            }
+        }
+    });
+
+    connect(ui->pageRepair, &RepairPage::backClicked, [this]{
+        showPage(ui->pageRepairList);
+    });
+
+    connect(ui->pageRepairList, &RepairPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageRepairList, &RepairList::itemSelected, [this]{
+        showPage(ui->pageRepair);
+    });
+}
+
+void MainWindow::connectionsOnBuy()
+{
+    connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
+        if(app == App::Buy){
+            BuyModel *model = ModelManager::instance()->buy();
+            model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+                showPage(ui->pageBuyList);
+            }else{
+                sendNotification(model->errorMsg());
+            }
+        }
+    });
+
+    connect(ui->pageBuy, &BuyPage::backClicked, [this]{
+        showPage(ui->pageBuyList);
+    });
+
+    connect(ui->pageBuyList, &BuyPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageBuyList, &BuyList::itemSelected, [this]{
+        showPage(ui->pageBuy);
+    });
+}
+
+void MainWindow::connectionsOnPrint()
+{
+    connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
+        if(app == App::Print){
+            PrintModel *model = ModelManager::instance()->print();
+            model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+                showPage(ui->pagePrintList);
+            }else{
+                sendNotification(model->errorMsg());
+            }
+        }
+    });
+
+    connect(ui->pagePrint, &PrintPage::backClicked, [this]{
+        showPage(ui->pagePrintList);
+    });
+
+    connect(ui->pagePrintList, &PrintPage::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pagePrintList, &PrintList::itemSelected, [this]{
+        showPage(ui->pagePrint);
+    });
+}
+
+void MainWindow::connectionsOnRoom()
+{
+    connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
+        if(app == App::Room){
+            MutiRoomModel *model = ModelManager::instance()->multiRoom();
+            model->request();
+            if(model->errorMsg().isNull() || model->errorMsg().isEmpty()){
+                showPage(ui->pageRoomList);
+            }else{
+                sendNotification(model->errorMsg());
+            }
+        }
+    });
+
+    connect(ui->pageRoomList, &RoomList::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageRoomList, &RoomList::itemSelected, [this]{
+        showPage(ui->pageRoom);
+    });
+
+    connect(ui->pageRoom, &RoomPage::backClicked, [this]{
+        showPage(ui->pageRoomList);
+    });
+}
+
+void MainWindow::connectionsOnAsset()
+{
+    connect(ui->pageManager->homePage(), &HomePage::appSelected, [this](int app){
+        if(app == App::Asset){
+            showPage(ui->pageAssetScan);
+        }
+    });
+
+    connect(ui->pageAssetScan, &AssetScan::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageAssetScan, &AssetScan::inputQcClicked, [this]{
+        showPage(ui->pageAssetQuery);
+    });
+
+    connect(ui->pageAssetQuery, &AssetQuery::showInfo, [this]{
+        showPage(ui->pageAssetInfo);
+    });
+
+    connect(ui->pageAssetQuery, &AssetQuery::backClicked, [this]{
+        showPage(ui->pageManager);
+    });
+
+    connect(ui->pageAssetInfo, &AssetInfo::backClicked, [this]{
+        showPage(ui->pageManager);
     });
 }
