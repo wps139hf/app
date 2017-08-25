@@ -31,7 +31,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(135, 36, 79);
+    <string notr="true">background-color: rgb(196, 19, 111);
 color:white</string>
    </property>
    <property name="text">

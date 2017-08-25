@@ -44,7 +44,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 170, 255);</string>
+      <string notr="true">background-color:rgb(196, 19, 111);</string>
      </property>
     </widget>
    </item>
@@ -307,7 +307,7 @@ QCheckBox::indicator:checked {
        <property name="styleSheet">
         <string notr="true">QPushButton{
     border: none;
-	background-color: rgb(0, 170, 255);
+	background-color: rgb(196, 19, 111);
 	color: white;   
 	border-radius: 20px;                        
 }

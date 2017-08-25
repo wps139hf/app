@@ -44,9 +44,8 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(57, 179, 255);</string>
+      <string notr="true">background-color: rgb(196, 19, 111);</string>
      </property>
-     <zorder>verticalSpacer</zorder>
     </widget>
    </item>
    <item>
@@ -226,7 +225,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-	border:1px solid rgb(136, 194, 248);
+	border:1px solid rgb(196, 19, 111);
 	border-radius: 6px;
 	background-color: rgb(255,255,255);
 }</string>
@@ -382,7 +381,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-	border:1px solid rgb(136, 194, 248);
+	border:1px solid rgb(196, 19, 111);
 	border-radius: 6px;
 	background-color: rgb(255,255,255);
 }</string>
@@ -532,7 +531,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-	border:1px solid rgb(136, 194, 248);
+	border:1px solid rgb(196, 19, 111);
 	border-radius: 6px;
 	background-color: rgb(255,255,255);
 }</string>
@@ -591,7 +590,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-	border:1px solid rgb(136, 194, 248);
+	border:1px solid rgb(196, 19, 111);
 	border-radius: 6px;
 	background-color: rgb(255,255,255);
 }</string>
@@ -650,7 +649,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-	border:1px solid rgb(136, 194, 248);
+	border:1px solid rgb(196, 19, 111);
 	border-radius: 6px;
 	background-color: rgb(255,255,255);
 }</string>
@@ -769,7 +768,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-	border:1px solid rgb(136, 194, 248);
+	border:1px solid rgb(196, 19, 111);
 	border-radius: 6px;
 	background-color: rgb(255,255,255);
 }</string>
@@ -798,7 +797,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-	border:1px solid rgb(136, 194, 248);
+	border:1px solid rgb(196, 19, 111);
 	border-radius: 6px;
 	background-color: rgb(255,255,255);
 }</string>
@@ -827,7 +826,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
-	border:1px solid rgb(136, 194, 248);
+	border:1px solid rgb(196, 19, 111);
 	border-radius: 6px;
 	background-color: rgb(255,255,255);
 }</string>
