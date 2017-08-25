@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(57, 179, 255);</string>
+   <string notr="true">background-color: rgb(196, 19, 111);</string>
   </property>
   <widget class="QLabel" name="title">
    <property name="geometry">
@@ -64,7 +64,7 @@
    <property name="styleSheet">
     <string notr="true">QToolButton{
 	border: 0;
-	background-color: rgb(57, 179, 255);
+	background-color: rgb(196, 19, 111);
 }
 
 QToolButton:press{
