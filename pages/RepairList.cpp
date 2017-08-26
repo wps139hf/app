@@ -17,7 +17,7 @@ RepairList::~RepairList()
 
 void RepairList::init()
 {
-    setTitle(tr("维修申请信息"));
+    setTitle(tr("报修申请"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
 }

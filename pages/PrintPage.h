@@ -17,6 +17,7 @@ public:
 
 protected:
     void init();
+    void refresh();
 private:
     Ui::PrintPage *ui;
 };

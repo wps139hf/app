@@ -60,7 +60,7 @@
       <string notr="true">background-color: rgb(255,255,255);</string>
      </property>
      <property name="text">
-      <string>   2017年8月1日9:00 请购详单</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -80,7 +80,7 @@
        <number>12</number>
       </property>
       <item row="0" column="1">
-       <widget class="QLabel" name="applicant_2">
+       <widget class="QLabel" name="applicant">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -104,7 +104,7 @@
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="text">
-         <string>张三</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -258,7 +258,7 @@
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>采购主题</string>
+         <string>申请时间</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -266,7 +266,7 @@
        </widget>
       </item>
       <item row="1" column="1" colspan="4">
-       <widget class="QLabel" name="timeOfUse_2">
+       <widget class="QLabel" name="timeOfapply">
         <property name="minimumSize">
          <size>
           <width>80</width>
@@ -290,7 +290,7 @@
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="text">
-         <string>2017.08.05 10：00</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -444,7 +444,7 @@
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>采购日期</string>
+         <string>采购时间</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -474,7 +474,7 @@
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>审批人</string>
+         <string>采购主题</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -512,7 +512,7 @@
        </widget>
       </item>
       <item row="2" column="1" colspan="4">
-       <widget class="QLabel" name="destination_2">
+       <widget class="QLabel" name="timeOfBuy">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -536,12 +536,12 @@
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="text">
-         <string>区教育局</string>
+         <string/>
         </property>
        </widget>
       </item>
       <item row="3" column="1" colspan="4">
-       <widget class="QLabel" name="instruction_2">
+       <widget class="QLabel" name="theme">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -565,12 +565,12 @@
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="text">
-         <string>商务车</string>
+         <string/>
         </property>
        </widget>
       </item>
       <item row="4" column="1" colspan="4">
-       <widget class="QLabel" name="agreeable_2">
+       <widget class="QLabel" name="agreeable">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -594,12 +594,12 @@
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="text">
-         <string>初期</string>
+         <string/>
         </property>
        </widget>
       </item>
       <item row="0" column="3" colspan="2">
-       <widget class="QLabel" name="serialNum_2">
+       <widget class="QLabel" name="serialNum">
         <property name="minimumSize">
          <size>
           <width>50</width>

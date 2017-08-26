@@ -24,35 +24,32 @@ void RoomPage::init()
 
 void RoomPage::refresh()
 {
-    MutiRoomModel *model = ModelManager::instance()->multiRoom();
-    if(model){
-        QJsonObject object = model->currentObject();
-        ui2->applicant->setText(object.value("申请人").toString());
-        ui2->serialNum->setText(object.value("编号").toString());
-        ui2->peoples->setText(object.value("使用人数").toString());
-        ui2->deskAndChair->setText(object.value("桌椅要求").toString());
+    QJsonObject object = ModelManager::instance()->multiRoom()->currentObject();
+    ui2->applicant->setText(object.value("申请人").toString());
+    ui2->serialNum->setText(object.value("编号").toString());
+    ui2->peoples->setText(object.value("使用人数").toString());
+    ui2->deskAndChair->setText(object.value("桌椅要求").toString());
 
-        QString date = object.value("使用日期").toString();
-        QString timeStart = object.value("使用开始").toString();
-        QString timeEnd = object.value("使用结束").toString();
-        ui2->timeOfUse->setText(date + "  " + timeStart + "--" + timeEnd);
+    QString date = object.value("使用日期").toString();
+    QString timeStart = object.value("使用开始").toString();
+    QString timeEnd = object.value("使用结束").toString();
+    ui2->timeOfUse->setText(date + "  " + timeStart + "--" + timeEnd);
 
-        ui2->purpose->setText(object.value("使用目的").toString());
+    ui2->purpose->setText(object.value("使用目的").toString());
 
-        QString demands;
-        QStringList list;
-        list << "一体机" << "摄像" << "笔记本" << "幕布";
-        for(auto item : list){
-            QString use = object.value(item).toString();
-            if(use == "是"){
-                if(!demands.isEmpty()){
-                    demands += ", ";
-                }
-                demands += item;
+    QString demands;
+    QStringList list;
+    list << "一体机" << "摄像" << "笔记本" << "幕布";
+    for(auto item : list){
+        QString use = object.value(item).toString();
+        if(use == "是"){
+            if(!demands.isEmpty()){
+                demands += ", ";
             }
+            demands += item;
         }
-        ui2->demands->setText(demands);
-
-        ui2->agreeable->setText(object.value("审批状态").toString());
     }
+    ui2->demands->setText(demands);
+
+    ui2->agreeable->setText(object.value("审批状态").toString());
 }

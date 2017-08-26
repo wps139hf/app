@@ -17,7 +17,7 @@ CarList::~CarList()
 
 void CarList::init()
 {
-    setTitle(tr("用车申请信息"));
+    setTitle(tr("用车申请"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
 }
