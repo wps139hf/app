@@ -24,15 +24,13 @@ void RepairPage::init()
 
 void RepairPage::refresh()
 {
-#if 0
-    QJsonObject object = ModelManager::instance()->car()->currentObject();
-    ui->applicant->setText(object.value("申请人").toString());
-    ui->serialNum->setText(object.value("编号").toString());
-    ui->peoples->setText(QString().setNum(object.value("乘车人数").toInt()));
-    ui->destination->setText(object.value("目的地").toString());
-    ui->trip->setText(object.value("单程").toString() == "是" ? "单程" : "双程");
-    ui->timeOfUse->setText(object.value("出车时间").toString());
-    ui->comment->setText(object.value("用车说明").toString());
+    QJsonObject object = ModelManager::instance()->repair()->currentObject();
+    ui->applicant->setText(object.value("报修人").toString());
+    ui->serialNum->setText(object.value("维修编号").toString());
+    ui->time->setText(object.value("报修时间").toString());
+    ui->classroom->setText(object.value("班级、专用室").toString());
+    ui->content->setText(object.value("报修内容").toString());
+    ui->status->setText(object.value("完成情况").toString());
+    ui->staff->setText(object.value("维修人").toString());
     ui->agreeable->setText(object.value("审批状态").toString());
-#endif
 }
