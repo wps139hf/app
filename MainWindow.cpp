@@ -43,14 +43,6 @@ void MainWindow::setupConnections()
     connectionsOnAsset();
 }
 
-void MainWindow::keyReleaseEvent(QKeyEvent *event)
-{
-    switch(event->key()){
-    case Qt::Key_Back:
-        break;
-    }
-}
-
 void MainWindow::startUp()
 {
     ApplicationModel *app = ModelManager::instance()->application();

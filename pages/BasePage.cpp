@@ -82,10 +82,13 @@ void BasePage::showEvent(QShowEvent *e)
     refresh();
 }
 
-//void BasePage::paintEvent(QPaintEvent *e)
-//{
-//    QWidget::paintEvent(e);
-//    QPainter painter(this);
-//    painter.fillRect(rect(), m_backgoundColor);
-//}
-
+void BasePage::keyReleaseEvent(QKeyEvent *event)
+{
+    switch(event->key()){
+    case Qt::Key_Backspace:
+    case Qt::Key_Back:
+        emit backClicked(true);
+        break;
+    default:break;
+    }
+}

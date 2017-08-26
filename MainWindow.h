@@ -20,9 +20,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     static MainWindow *instance();
+
 protected:
     void setupConnections();
-    void keyReleaseEvent(QKeyEvent *event);
+
 private:
     void startUp();
     void wait(int msecond);
@@ -35,8 +36,11 @@ private:
     void connectionsOnPrint();
     void connectionsOnRoom();
     void connectionsOnAsset();
+
+private:
     Ui::MainWindow *ui;
     QSharedPointer<Notification> m_notification;
+//    QStack<QWidget*> m_pageStack;
 };
 
 #endif // MAINWINDOW_H
