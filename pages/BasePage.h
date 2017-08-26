@@ -6,6 +6,7 @@
 
 #include <QDebug>
 #include <QWidget>
+#include <QKeyEvent>
 
 class BasePage : public QWidget
 {
@@ -32,7 +33,7 @@ protected:
     virtual void init();
     virtual void refresh();
     void showEvent(QShowEvent *e);
-//    void paintEvent(QPaintEvent *e);
+    void keyReleaseEvent(QKeyEvent *event);
 protected:
     TitleBar *m_titleBar = Q_NULLPTR;
     ToolBar *m_toolbar = Q_NULLPTR;
