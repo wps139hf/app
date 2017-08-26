@@ -17,7 +17,7 @@ BuyList::~BuyList()
 
 void BuyList::init()
 {
-    setTitle(tr("请购申请信息"));
+    setTitle(tr("请购申请"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
 }

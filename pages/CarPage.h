@@ -16,6 +16,7 @@ public:
     ~CarPage();
 protected:
     void init();
+    void refresh();
 private:
     Ui::CarPage *ui;
 };

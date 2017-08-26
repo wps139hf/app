@@ -20,7 +20,7 @@ RoomList::~RoomList()
 
 void RoomList::init()
 {
-    setTitle(tr("多功能厅信息"));
+    setTitle(tr("多功能厅申请"));
     setTitleButtonVisible(TitleBar::Back, true);
     setTitleButtonVisible(TitleBar::Custom, false);
 }
