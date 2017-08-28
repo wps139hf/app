@@ -16,8 +16,8 @@ BasePage::~BasePage()
 void BasePage::setTitleBar(TitleBar *bar)
 {
     m_titleBar = bar;
-    connect(m_titleBar, SIGNAL(backClicked(bool)), this, SIGNAL(backClicked(bool)));
-    connect(m_titleBar, SIGNAL(customClicked(bool)), this, SIGNAL(customClicked(bool)));
+    connect(m_titleBar, SIGNAL(backClicked(bool)), this, SIGNAL(backClicked(bool)), Qt::QueuedConnection);
+    connect(m_titleBar, SIGNAL(customClicked(bool)), this, SIGNAL(customClicked(bool)), Qt::QueuedConnection);
 }
 
 void BasePage::setToolBar(ToolBar *bar)
@@ -87,7 +87,14 @@ void BasePage::keyReleaseEvent(QKeyEvent *event)
     switch(event->key()){
     case Qt::Key_Backspace:
     case Qt::Key_Back:
-        emit backClicked(true);
+        qDebug() << "keyReleaseEvent, Qt::Key_Back:start";
+//        emit backClicked(false);
+
+//        QTimer::singleShot(1000, this, [this](){
+            qDebug() << "QTimer::singleShot";
+            emit m_titleBar->backClicked(false);
+//        });
+        qDebug() << "keyReleaseEvent, Qt::Key_Back:end";
         break;
     default:break;
     }

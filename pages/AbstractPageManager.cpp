@@ -28,6 +28,7 @@ void AbstractPageManager::initilize()
 
 void AbstractPageManager::showPage(QWidget *page)
 {
+    qDebug() << "showPage, " << page->objectName();
     m_prevPage = m_curPage;
     m_curPage = page;
 
