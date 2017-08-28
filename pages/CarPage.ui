@@ -66,7 +66,7 @@
       <string notr="true">background-color: rgb(255,255,255);</string>
      </property>
      <property name="text">
-      <string>   2017年8月1日9:00 申请用车信息</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

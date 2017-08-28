@@ -6,8 +6,8 @@
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
 
-#define ANIMATION_DURATION  (200)
-#define ANIMATION_EASING_CURVE    (QEasingCurve::InOutQuad)
+#define ANIMATION_DURATION  (300)
+#define ANIMATION_EASING_CURVE    (QEasingCurve::OutQuad)
 
 class AnimatedPage : public BasePage
 {
