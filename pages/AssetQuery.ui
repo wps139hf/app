@@ -171,7 +171,7 @@ QLineEdit:hover {
 }
 
 QPushButton:pressed{
-	background-color: rgb(0, 101, 152);
+	background-color: rgb(99, 10, 56);
 }
 </string>
        </property>
