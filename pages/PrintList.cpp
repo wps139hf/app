@@ -8,6 +8,7 @@ PrintList::PrintList(QWidget *parent) :
 {
     ui->setupUi(this);
     setTitleBar(ui->titleBar);
+    connect(ui->requestBtn,SIGNAL(pressed()),this,SIGNAL(request()));
 }
 
 PrintList::~PrintList()

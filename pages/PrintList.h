@@ -17,6 +17,7 @@ public:
     ~PrintList();
 signals:
     void itemSelected();
+    void request();
 protected:
     void init();
     void refresh();

@@ -207,6 +207,14 @@ void MainWindow::connectionsOnPrint()
     connect(ui->pagePrintList, &PrintList::itemSelected, [this]{
         showPage(ui->pagePrint);
     });
+
+    connect(ui->pagePrintList, &PrintList::request, [this]{
+        showPage(ui->pagePrintRequest);
+    });
+
+    connect(ui->pagePrintRequest, &PrintRequest::backClicked, [this]{
+        showPage(ui->pagePrintList);
+    });
 }
 
 void MainWindow::connectionsOnRoom()

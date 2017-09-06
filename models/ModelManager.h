@@ -9,6 +9,7 @@
 #include "BuyModel.h"
 #include "CarModel.h"
 #include "RepairModel.h"
+#include "messagemodel.h"
 
 class ModelManager : public QObject
 {
@@ -22,6 +23,7 @@ public:
     PrintModel *print();
     BuyModel *buy();
     RepairModel *repair();
+    MessageModel *message();
 
     static ModelManager *instance();
 signals:

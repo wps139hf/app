@@ -77,7 +77,9 @@ SOURCES += \
     pages/CarList.cpp \
     pages/RepairList.cpp \
     pages/BuyList.cpp \
-    pages/PrintList.cpp
+    pages/PrintList.cpp \
+    models/MessageModel.cpp \
+    pages/PrintRequest.cpp
 
 HEADERS += \
     pages/HomePage.h \
@@ -130,7 +132,9 @@ HEADERS += \
     pages/CarList.h \
     pages/RepairList.h \
     pages/BuyList.h \
-    pages/PrintList.h
+    pages/PrintList.h \
+    models/MessageModel.h \
+    pages/PrintRequest.h
 
 FORMS += \
     pages/HomePage.ui \
@@ -162,7 +166,8 @@ FORMS += \
     pages/CarList.ui \
     pages/RepairList.ui \
     pages/BuyList.ui \
-    pages/PrintList.ui
+    pages/PrintList.ui \
+    pages/PrintRequest.ui
 
 CONFIG += mobility
 MOBILITY = 

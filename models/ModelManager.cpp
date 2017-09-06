@@ -47,6 +47,12 @@ RepairModel *ModelManager::repair()
     return &r;
 }
 
+MessageModel *ModelManager::message()
+{
+    static MessageModel m(this);
+    return &m;
+}
+
 ModelManager *ModelManager::m_instance = Q_NULLPTR;
 ModelManager *ModelManager::instance()
 {
